@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URL Shortener</title>
+  <style>
+    :root { --bg:#f7f7f8; --card:#fff; --text:#1d1d1f; --muted:#6b6b76; --accent:#2f6fed; --err:#c62828; --line:#e3e3e8; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#141417; --card:#1e1e23; --text:#ececf1; --muted:#9a9aa6; --accent:#6c9cff; --err:#ff6b6b; --line:#2e2e36; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font:16px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--text); }
+    main { max-width:760px; margin:0 auto; padding:32px 16px; }
+    h1 { margin:0 0 4px; font-size:28px; }
+    .muted { color:var(--muted); }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin-top:20px; }
+    form { display:grid; gap:10px; grid-template-columns:1fr; }
+    @media (min-width:600px) { form { grid-template-columns:3fr 1.3fr auto; } }
+    input { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:transparent; color:inherit; font:inherit; }
+    button { padding:10px 18px; border:0; border-radius:8px; background:var(--accent); color:#fff; font:inherit; font-weight:600; cursor:pointer; }
+    .error { color:var(--err); margin-top:12px; }
+    .result a { font-size:20px; font-weight:600; color:var(--accent); word-break:break-all; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); }
+    td.url { max-width:320px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    td.num { text-align:right; font-variant-numeric:tabular-nums; }
+    a { color:var(--accent); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>URL Shortener</h1>
+  <div class="muted">{{.Stats.Links}} links · {{.Stats.Clicks}} clicks</div>
+
+  <div class="card">
+    <form method="post" action="/shorten">
+      <input name="url" placeholder="https://example.com/a/very/long/link" value="{{.URL}}" required autofocus aria-label="URL to shorten">
+      <input name="alias" placeholder="custom alias (optional)" value="{{.Alias}}" aria-label="Custom alias">
+      <button type="submit">Shorten</button>
+    </form>
+    {{with .Error}}<div class="error" role="alert">{{.}}</div>{{end}}
+    {{with .Result}}
+      <div class="result" style="margin-top:16px">
+        <a href="{{.ShortURL}}">{{.ShortURL}}</a>
+        <div class="muted">→ {{.URL}}</div>
+      </div>
+    {{end}}
+  </div>
+
+  {{if .Links}}
+  <div class="card">
+    <strong>Recent links</strong>
+    <table>
+      <thead><tr><th>Code</th><th>Destination</th><th class="num">Clicks</th></tr></thead>
+      <tbody>
+      {{range .Links}}
+        <tr>
+          <td><a href="{{.ShortURL}}">{{.Code}}</a></td>
+          <td class="url" title="{{.URL}}">{{.URL}}</td>
+          <td class="num">{{.Clicks}}</td>
+        </tr>
+      {{end}}
+      </tbody>
+    </table>
+  </div>
+  {{end}}
+</main>
+</body>
+</html>

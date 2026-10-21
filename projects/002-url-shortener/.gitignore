@@ -1,0 +1,9 @@
+# build output
+/bin/
+/shortener
+# local databases
+*.db
+*.db-shm
+*.db-wal
+# coverage
+coverage.out
