@@ -1,0 +1,508 @@
+# 500 Computer Science Projects
+
+Build queue for the twice-daily scheduled builds. Each run takes the first unchecked item,
+builds it in `projects/NNN-slug/`, and checks it off with the folder link.
+Ordered from starter to advanced, interleaving 20 areas and 40+ languages.
+
+Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
+
+- [ ] 001 | Pomodoro Timer | HTML/CSS/JS | Starter | Web Frontend | Focus timer with sessions, breaks, sound alerts and stats
+- [ ] 002 | URL Shortener | Go | Starter | Backend & APIs | Short links with redirects, click counts, SQLite storage
+- [ ] 003 | Todo CLI | Python | Starter | CLI Tools | Task list with priorities, due dates, JSON storage
+- [ ] 004 | Sorting Visualizer | JavaScript | Starter | Data Structures & Algorithms | Animate bubble, merge, quick, heap sort
+- [ ] 005 | Producer-Consumer Simulator | Java | Starter | Systems & Operating Systems | Bounded buffer with semaphores visualized
+- [ ] 006 | Port Scanner | Python | Starter | Networking | TCP connect scan with concurrency (own hosts only)
+- [ ] 007 | Library Management DB | SQL + Python | Starter | Databases & Storage | Normalized schema, queries, CLI
+- [ ] 008 | Calculator Parser | Python | Starter | Compilers & Interpreters | Recursive descent with operator precedence
+- [ ] 009 | Tic-Tac-Toe With Minimax | Python | Starter | Games | Unbeatable AI with pygame UI
+- [ ] 010 | Password Strength Checker | Python | Starter | Security | Entropy estimate and breach-list check
+- [ ] 011 | Linear Regression From Scratch | Python (NumPy) | Starter | Machine Learning & AI | Gradient descent with plots
+- [ ] 012 | COVID/Public Data Dashboard | Python (Pandas + Plotly) | Starter | Data Engineering & Analysis | Clean, analyze, visualize open data
+- [ ] 013 | Notes App | Dart (Flutter) | Starter | Mobile & Desktop Apps | Cross-platform notes with search
+- [ ] 014 | Dockerized Microservices | Docker Compose | Starter | DevOps & Cloud | 3 services with networking and volumes
+- [ ] 015 | Snowflake ID Generator | Rust | Starter | Distributed Systems | Unique time-ordered IDs
+- [ ] 016 | Particle System | JavaScript (Canvas) | Starter | Graphics & Simulation | Fireworks and forces
+- [ ] 017 | Bank Account Actors | Elixir | Starter | Functional & Polyglot | GenServer accounts with supervision
+- [ ] 018 | Logic Gate Simulator | TypeScript | Starter | Embedded & Emulation | Drag gates, build adders
+- [ ] 019 | Personal Portfolio Site | Next.js | Starter | Full-Stack Apps | Projects, blog, contact form
+- [ ] 020 | Matrix Calculator | Python | Starter | Math & Scientific Computing | Determinant, inverse, RREF with steps
+- [ ] 021 | Markdown Previewer | React | Starter | Web Frontend | Live split-pane markdown editor with export to HTML
+- [ ] 022 | REST Todo API | Python (FastAPI) | Starter | Backend & APIs | CRUD API with validation, tests, OpenAPI docs
+- [ ] 023 | Password Generator | Rust | Starter | CLI Tools | Configurable secure passwords and passphrases
+- [ ] 024 | Linked List Library | C | Starter | Data Structures & Algorithms | Singly/doubly linked lists with tests
+- [ ] 025 | CPU Scheduler Simulator | Python | Starter | Systems & Operating Systems | FCFS, SJF, RR, MLFQ with Gantt charts
+- [ ] 026 | Chat over TCP | Go | Starter | Networking | Multi-client chat server and client
+- [ ] 027 | Backup & Restore Tool | Bash | Starter | Databases & Storage | Scheduled dumps with rotation
+- [ ] 028 | Brainfuck Interpreter | C | Starter | Compilers & Interpreters | Interpreter plus optimizing pass
+- [ ] 029 | Snake | JavaScript (Canvas) | Starter | Games | Classic snake with levels and high scores
+- [ ] 030 | Caesar/Vigenere Cracker | Python | Starter | Security | Frequency analysis tools
+- [ ] 031 | Spam Classifier | Python | Starter | Machine Learning & AI | Naive Bayes on SMS dataset
+- [ ] 032 | Web Scraper Pipeline | Python | Starter | Data Engineering & Analysis | Scrape, clean, store with scheduling
+- [ ] 033 | Weather App | React Native | Starter | Mobile & Desktop Apps | Location-based forecasts
+- [ ] 034 | CI Pipeline Template | GitHub Actions | Starter | DevOps & Cloud | Lint, test, build, release workflow
+- [ ] 035 | Boids Flocking | Processing (Java) | Starter | Graphics & Simulation | Separation, alignment, cohesion
+- [ ] 036 | Todo App | Elm | Starter | Functional & Polyglot | The Elm architecture
+- [ ] 037 | Arduino Sensor Logger | C++ (Arduino) | Starter | Embedded & Emulation | Read sensors, log over serial
+- [ ] 038 | Link-in-Bio Page Builder | SvelteKit | Starter | Full-Stack Apps | Custom profile pages
+- [ ] 039 | Prime Sieve Benchmarks | C | Starter | Math & Scientific Computing | Eratosthenes, Atkin, segmented
+- [ ] 040 | Weather Dashboard | Vue | Starter | Web Frontend | City search, 5-day forecast, unit toggle using Open-Meteo
+- [ ] 041 | Pastebin Clone | Node.js (Express) | Starter | Backend & APIs | Paste sharing with expiry and syntax highlighting
+- [ ] 042 | Unit Converter | Go | Starter | CLI Tools | Length, mass, temperature, data size conversions
+- [ ] 043 | Trie Autocomplete | Python | Starter | Data Structures & Algorithms | Prefix search with frequency ranking
+- [ ] 044 | Page Replacement Simulator | Python | Starter | Systems & Operating Systems | FIFO, LRU, Clock, OPT comparisons
+- [ ] 045 | Subnet Calculator | TypeScript | Starter | Networking | CIDR math with visual breakdown
+- [ ] 046 | Data Seeder | Node.js | Starter | Databases & Storage | Realistic fake data generator for schemas
+- [ ] 047 | Esoteric Language Design | Python | Starter | Compilers & Interpreters | Design and implement your own tiny language
+- [ ] 048 | Breakout | Rust (macroquad) | Starter | Games | Paddle physics and power-ups
+- [ ] 049 | Hash Identifier | Go | Starter | Security | Detect hash types by format
+- [ ] 050 | K-Means Visualizer | JavaScript | Starter | Machine Learning & AI | Interactive clustering steps
+- [ ] 051 | SQL Analytics Notebook | SQL + Jupyter | Starter | Data Engineering & Analysis | Analyze a public dataset with SQL
+- [ ] 052 | Screen Color Picker | Python (Tkinter) | Starter | Mobile & Desktop Apps | Pick and convert colors
+- [ ] 053 | Self-hosted Git Server Setup | Docker | Starter | DevOps & Cloud | Gitea with backups
+- [ ] 054 | L-System Plants | Python | Starter | Graphics & Simulation | Grammar-based plant drawing
+- [ ] 055 | Game of Life | Elixir | Starter | Functional & Polyglot | Process-per-cell experiment
+- [ ] 056 | Raspberry Pi Dashboard | Python | Starter | Embedded & Emulation | GPIO control web panel
+- [ ] 057 | Code Snippet Manager | Next.js | Starter | Full-Stack Apps | Tags, search, syntax highlight
+- [ ] 058 | Graph Plotter | JavaScript | Starter | Math & Scientific Computing | Plot functions with zoom/pan
+- [ ] 059 | Color Palette Generator | Svelte | Starter | Web Frontend | Generate, lock, and export accessible color palettes
+- [ ] 060 | wc Clone | C | Starter | CLI Tools | Counts lines, words, bytes with flags
+- [ ] 061 | Union-Find Maze Generator | Python | Starter | Data Structures & Algorithms | Kruskal-based maze generation and solver
+- [ ] 062 | Network Speed Tester | Python | Starter | Networking | Latency, throughput, jitter measurements
+- [ ] 063 | Spreadsheet to SQL Importer | Python | Starter | Databases & Storage | Infer types and load CSV/XLSX into DB
+- [ ] 064 | INI/TOML Parser | Rust | Starter | Compilers & Interpreters | Config parser with good errors
+- [ ] 065 | 2048 | TypeScript | Starter | Games | Swipe controls and animations
+- [ ] 066 | JWT Debugger | React | Starter | Security | Decode and verify tokens locally
+- [ ] 067 | Chatbot With Intents | Python | Starter | Machine Learning & AI | Rule plus classifier hybrid bot
+- [ ] 068 | Personal Spending Analyzer | R | Starter | Data Engineering & Analysis | Categorize and chart transactions
+- [ ] 069 | QR Code Scanner/Generator | Flutter | Starter | Mobile & Desktop Apps | Camera scan and generation
+- [ ] 070 | Home Lab Dashboard | TypeScript | Starter | DevOps & Cloud | Links and status for self-hosted services
+- [ ] 071 | Pixel Sorting Art | Python | Starter | Graphics & Simulation | Glitch art generator
+- [ ] 072 | Static Blog Generator | Ruby | Starter | Functional & Polyglot | ERB templates and markdown
+- [ ] 073 | Serial Terminal | Go | Starter | Embedded & Emulation | Cross-platform serial monitor
+- [ ] 074 | Monte Carlo Pi & Options | Python | Starter | Math & Scientific Computing | Simulation estimates
+- [ ] 075 | Typing Speed Test | TypeScript | Starter | Web Frontend | WPM/accuracy test with per-key heatmap
+- [ ] 076 | File Organizer | Python | Starter | CLI Tools | Sort files into folders by type/date with dry run
+- [ ] 077 | Sudoku Solver | Python | Starter | Data Structures & Algorithms | Backtracking with constraint propagation
+- [ ] 078 | Wake-on-LAN Tool | Python | Starter | Networking | Send magic packets to devices
+- [ ] 079 | Inventory DB App | Java (JDBC) | Starter | Databases & Storage | Stock tracking with transactions
+- [ ] 080 | Stack Calculator (RPN) | Lua | Starter | Compilers & Interpreters | RPN with variables and functions
+- [ ] 081 | Minesweeper | Java (Swing) | Starter | Games | Flood fill reveal and difficulty levels
+- [ ] 082 | Security Headers Checker | Go | Starter | Security | Audit HTTP security headers
+- [ ] 083 | Survey Analysis Report | R | Starter | Data Engineering & Analysis | Statistical tests and report generation
+- [ ] 084 | Calculator (Scientific) | Swift | Starter | Mobile & Desktop Apps | Expression parsing and history
+- [ ] 085 | Config Diff Tool | Go | Starter | DevOps & Cloud | Diff YAML/JSON configs semantically
+- [ ] 086 | SVG Path Animator | TypeScript | Starter | Graphics & Simulation | Animate and morph SVG paths
+- [ ] 087 | Text Processing Toolkit | Perl | Starter | Functional & Polyglot | Regex-driven log reports
+- [ ] 088 | Turing Machine Simulator | JavaScript | Starter | Embedded & Emulation | Visual tape and rules
+- [ ] 089 | Probability Simulator | R | Starter | Math & Scientific Computing | Dice, cards, birthday problem
+- [ ] 090 | Design Tokens Theme Switcher | CSS + JS | Starter | Web Frontend | Light/dark/high-contrast theming via CSS variables
+- [ ] 091 | Tree Clone | C | Starter | CLI Tools | Directory tree printer with depth and filters
+- [ ] 092 | N-Queens Visualizer | Python | Starter | Data Structures & Algorithms | Backtracking visualized step by step
+- [ ] 093 | DHCP Lease Viewer | Go | Starter | Networking | Parse and display DHCP leases
+- [ ] 094 | Wordle Clone | Svelte | Starter | Games | Daily word, share results
+- [ ] 095 | Steganography Tool | Python | Starter | Security | Hide text in image LSBs
+- [ ] 096 | Excel Report Automation | Python (openpyxl) | Starter | Data Engineering & Analysis | Generate formatted reports
+- [ ] 097 | Nginx Config Generator | TypeScript | Starter | DevOps & Cloud | Generate configs from form
+- [ ] 098 | Spring-Mass Simulator | Python | Starter | Graphics & Simulation | Interactive physics demo
+- [ ] 099 | Nim CLI Tool | Nim | Starter | Functional & Polyglot | Fast file utility
+- [ ] 100 | Collatz Explorer | Go | Starter | Math & Scientific Computing | Sequence stats and charts
+- [ ] 101 | Pomodoro CLI | Python | Starter | CLI Tools | Terminal timer with notifications and logs
+- [ ] 102 | Game of Life | Haskell | Starter | Games | Infinite grid with patterns
+- [ ] 103 | ASCII Art Converter | Go | Starter | Graphics & Simulation | Images to ASCII with color
+- [ ] 104 | COBOL Payroll | COBOL | Starter | Functional & Polyglot | Classic batch payroll report
+- [ ] 105 | Markov Chain Text Generator | Python | Starter | Math & Scientific Computing | N-gram text generation
+- [ ] 106 | Shell History Analyzer | Python | Starter | CLI Tools | Top commands, time patterns, suggested aliases
+- [ ] 107 | Text RPG | C# | Starter | Games | Stats, inventory, save/load
+- [ ] 108 | Generative Art Studio | p5.js | Starter | Graphics & Simulation | Seeded generative sketches
+- [ ] 109 | Number Theory Explorer | Python (Jupyter) | Starter | Math & Scientific Computing | Interactive notebooks
+- [ ] 110 | Static Code Line Counter | Go | Starter | CLI Tools | cloc-style counts by language
+- [ ] 111 | Memory Match | Dart (Flutter) | Starter | Games | Card flip game with timer
+- [ ] 112 | Bulk Image Resizer | Python (Pillow) | Starter | CLI Tools | Batch resize/convert images with presets
+- [ ] 113 | Kanban Board | React + TypeScript | Intermediate | Web Frontend | Drag-and-drop columns persisted to localStorage
+- [ ] 114 | Blog API | Java (Spring Boot) | Intermediate | Backend & APIs | Posts, comments, JWT auth, pagination
+- [ ] 115 | grep Clone | Rust | Intermediate | CLI Tools | Regex search with colors, recursion, context lines
+- [ ] 116 | Pathfinding Visualizer | TypeScript | Intermediate | Data Structures & Algorithms | BFS, Dijkstra, A* on interactive grid
+- [ ] 117 | Unix Shell | C | Intermediate | Systems & Operating Systems | Pipes, redirection, job control, builtins
+- [ ] 118 | HTTP Server From Scratch | C | Intermediate | Networking | Static files, keep-alive, MIME types
+- [ ] 119 | Key-Value Store | Go | Intermediate | Databases & Storage | Persistent KV with write-ahead log
+- [ ] 120 | Lisp Interpreter | Python | Intermediate | Compilers & Interpreters | Scheme subset with closures and tail calls
+- [ ] 121 | Tetris | C++ (SFML) | Intermediate | Games | SRS rotation, levels, ghost piece
+- [ ] 122 | File Integrity Monitor | Rust | Intermediate | Security | Baseline hashes and change alerts
+- [ ] 123 | Neural Network From Scratch | Python (NumPy) | Intermediate | Machine Learning & AI | MLP with backprop on MNIST
+- [ ] 124 | ETL Pipeline | Python (Airflow-style) | Intermediate | Data Engineering & Analysis | Extract, transform, load with DAGs
+- [ ] 125 | Expense Tracker (Android) | Kotlin (Jetpack Compose) | Intermediate | Mobile & Desktop Apps | Categories, charts, Room DB
+- [ ] 126 | Infrastructure as Code | Terraform | Intermediate | DevOps & Cloud | VPC, compute, database modules
+- [ ] 127 | Consistent Hashing Ring | Python | Intermediate | Distributed Systems | Virtual nodes and rebalancing demo
+- [ ] 128 | Fractal Explorer | Rust | Intermediate | Graphics & Simulation | Mandelbrot zoom with multithreading
+- [ ] 129 | Parser Combinators | Haskell | Intermediate | Functional & Polyglot | Library and JSON parser
+- [ ] 130 | CHIP-8 Emulator | Rust | Intermediate | Embedded & Emulation | Full CHIP-8 with display and input
+- [ ] 131 | Bug Tracker | Django | Intermediate | Full-Stack Apps | Issues, labels, assignees
+- [ ] 132 | Symbolic Differentiator | Python | Intermediate | Math & Scientific Computing | Derivative and simplification
+- [ ] 133 | Regex Tester | Svelte | Intermediate | Web Frontend | Live regex matching with group highlighting and explanations
+- [ ] 134 | Rate Limiter Service | Go | Intermediate | Backend & APIs | Token-bucket and sliding-window limiter as middleware
+- [ ] 135 | Git Stats Reporter | Go | Intermediate | CLI Tools | Commit activity, top authors, churn from git log
+- [ ] 136 | Hash Map From Scratch | C | Intermediate | Data Structures & Algorithms | Open addressing with resizing and benchmarks
+- [ ] 137 | Thread Pool | C++ | Intermediate | Systems & Operating Systems | Work queue with futures and graceful shutdown
+- [ ] 138 | Packet Sniffer | Python (scapy) | Intermediate | Networking | Capture and decode Ethernet/IP/TCP headers
+- [ ] 139 | SQL Query Parser | Python | Intermediate | Databases & Storage | Parse SELECT/WHERE/JOIN into AST
+- [ ] 140 | Tree-walking Interpreter | Go | Intermediate | Compilers & Interpreters | Monkey-style language with tests
+- [ ] 141 | Platformer | C# (MonoGame) | Intermediate | Games | Tile maps, physics, enemies
+- [ ] 142 | Encrypted Notes App | TypeScript (WebCrypto) | Intermediate | Security | AES-GCM notes with PBKDF2
+- [ ] 143 | Movie Recommender | Python | Intermediate | Machine Learning & AI | Collaborative filtering with matrix factorization
+- [ ] 144 | Log Analyzer | Go | Intermediate | Data Engineering & Analysis | Parse access logs into metrics
+- [ ] 145 | Habit Tracker (iOS) | Swift (SwiftUI) | Intermediate | Mobile & Desktop Apps | Streaks and widgets
+- [ ] 146 | Kubernetes Deployment | Helm | Intermediate | DevOps & Cloud | Chart with config, secrets, autoscaling
+- [ ] 147 | Vector Clocks Demo | Elixir | Intermediate | Distributed Systems | Causality tracking between processes
+- [ ] 148 | Cloth Simulation | JavaScript | Intermediate | Graphics & Simulation | Verlet integration
+- [ ] 149 | Expression Simplifier | OCaml | Intermediate | Functional & Polyglot | Symbolic algebra simplification
+- [ ] 150 | 8-bit CPU Simulator | Python | Intermediate | Embedded & Emulation | Custom ISA with assembler
+- [ ] 151 | E-commerce Store | Rails | Intermediate | Full-Stack Apps | Cart, checkout (test mode), admin
+- [ ] 152 | Numerical Methods Library | Julia | Intermediate | Math & Scientific Computing | Root finding, integration, ODEs
+- [ ] 153 | Infinite Image Gallery | Vue | Intermediate | Web Frontend | Virtualized masonry grid with lazy loading
+- [ ] 154 | GraphQL Bookstore | TypeScript (Apollo) | Intermediate | Backend & APIs | Schema, resolvers, dataloader batching
+- [ ] 155 | Markdown to PDF | Node.js | Intermediate | CLI Tools | Convert markdown with themes and table of contents
+- [ ] 156 | Graph Algorithms Toolkit | Java | Intermediate | Data Structures & Algorithms | Topo sort, SCC, MST, max flow
+- [ ] 157 | Process Monitor | Rust | Intermediate | Systems & Operating Systems | top-like view reading /proc
+- [ ] 158 | Reverse Proxy | Go | Intermediate | Networking | Load balancing with health checks
+- [ ] 159 | Database Schema Visualizer | TypeScript | Intermediate | Databases & Storage | ER diagram from SQL DDL
+- [ ] 160 | JSON Parser | C++ | Intermediate | Compilers & Interpreters | Streaming parser with error positions
+- [ ] 161 | Roguelike | Rust | Intermediate | Games | Procedural dungeons, FOV, turn-based combat
+- [ ] 162 | Log-based Intrusion Detector | Python | Intermediate | Security | Detect brute force and anomalies in auth logs
+- [ ] 163 | Image Classifier | PyTorch | Intermediate | Machine Learning & AI | CNN on CIFAR-10 with training report
+- [ ] 164 | Data Quality Checker | Python | Intermediate | Data Engineering & Analysis | Schema and constraint validation reports
+- [ ] 165 | Desktop Markdown Editor | Electron | Intermediate | Mobile & Desktop Apps | File tree, preview, export
+- [ ] 166 | Uptime Monitor | Go | Intermediate | DevOps & Cloud | Checks, alerts, status page
+- [ ] 167 | Leader Election (Bully) | Python | Intermediate | Distributed Systems | Simulation with failures
+- [ ] 168 | Shader Playground | GLSL + JS | Intermediate | Graphics & Simulation | Live-edit fragment shaders
+- [ ] 169 | Web App | Clojure (Ring) | Intermediate | Functional & Polyglot | Routing and HTML with Hiccup
+- [ ] 170 | MicroPython Weather Station | MicroPython | Intermediate | Embedded & Emulation | Sensor readings and display
+- [ ] 171 | Job Board | Laravel | Intermediate | Full-Stack Apps | Listings, applications, search
+- [ ] 172 | Statistics Library | Rust | Intermediate | Math & Scientific Computing | Descriptive stats and distributions
+- [ ] 173 | Accessible Component Library | React + TypeScript | Intermediate | Web Frontend | Buttons, modals, tabs with ARIA and Storybook
+- [ ] 174 | Webhook Relay | Ruby (Sinatra) | Intermediate | Backend & APIs | Receive, store, and replay webhooks with retries
+- [ ] 175 | Dotfiles Manager | Bash | Intermediate | CLI Tools | Symlink, backup, and sync dotfiles
+- [ ] 176 | Skip List | Go | Intermediate | Data Structures & Algorithms | Probabilistic sorted structure with benchmarks
+- [ ] 177 | File Watcher | Go | Intermediate | Systems & Operating Systems | Recursive change detection with debounce
+- [ ] 178 | WebSocket Server | Node.js | Intermediate | Networking | Handshake and framing implemented by hand
+- [ ] 179 | Migration Tool | Python | Intermediate | Databases & Storage | Versioned up/down schema migrations
+- [ ] 180 | Assembler | Python | Intermediate | Compilers & Interpreters | Two-pass assembler for a toy ISA
+- [ ] 181 | Space Shooter | Godot (GDScript) | Intermediate | Games | Waves, bosses, particle effects
+- [ ] 182 | TOTP Authenticator | Go | Intermediate | Security | RFC 6238 codes with QR import
+- [ ] 183 | Sentiment Analysis API | Python (FastAPI) | Intermediate | Machine Learning & AI | Pretrained model served via API
+- [ ] 184 | Sports Stats Explorer | R (Shiny) | Intermediate | Data Engineering & Analysis | Interactive player comparisons
+- [ ] 185 | System Tray Pomodoro | Rust (Tauri) | Intermediate | Mobile & Desktop Apps | Lightweight desktop timer
+- [ ] 186 | Log Aggregator | Python | Intermediate | DevOps & Cloud | Collect, ship, and search logs
+- [ ] 187 | Service Discovery | Go | Intermediate | Distributed Systems | Registry with health checks
+- [ ] 188 | Procedural Terrain | C# (Unity) | Intermediate | Graphics & Simulation | Perlin noise terrain generation
+- [ ] 189 | Stream Library | Scala | Intermediate | Functional & Polyglot | Lazy streams and combinators
+- [ ] 190 | Embedded State Machine | C | Intermediate | Embedded & Emulation | Traffic light controller with tests
+- [ ] 191 | Forum | Phoenix | Intermediate | Full-Stack Apps | Threads, voting, moderation
+- [ ] 192 | Cryptographic Math Toolkit | Python | Intermediate | Math & Scientific Computing | Modular arithmetic, primes, CRT
+- [ ] 193 | Spreadsheet Lite | TypeScript | Intermediate | Web Frontend | Grid with formulas, cell references, and recalculation
+- [ ] 194 | Job Queue | Python (Redis) | Intermediate | Backend & APIs | Background job worker with retries and dead-letter queue
+- [ ] 195 | HTTP Load Tester | Go | Intermediate | CLI Tools | Concurrent requests with latency percentiles
+- [ ] 196 | LRU/LFU Cache | Java | Intermediate | Data Structures & Algorithms | O(1) caches with eviction policy tests
+- [ ] 197 | Disk Usage Analyzer | Rust | Intermediate | Systems & Operating Systems | Parallel directory scan with largest-items report
+- [ ] 198 | Ping & Traceroute | C | Intermediate | Networking | ICMP with raw sockets
+- [ ] 199 | Query Plan Explainer | Python | Intermediate | Databases & Storage | Visualize PostgreSQL EXPLAIN output
+- [ ] 200 | Forth Interpreter | C | Intermediate | Compilers & Interpreters | Dictionary, stacks, user words
+- [ ] 201 | Multiplayer Pong | Go + WebSockets | Intermediate | Games | Server-authoritative online pong
+- [ ] 202 | Vulnerable App Lab | Node.js | Intermediate | Security | Intentionally vulnerable app plus fixed version (local only)
+- [ ] 203 | Decision Tree From Scratch | Python | Intermediate | Machine Learning & AI | ID3/CART with pruning
+- [ ] 204 | CSV Profiler | Rust | Intermediate | Data Engineering & Analysis | Type inference and stats for large CSVs
+- [ ] 205 | Recipe Manager | Kotlin | Intermediate | Mobile & Desktop Apps | Offline recipes with shopping list
+- [ ] 206 | Metrics Exporter | Go | Intermediate | DevOps & Cloud | Prometheus exporter for custom app
+- [ ] 207 | Distributed Counter | Elixir | Intermediate | Distributed Systems | Actor-based counter with OTP
+- [ ] 208 | Traffic Simulation | Java | Intermediate | Graphics & Simulation | Cars, lights, intersections
+- [ ] 209 | Lambda Calculus Evaluator | Haskell | Intermediate | Functional & Polyglot | Beta reduction and Church numerals
+- [ ] 210 | ALU in VHDL | VHDL | Intermediate | Embedded & Emulation | Testbench and waveforms
+- [ ] 211 | Real Estate Listings | Next.js | Intermediate | Full-Stack Apps | Map search and filters
+- [ ] 212 | Polynomial Library | Haskell | Intermediate | Math & Scientific Computing | Arithmetic and root finding
+- [ ] 213 | Music Visualizer | JavaScript (Web Audio) | Intermediate | Web Frontend | Real-time frequency bars and waveform from audio input
+- [ ] 214 | File Upload Service | C# (ASP.NET Core) | Intermediate | Backend & APIs | Chunked uploads, checksums, signed download URLs
+- [ ] 215 | Duplicate File Finder | C++ | Intermediate | CLI Tools | Hash-based duplicate detection with size prefilter
+- [ ] 216 | Bloom Filter | Rust | Intermediate | Data Structures & Algorithms | Tunable false-positive rate with analysis
+- [ ] 217 | Ring Buffer Logger | C++ | Intermediate | Systems & Operating Systems | High-throughput async logging
+- [ ] 218 | SMTP Client | Java | Intermediate | Networking | Send mail with TLS and attachments
+- [ ] 219 | Connection Pool | Java | Intermediate | Databases & Storage | Pooled connections with timeouts
+- [ ] 220 | Template Engine | TypeScript | Intermediate | Compilers & Interpreters | Variables, loops, partials, escaping
+- [ ] 221 | Card Game Engine | Kotlin | Intermediate | Games | Deck, rules engine, Blackjack and Solitaire
+- [ ] 222 | Static Secret Scanner | Rust | Intermediate | Security | Find leaked keys in repos
+- [ ] 223 | Reinforcement Learning Gridworld | Python | Intermediate | Machine Learning & AI | Q-learning and SARSA visualized
+- [ ] 224 | Data Lake Mini | Python (DuckDB) | Intermediate | Data Engineering & Analysis | Parquet partitions and queries
+- [ ] 225 | Clipboard Manager | C# (WPF) | Intermediate | Mobile & Desktop Apps | History, search, pinning
+- [ ] 226 | Server Provisioning | Ansible | Intermediate | DevOps & Cloud | Harden and configure Ubuntu server
+- [ ] 227 | Circuit Breaker Library | Java | Intermediate | Distributed Systems | States, thresholds, metrics
+- [ ] 228 | Epidemic Simulator | Python | Intermediate | Graphics & Simulation | SIR model agent-based
+- [ ] 229 | Telegram/Discord Bot | Clojure | Intermediate | Functional & Polyglot | Commands and state
+- [ ] 230 | Finite Automata Toolkit | Python | Intermediate | Embedded & Emulation | DFA/NFA conversion and minimization
+- [ ] 231 | Restaurant Ordering | MERN | Intermediate | Full-Stack Apps | Menu, orders, kitchen view
+- [ ] 232 | Calculus Visualizer | TypeScript | Intermediate | Math & Scientific Computing | Riemann sums, tangent lines
+- [ ] 233 | Whiteboard App | TypeScript + Canvas | Intermediate | Web Frontend | Freehand drawing, shapes, undo/redo, PNG export
+- [ ] 234 | Realtime Chat Server | Elixir (Phoenix) | Intermediate | Backend & APIs | Rooms, presence, message history via channels
+- [ ] 235 | Habit Tracker TUI | Go (Bubble Tea) | Intermediate | CLI Tools | Daily habits with streaks in a terminal UI
+- [ ] 236 | Segment Tree | C++ | Intermediate | Data Structures & Algorithms | Range queries and lazy propagation
+- [ ] 237 | Cron Clone | Go | Intermediate | Systems & Operating Systems | Cron expression parser and scheduler daemon
+- [ ] 238 | Network Topology Visualizer | Python | Intermediate | Networking | Graph view of traceroute paths
+- [ ] 239 | Bitcask Store | Go | Intermediate | Databases & Storage | Log-structured hash table storage
+- [ ] 240 | Markdown Parser | Go | Intermediate | Compilers & Interpreters | CommonMark subset to HTML
+- [ ] 241 | Physics Puzzle Game | JavaScript (Matter.js) | Intermediate | Games | Level editor and physics puzzles
+- [ ] 242 | RSA From Scratch | Python | Intermediate | Security | Key gen, encrypt, sign (educational)
+- [ ] 243 | Handwritten Digit Web App | TensorFlow.js | Intermediate | Machine Learning & AI | Draw digits, predict in browser
+- [ ] 244 | Real-time Dashboard | Node.js + Socket.io | Intermediate | Data Engineering & Analysis | Live metrics charts
+- [ ] 245 | Music Player | Java (JavaFX) | Intermediate | Mobile & Desktop Apps | Playlists and metadata
+- [ ] 246 | Serverless API | AWS Lambda (Python) | Intermediate | DevOps & Cloud | API Gateway + DynamoDB via SAM
+- [ ] 247 | Rate Limiter (Distributed) | Go + Redis | Intermediate | Distributed Systems | Global limits across nodes
+- [ ] 248 | Orbital Mechanics Sim | JavaScript | Intermediate | Graphics & Simulation | N-body gravity
+- [ ] 249 | Scripting Plugin System | Lua (embedded in C) | Intermediate | Functional & Polyglot | Embed Lua for app plugins
+- [ ] 250 | MIPS Simulator | Java | Intermediate | Embedded & Emulation | Pipeline visualization
+- [ ] 251 | Fitness Tracker | Remix | Intermediate | Full-Stack Apps | Workouts, goals, charts
+- [ ] 252 | Equation Solver | Java | Intermediate | Math & Scientific Computing | Linear systems via Gaussian elimination
+- [ ] 253 | Flashcard SRS App | Svelte | Intermediate | Web Frontend | Spaced repetition (SM-2) with deck import/export
+- [ ] 254 | Feature Flag Service | TypeScript (NestJS) | Intermediate | Backend & APIs | Flags with targeting rules and SDK client
+- [ ] 255 | CSV Swiss Army Knife | Rust | Intermediate | CLI Tools | Select, filter, sort, join CSV files
+- [ ] 256 | Huffman Compression | C | Intermediate | Data Structures & Algorithms | Encode/decode files with header tree
+- [ ] 257 | Virtual Memory Simulator | Java | Intermediate | Systems & Operating Systems | Page tables, TLB, address translation
+- [ ] 258 | FTP Server | Python | Intermediate | Networking | Basic commands with passive mode
+- [ ] 259 | Distributed Cache Client | Go | Intermediate | Databases & Storage | Consistent hashing over nodes
+- [ ] 260 | SQL to MongoDB Translator | Python | Intermediate | Compilers & Interpreters | Translate simple SQL to Mongo queries
+- [ ] 261 | Checkers With AI | Python | Intermediate | Games | Alpha-beta with heuristics
+- [ ] 262 | Phishing URL Classifier | Python (scikit-learn) | Intermediate | Security | Feature-based URL classification
+- [ ] 263 | Anomaly Detection | Python | Intermediate | Machine Learning & AI | Isolation Forest on transaction data
+- [ ] 264 | Geospatial Analysis | Python (GeoPandas) | Intermediate | Data Engineering & Analysis | Maps of public transit data
+- [ ] 265 | File Encryptor Desktop | Go (Fyne) | Intermediate | Mobile & Desktop Apps | Encrypt/decrypt files via GUI
+- [ ] 266 | Blue-Green Deploy Script | Bash | Intermediate | DevOps & Cloud | Zero-downtime switch with health checks
+- [ ] 267 | Merkle Tree Sync | Python | Intermediate | Distributed Systems | Anti-entropy data sync
+- [ ] 268 | Image Filters | C | Intermediate | Graphics & Simulation | Blur, edge detect, grayscale on PPM
+- [ ] 269 | Data Pipeline | F# | Intermediate | Functional & Polyglot | Type providers and pipelines
+- [ ] 270 | Cache Simulator | C | Intermediate | Embedded & Emulation | Hit/miss rates for configs
+- [ ] 271 | Recipe Sharing Site | Django | Intermediate | Full-Stack Apps | Uploads, ratings, search
+- [ ] 272 | Game Theory Simulator | Python | Intermediate | Math & Scientific Computing | Prisoner's dilemma tournaments
+- [ ] 273 | Personal Finance Charts | React + D3 | Intermediate | Web Frontend | CSV import and interactive spending visualizations
+- [ ] 274 | Search API | Python | Intermediate | Backend & APIs | Inverted index with TF-IDF ranking over documents
+- [ ] 275 | Terminal Markdown Viewer | Rust | Intermediate | CLI Tools | Render markdown with styling in terminal
+- [ ] 276 | Algorithm Benchmark Harness | Rust | Intermediate | Data Structures & Algorithms | Compare algorithms with statistics and plots
+- [ ] 277 | Deadlock Detector | Python | Intermediate | Systems & Operating Systems | Resource allocation graph and banker's algorithm
+- [ ] 278 | IP Address Manager | Django | Intermediate | Networking | Track subnets and allocations
+- [ ] 279 | Pretty Printer/Formatter | Haskell | Intermediate | Compilers & Interpreters | Wadler-style pretty printing
+- [ ] 280 | Tower Defense | Lua (LÖVE) | Intermediate | Games | Paths, towers, upgrades
+- [ ] 281 | Firewall Rule Analyzer | Python | Intermediate | Security | Detect shadowed/redundant iptables rules
+- [ ] 282 | Genetic Algorithm Solver | Rust | Intermediate | Machine Learning & AI | TSP via evolution
+- [ ] 283 | Data Pipeline Testing Framework | Python | Intermediate | Data Engineering & Analysis | Fixtures and assertions for pipelines
+- [ ] 284 | Workout Logger | Swift | Intermediate | Mobile & Desktop Apps | Sets, reps, progress charts
+- [ ] 285 | Cost Report Tool | Python | Intermediate | DevOps & Cloud | Parse cloud billing exports
+- [ ] 286 | Network Partition Simulator | Python | Intermediate | Distributed Systems | Test system behavior under partitions
+- [ ] 287 | Elevator Simulation | Go | Intermediate | Graphics & Simulation | Scheduling algorithms compared
+- [ ] 288 | Monad Tutorial Project | Haskell | Intermediate | Functional & Polyglot | Maybe, Either, State, IO examples
+- [ ] 289 | Home Automation Hub | Python (MQTT) | Intermediate | Embedded & Emulation | Devices, rules, dashboard
+- [ ] 290 | Hackathon Manager | Go + HTMX | Intermediate | Full-Stack Apps | Teams, submissions, judging
+- [ ] 291 | Signal Processing Toolkit | Python (SciPy) | Intermediate | Math & Scientific Computing | Filters and spectrograms
+- [ ] 292 | PWA Notes App | Vanilla JS | Intermediate | Web Frontend | Offline-first notes with service worker and IndexedDB
+- [ ] 293 | Notification Service | Node.js | Intermediate | Backend & APIs | Email/SMS/push abstraction with templates and queue
+- [ ] 294 | SSH Config Manager | Python | Intermediate | CLI Tools | Add/list/test SSH host entries
+- [ ] 295 | String Matching Algorithms | Go | Intermediate | Data Structures & Algorithms | KMP, Boyer-Moore, Rabin-Karp comparison
+- [ ] 296 | Text Editor (kilo-style) | C | Intermediate | Systems & Operating Systems | Terminal editor with search and syntax highlight
+- [ ] 297 | Netcat Clone | Rust | Intermediate | Networking | Listen/connect modes with piping
+- [ ] 298 | Spreadsheet Formula Engine | Java | Intermediate | Compilers & Interpreters | Parse and evaluate with dependency graph
+- [ ] 299 | Sokoban With Solver | Python | Intermediate | Games | Puzzles plus BFS/A* solver
+- [ ] 300 | Certificate Inspector | Rust | Intermediate | Security | Parse X.509 chains and expiry
+- [ ] 301 | Text Summarizer | Python | Intermediate | Machine Learning & AI | Extractive TextRank summarization
+- [ ] 302 | Job Market Analyzer | Python | Intermediate | Data Engineering & Analysis | Scrape listings and analyze skills
+- [ ] 303 | Desktop Dashboard Widgets | Tauri + Svelte | Intermediate | Mobile & Desktop Apps | System stats widgets
+- [ ] 304 | Dockerfile Linter | Rust | Intermediate | DevOps & Cloud | Best-practice checks
+- [ ] 305 | Cellular Automata Lab | Rust (WASM) | Intermediate | Graphics & Simulation | Rules explorer in browser
+- [ ] 306 | Concurrency Patterns | Go | Intermediate | Functional & Polyglot | Pipelines, fan-in/out, context
+- [ ] 307 | ESP32 Web Server | C++ (ESP-IDF) | Intermediate | Embedded & Emulation | Wi-Fi config and control page
+- [ ] 308 | Survey Builder | Flask + React | Intermediate | Full-Stack Apps | Logic branching and analytics
+- [ ] 309 | Graph Coloring Solver | C++ | Intermediate | Math & Scientific Computing | Heuristics and backtracking
+- [ ] 310 | Static Site Generator | Node.js | Intermediate | Web Frontend | Markdown to HTML with templates and front matter
+- [ ] 311 | Recipe API With Caching | PHP (Laravel) | Intermediate | Backend & APIs | Recipe CRUD with Redis caching and search
+- [ ] 312 | Log Tail Highlighter | Go | Intermediate | CLI Tools | Follow logs with pattern-based coloring
+- [ ] 313 | Priority Queue Variants | Java | Intermediate | Data Structures & Algorithms | Binary, d-ary, Fibonacci heaps
+- [ ] 314 | Static Analyzer | Python (ast) | Intermediate | Compilers & Interpreters | Lint rules for Python source
+- [ ] 315 | Multiplayer Trivia | Elixir (Phoenix LiveView) | Intermediate | Games | Real-time rooms and scoring
+- [ ] 316 | Diffie-Hellman Chat | Java | Intermediate | Security | Key exchange plus encrypted messaging
+- [ ] 317 | Time-series Forecaster | Python | Intermediate | Machine Learning & AI | ARIMA vs LSTM comparison
+- [ ] 318 | Data Catalog | TypeScript | Intermediate | Data Engineering & Analysis | Track datasets, schemas, lineage
+- [ ] 319 | Bluetooth Device Scanner | Kotlin | Intermediate | Mobile & Desktop Apps | Scan and list BLE devices
+- [ ] 320 | Deployment Bot | Node.js | Intermediate | DevOps & Cloud | Chat-triggered deploys (mock)
+- [ ] 321 | Matrix Library | Julia | Intermediate | Functional & Polyglot | Linear algebra with benchmarks
+- [ ] 322 | Calculator in Assembly | Assembly (x86-64) | Intermediate | Embedded & Emulation | Integer calculator
+- [ ] 323 | Wiki Engine | Go | Intermediate | Full-Stack Apps | Markdown pages, history, diffs
+- [ ] 324 | Unit-aware Calculator | Rust | Intermediate | Math & Scientific Computing | Dimensional analysis
+- [ ] 325 | Form Builder | Vue | Intermediate | Web Frontend | Drag-to-build forms with validation and JSON schema export
+- [ ] 326 | Server-Sent Events Stock Ticker | Go | Intermediate | Backend & APIs | Simulated prices streamed via SSE
+- [ ] 327 | Text Adventure Engine | Lua | Intermediate | CLI Tools | Data-driven rooms, items, and parser
+- [ ] 328 | Interval Tree Scheduler | TypeScript | Intermediate | Data Structures & Algorithms | Meeting overlap detection
+- [ ] 329 | Dependency Vulnerability Checker | TypeScript | Intermediate | Security | Check lockfiles against OSV database
+- [ ] 330 | Face Detection App | Python (OpenCV) | Intermediate | Machine Learning & AI | Real-time webcam detection
+- [ ] 331 | Weather Data Warehouse | SQL (star schema) | Intermediate | Data Engineering & Analysis | Dimensional model and queries
+- [ ] 332 | Screen Recorder | Python | Intermediate | Mobile & Desktop Apps | Capture screen to video
+- [ ] 333 | Container Image Scanner | Python | Intermediate | DevOps & Cloud | List packages and known CVEs
+- [ ] 334 | Smart Contract (Testnet) | Solidity | Intermediate | Functional & Polyglot | Token with tests (local chain only)
+- [ ] 335 | Gameboy ROM Homebrew | C (GBDK) | Intermediate | Embedded & Emulation | Small game for real hardware
+- [ ] 336 | Expense Splitter | SvelteKit | Intermediate | Full-Stack Apps | Groups and debt simplification
+- [ ] 337 | Differential Equation Plotter | MATLAB/Octave | Intermediate | Math & Scientific Computing | Slope fields and solutions
+- [ ] 338 | Web Component Date Picker | JavaScript (Custom Elements) | Intermediate | Web Frontend | Framework-agnostic accessible date picker
+- [ ] 339 | JSON Schema Validator Service | Rust | Intermediate | Backend & APIs | Validate payloads against schemas via HTTP
+- [ ] 340 | Dynamic Programming Gallery | Python | Intermediate | Data Structures & Algorithms | Classic DP problems with explanations and tests
+- [ ] 341 | CTF Crypto Toolkit | Python | Intermediate | Security | Common crypto helpers and solvers
+- [ ] 342 | Model Explainability Dashboard | Python (Streamlit) | Intermediate | Machine Learning & AI | SHAP explanations
+- [ ] 343 | A/B Test Analyzer | Python | Intermediate | Data Engineering & Analysis | Significance tests and power analysis
+- [ ] 344 | Podcast Player | Flutter | Intermediate | Mobile & Desktop Apps | RSS parsing and playback
+- [ ] 345 | Backup Orchestrator | Python | Intermediate | DevOps & Cloud | Scheduled, encrypted offsite backups
+- [ ] 346 | Logic Puzzle Solver | Prolog | Intermediate | Functional & Polyglot | Zebra puzzle and constraints
+- [ ] 347 | Library Catalog | ASP.NET Core MVC | Intermediate | Full-Stack Apps | Books, loans, holds
+- [ ] 348 | Image Thumbnail Service | Go | Intermediate | Backend & APIs | On-demand resizing with caching headers
+- [ ] 349 | ML Experiment Tracker | Go | Intermediate | Machine Learning & AI | Log runs, params, metrics, compare
+- [ ] 350 | Data Visualization Gallery | JavaScript (D3) | Intermediate | Data Engineering & Analysis | 10 chart types with real data
+- [ ] 351 | Download Manager | C# | Intermediate | Mobile & Desktop Apps | Parallel chunked downloads with resume
+- [ ] 352 | Crystal Web Service | Crystal | Intermediate | Functional & Polyglot | Typed HTTP API
+- [ ] 353 | Appointment Scheduler | Rails | Intermediate | Full-Stack Apps | Availability, bookings, reminders
+- [ ] 354 | Booking System | C# (.NET) | Intermediate | Backend & APIs | Slot reservation with concurrency-safe locking
+- [ ] 355 | Pixel Art Editor | Electron | Intermediate | Mobile & Desktop Apps | Grid drawing and sprite export
+- [ ] 356 | Volunteer Coordinator | Django | Intermediate | Full-Stack Apps | Shifts and sign-ups
+- [ ] 357 | Classroom Q&A | Express + Socket.io | Intermediate | Full-Stack Apps | Live questions and upvotes
+- [ ] 358 | Personal CRM | Phoenix LiveView | Intermediate | Full-Stack Apps | Contacts and follow-up reminders
+- [ ] 359 | Virtual DOM From Scratch | TypeScript | Advanced | Web Frontend | Minimal virtual DOM with diffing and patching
+- [ ] 360 | OAuth2 Authorization Server | Go | Advanced | Backend & APIs | Auth code + PKCE flow, token issuing, refresh
+- [ ] 361 | JSON Query Tool | Rust | Advanced | CLI Tools | jq-like filter language parser and evaluator
+- [ ] 362 | Red-Black Tree | C++ | Advanced | Data Structures & Algorithms | Insert/delete with invariant checks and tests
+- [ ] 363 | Memory Allocator | C | Advanced | Systems & Operating Systems | malloc/free with free lists and coalescing
+- [ ] 364 | DNS Resolver | Rust | Advanced | Networking | Recursive resolver parsing raw DNS packets
+- [ ] 365 | SQLite Clone | C | Advanced | Databases & Storage | Pages, B-tree storage, simple SQL
+- [ ] 366 | Bytecode VM | C | Advanced | Compilers & Interpreters | Stack VM with compiler and GC
+- [ ] 367 | Chess Engine | C++ | Advanced | Games | Bitboards, alpha-beta, UCI protocol
+- [ ] 368 | Password Manager | Rust | Advanced | Security | Encrypted vault with Argon2
+- [ ] 369 | Autograd Engine | Python | Advanced | Machine Learning & AI | micrograd-style reverse-mode autodiff
+- [ ] 370 | Stream Processor | Java | Advanced | Data Engineering & Analysis | Windowed aggregations over event stream
+- [ ] 371 | Budget App With Sync | Flutter + Firebase | Advanced | Mobile & Desktop Apps | Multi-device sync
+- [ ] 372 | Kubernetes Operator | Go | Advanced | DevOps & Cloud | CRD and reconcile loop
+- [ ] 373 | Raft Consensus | Go | Advanced | Distributed Systems | Leader election and log replication
+- [ ] 374 | Ray Tracer | C++ | Advanced | Graphics & Simulation | Spheres, materials, reflections
+- [ ] 375 | Property-based Testing Lib | F# | Advanced | Functional & Polyglot | Generators and shrinking
+- [ ] 376 | Game Boy Emulator | C++ | Advanced | Embedded & Emulation | CPU, PPU, timers, ROM loading
+- [ ] 377 | Social Media Clone | Next.js + Postgres | Advanced | Full-Stack Apps | Posts, follows, feed, notifications
+- [ ] 378 | FFT Implementation | C++ | Advanced | Math & Scientific Computing | Cooley-Tukey with audio demo
+- [ ] 379 | Mini Reactive Framework | TypeScript | Advanced | Web Frontend | Signals-based reactivity and templating like a tiny Solid
+- [ ] 380 | API Gateway | Go | Advanced | Backend & APIs | Routing, auth, rate limiting, request logging
+- [ ] 381 | Terminal Spreadsheet | Python (curses) | Advanced | CLI Tools | Cell navigation, formulas, CSV I/O in terminal
+- [ ] 382 | B-Tree | Rust | Advanced | Data Structures & Algorithms | Disk-oriented B-tree with range queries
+- [ ] 383 | Toy File System (FUSE) | C | Advanced | Systems & Operating Systems | Inode-based FS mounted via FUSE
+- [ ] 384 | BitTorrent Client | Go | Advanced | Networking | Tracker, peers, piece download and verify
+- [ ] 385 | LSM Tree Engine | Rust | Advanced | Databases & Storage | Memtable, SSTables, compaction
+- [ ] 386 | Regex Engine | Rust | Advanced | Compilers & Interpreters | Thompson NFA construction and matching
+- [ ] 387 | Raycaster (Wolfenstein-style) | C | Advanced | Games | Textured raycasting engine
+- [ ] 388 | Secure File Transfer | Go | Advanced | Security | End-to-end encrypted transfer with key exchange
+- [ ] 389 | RAG Document Q&A | Python | Advanced | Machine Learning & AI | Embeddings, vector search, LLM answers
+- [ ] 390 | MapReduce Framework | Go | Advanced | Data Engineering & Analysis | Master/worker word count and fault tolerance
+- [ ] 391 | Language Flashcards | Kotlin Multiplatform | Advanced | Mobile & Desktop Apps | Shared logic Android/desktop
+- [ ] 392 | Secrets Manager | Rust | Advanced | DevOps & Cloud | Encrypted store with access policies
+- [ ] 393 | Distributed KV Store | Go | Advanced | Distributed Systems | Sharding and replication on Raft
+- [ ] 394 | Software Rasterizer | Rust | Advanced | Graphics & Simulation | Triangles, z-buffer, textures
+- [ ] 395 | Chat Server | Erlang | Advanced | Functional & Polyglot | OTP supervision trees
+- [ ] 396 | 6502 Emulator | C | Advanced | Embedded & Emulation | CPU core with test suite
+- [ ] 397 | Learning Management System | Spring Boot + React | Advanced | Full-Stack Apps | Courses, quizzes, progress
+- [ ] 398 | Linear Programming Solver | Python | Advanced | Math & Scientific Computing | Simplex method
+- [ ] 399 | Collaborative Text Editor UI | React + Yjs | Advanced | Web Frontend | CRDT-backed multi-user editor with presence
+- [ ] 400 | Event Sourcing Bank Ledger | Kotlin (Ktor) | Advanced | Backend & APIs | Append-only events, projections, snapshots
+- [ ] 401 | Make Clone | C | Advanced | CLI Tools | Parse Makefiles, build dependency graph, run targets
+- [ ] 402 | Persistent Data Structures | Haskell | Advanced | Data Structures & Algorithms | Immutable lists, maps with structural sharing
+- [ ] 403 | Simple Kernel (x86) | C + Assembly | Advanced | Systems & Operating Systems | Bootloader, VGA output, interrupts, paging
+- [ ] 404 | P2P File Sharing | Rust | Advanced | Networking | Peer discovery and chunked transfers
+- [ ] 405 | Time-Series Database | Go | Advanced | Databases & Storage | Gorilla compression and downsampling
+- [ ] 406 | Type Checker | OCaml | Advanced | Compilers & Interpreters | Hindley-Milner inference for lambda calculus
+- [ ] 407 | Go (Board Game) Engine | Rust | Advanced | Games | Rules, scoring, Monte Carlo Tree Search
+- [ ] 408 | AES Implementation | C | Advanced | Security | Educational AES with test vectors
+- [ ] 409 | Tiny Transformer | PyTorch | Advanced | Machine Learning & AI | Character-level GPT trained on text
+- [ ] 410 | Change Data Capture Demo | Python | Advanced | Data Engineering & Analysis | Postgres logical replication to consumer
+- [ ] 411 | Image Editor | C++ (Qt) | Advanced | Mobile & Desktop Apps | Layers, filters, undo
+- [ ] 412 | Chaos Testing Tool | Go | Advanced | DevOps & Cloud | Inject latency/failures into services
+- [ ] 413 | Gossip Protocol | Rust | Advanced | Distributed Systems | Membership and failure detection
+- [ ] 414 | Physics Engine 2D | C++ | Advanced | Graphics & Simulation | Rigid bodies and collisions
+- [ ] 415 | Zig Allocator Experiments | Zig | Advanced | Functional & Polyglot | Custom allocators and tests
+- [ ] 416 | NES CPU Emulator | Go | Advanced | Embedded & Emulation | Opcodes and nestest verification
+- [ ] 417 | Event Ticketing | NestJS + Vue | Advanced | Full-Stack Apps | Seats, QR tickets, check-in
+- [ ] 418 | Sparse Matrix Library | C | Advanced | Math & Scientific Computing | CSR format and solvers
+- [ ] 419 | Browser Code Playground | TypeScript | Advanced | Web Frontend | Sandboxed iframe JS/HTML/CSS runner with console
+- [ ] 420 | gRPC Inventory Service | Rust (tonic) | Advanced | Backend & APIs | Protobuf services with streaming updates
+- [ ] 421 | Rope Data Structure | Rust | Advanced | Data Structures & Algorithms | Efficient text editing structure
+- [ ] 422 | Coroutine Library | C | Advanced | Systems & Operating Systems | Context switching with ucontext
+- [ ] 423 | VPN Tunnel (TUN) | Go | Advanced | Networking | Encrypted tunnel between two hosts
+- [ ] 424 | ORM From Scratch | TypeScript | Advanced | Databases & Storage | Models, queries, relations over SQLite
+- [ ] 425 | Language Server | TypeScript | Advanced | Compilers & Interpreters | LSP diagnostics/completion for a toy language
+- [ ] 426 | ECS Game Engine | C++ | Advanced | Games | Entity-component-system core
+- [ ] 427 | Honeypot (SSH) | Python | Advanced | Security | Low-interaction honeypot logging attempts
+- [ ] 428 | Neural Net in Rust | Rust | Advanced | Machine Learning & AI | Tensor ops and training loop
+- [ ] 429 | Twitter-like Trend Detector | Scala | Advanced | Data Engineering & Analysis | Detect trending terms in text stream
+- [ ] 430 | Offline Maps Viewer | React Native | Advanced | Mobile & Desktop Apps | Cached tiles and markers
+- [ ] 431 | Build Cache Server | Go | Advanced | DevOps & Cloud | Content-addressed artifact cache
+- [ ] 432 | Distributed Lock Service | Go | Advanced | Distributed Systems | Leases and fencing tokens
+- [ ] 433 | Fluid Simulation | C++ | Advanced | Graphics & Simulation | Stable fluids on grid
+- [ ] 434 | Racket Language Extension | Racket | Advanced | Functional & Polyglot | Macros for a DSL
+- [ ] 435 | RISC-V Emulator | Rust | Advanced | Embedded & Emulation | RV32I interpreter running C programs
+- [ ] 436 | Video Streaming Platform | Node.js + HLS | Advanced | Full-Stack Apps | Upload, transcode, stream
+- [ ] 437 | Bayesian Inference Demo | Python (PyMC) | Advanced | Math & Scientific Computing | Posterior estimation examples
+- [ ] 438 | Chart Library | TypeScript + SVG | Advanced | Web Frontend | Line/bar/pie charts with axes, legends, tooltips
+- [ ] 439 | Multi-tenant SaaS Starter | Python (Django) | Advanced | Backend & APIs | Tenant isolation, billing stubs, RBAC
+- [ ] 440 | Big Integer Library | C | Advanced | Data Structures & Algorithms | Arbitrary precision add, multiply (Karatsuba), divide
+- [ ] 441 | Garbage Collector | C | Advanced | Systems & Operating Systems | Mark-and-sweep GC for a tiny object system
+- [ ] 442 | Load Balancer | C++ | Advanced | Networking | Round-robin/least-conn L4 balancer
+- [ ] 443 | Redis Clone | Rust | Advanced | Databases & Storage | RESP protocol, strings, lists, expiry
+- [ ] 444 | Compiler to x86-64 | Rust | Advanced | Compilers & Interpreters | C subset to assembly
+- [ ] 445 | Flappy Clone With NEAT AI | Python | Advanced | Games | Neuroevolution learns to play
+- [ ] 446 | Access Control Policy Engine | Go | Advanced | Security | RBAC/ABAC evaluation with tests
+- [ ] 447 | Speech Command Recognizer | PyTorch | Advanced | Machine Learning & AI | Spectrograms and CNN
+- [ ] 448 | Kafka-style Log | Rust | Advanced | Data Engineering & Analysis | Partitioned append-only log with consumers
+- [ ] 449 | Chat App | React Native + Firebase | Advanced | Mobile & Desktop Apps | Auth, realtime messages, push
+- [ ] 450 | Canary Analysis Tool | Python | Advanced | DevOps & Cloud | Compare metrics between versions
+- [ ] 451 | CRDT Library | TypeScript | Advanced | Distributed Systems | G-Counter, OR-Set, LWW, RGA
+- [ ] 452 | 3D Renderer With WebGL | TypeScript | Advanced | Graphics & Simulation | Shaders, camera, lighting
+- [ ] 453 | Brainf*ck CPU in Verilog | Verilog | Advanced | Embedded & Emulation | Hardware implementation simulated
+- [ ] 454 | Mini Trello SaaS | Next.js + Prisma | Advanced | Full-Stack Apps | Boards, teams, realtime updates
+- [ ] 455 | Mandelbrot in Assembly | Assembly + C | Advanced | Math & Scientific Computing | SIMD-accelerated rendering
+- [ ] 456 | Frontend Router From Scratch | TypeScript | Advanced | Web Frontend | History API router with nested routes and guards
+- [ ] 457 | Idempotent Payments API (Mock) | Java | Advanced | Backend & APIs | Idempotency keys, state machine, reconciliation
+- [ ] 458 | Suffix Array & LCP | C++ | Advanced | Data Structures & Algorithms | Construction and substring search
+- [ ] 459 | Lock-free Queue | Rust | Advanced | Systems & Operating Systems | Michael-Scott queue with atomics and tests
+- [ ] 460 | HTTP/2 Frame Parser | Rust | Advanced | Networking | Decode frames and HPACK headers
+- [ ] 461 | Document Store | Java | Advanced | Databases & Storage | JSON documents with secondary indexes
+- [ ] 462 | WebAssembly Compiler | Rust | Advanced | Compilers & Interpreters | Expression language to WASM text format
+- [ ] 463 | Zero-Knowledge Proof Demo | Python | Advanced | Security | Schnorr protocol walkthrough
+- [ ] 464 | Word2Vec From Scratch | Python | Advanced | Machine Learning & AI | Skip-gram with negative sampling
+- [ ] 465 | Distributed Tracing Demo | OpenTelemetry (Go) | Advanced | DevOps & Cloud | Traces across services
+- [ ] 466 | Pub/Sub System | Rust | Advanced | Distributed Systems | Topics, partitions, consumer groups
+- [ ] 467 | Voxel Engine | C++ (OpenGL) | Advanced | Graphics & Simulation | Chunked voxel world
+- [ ] 468 | Branch Predictor Sim | C++ | Advanced | Embedded & Emulation | Compare predictor designs
+- [ ] 469 | HTTP Framework From Scratch | Python | Advanced | Backend & APIs | Routing, middleware, request parsing on raw sockets
+- [ ] 470 | Container Runtime (Mini Docker) | Go | Advanced | Systems & Operating Systems | Namespaces, cgroups, chroot
+- [ ] 471 | MQTT Broker | Go | Advanced | Networking | Publish/subscribe with QoS 0/1
+- [ ] 472 | Full-text Search Engine | Rust | Advanced | Databases & Storage | Tokenizer, inverted index, BM25
+- [ ] 473 | Prolog Interpreter | Python | Advanced | Compilers & Interpreters | Unification and backtracking
+- [ ] 474 | AI Agent With Tools | TypeScript | Advanced | Machine Learning & AI | LLM agent loop with tool calling
+- [ ] 475 | Two-Phase Commit | Java | Advanced | Distributed Systems | Coordinator and participants with failures
+- [ ] 476 | Path Tracer | Rust | Advanced | Graphics & Simulation | Monte Carlo global illumination
+- [ ] 477 | Bootloader | Assembly (x86) | Advanced | Embedded & Emulation | Boot sector printing text
+- [ ] 478 | Syscall Tracer | C | Advanced | Systems & Operating Systems | ptrace-based strace clone
+- [ ] 479 | UDP Reliable Transport | C | Advanced | Networking | Sliding window, ACKs, retransmission
+- [ ] 480 | Graph Database | Kotlin | Advanced | Databases & Storage | Nodes/edges with Cypher-like queries
+- [ ] 481 | Lexer Generator | C++ | Advanced | Compilers & Interpreters | Regex rules to DFA tables
+- [ ] 482 | Distributed Task Scheduler | Python | Advanced | Distributed Systems | Workers, leases, retries
+- [ ] 483 | Firmware Update Simulator | Rust | Advanced | Embedded & Emulation | A/B partitions and verification
+- [ ] 484 | Dynamic Linker Explorer | C | Advanced | Systems & Operating Systems | ELF parsing and symbol resolution viewer
+- [ ] 485 | Network Simulator | Java | Advanced | Networking | Routers, links, distance-vector routing
+- [ ] 486 | Columnar File Reader | Rust | Advanced | Databases & Storage | Read Parquet-like column format
+- [ ] 487 | JIT Experiment | C | Advanced | Compilers & Interpreters | Emit machine code at runtime for arithmetic
+- [ ] 488 | Chord DHT | Go | Advanced | Distributed Systems | Finger tables and lookups
+- [ ] 489 | Init System | Rust | Advanced | Systems & Operating Systems | Service supervision with restart policies
+- [ ] 490 | Event Store | C# (.NET) | Advanced | Databases & Storage | Append-only streams with subscriptions
+- [ ] 491 | Saga Orchestrator | Kotlin | Advanced | Distributed Systems | Compensating transactions
+- [ ] 492 | Mini Debugger | C | Advanced | Systems & Operating Systems | Breakpoints and stepping via ptrace
+- [ ] 493 | MVCC Demo | Rust | Advanced | Databases & Storage | Snapshot isolation and version chains
+- [ ] 494 | Paxos Simulation | Python | Advanced | Distributed Systems | Single-decree Paxos visualized
+- [ ] 495 | Async Runtime | Rust | Advanced | Systems & Operating Systems | Executor, futures, epoll reactor
+- [ ] 496 | Vector Search Index | Python | Advanced | Databases & Storage | HNSW approximate nearest neighbors
+- [ ] 497 | Actor Framework | Scala | Advanced | Distributed Systems | Mailboxes, supervision
+- [ ] 498 | Distributed File System | Go | Advanced | Distributed Systems | Chunk servers and master metadata
+- [ ] 499 | Quorum Replication | Rust | Advanced | Distributed Systems | Read/write quorums and repair
+- [ ] 500 | Distributed Tracing Collector | Go | Advanced | Distributed Systems | Span ingestion and query
