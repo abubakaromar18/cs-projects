@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pomodoro Timer</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-phase="work">
+  <main class="app">
+    <header>
+      <h1>Pomodoro</h1>
+      <nav class="phase-tabs" aria-label="Current phase">
+        <span data-tab="work">Focus</span>
+        <span data-tab="shortBreak">Short break</span>
+        <span data-tab="longBreak">Long break</span>
+      </nav>
+    </header>
+
+    <section class="timer" aria-live="polite">
+      <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="ring-track" cx="60" cy="60" r="54"></circle>
+        <circle class="ring-progress" cx="60" cy="60" r="54"></circle>
+      </svg>
+      <div class="readout">
+        <div id="time" class="time">25:00</div>
+        <div id="cycle" class="cycle">Session 1 of 4</div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button id="reset" class="secondary" title="Reset (R)">Reset</button>
+      <button id="toggle" class="primary" title="Start / pause (Space)">Start</button>
+      <button id="skip" class="secondary" title="Skip (S)">Skip</button>
+    </div>
+
+    <section class="stats" aria-labelledby="stats-heading">
+      <h2 id="stats-heading">Stats</h2>
+      <div class="tiles">
+        <div class="tile"><span id="stat-today">0</span><small>sessions today</small></div>
+        <div class="tile"><span id="stat-focus">0m</span><small>focus today</small></div>
+        <div class="tile"><span id="stat-streak">0</span><small>day streak</small></div>
+        <div class="tile"><span id="stat-total">0</span><small>all-time sessions</small></div>
+      </div>
+      <div id="chart" class="chart" role="img" aria-label="Sessions over the last 7 days"></div>
+    </section>
+
+    <details class="settings">
+      <summary>Settings</summary>
+      <form id="settings-form">
+        <label>Focus (min) <input type="number" name="workMinutes" min="1" max="180"></label>
+        <label>Short break (min) <input type="number" name="shortBreakMinutes" min="1" max="60"></label>
+        <label>Long break (min) <input type="number" name="longBreakMinutes" min="1" max="120"></label>
+        <label>Long break every <input type="number" name="longBreakInterval" min="1" max="12"></label>
+        <label class="check"><input type="checkbox" name="autoStartNext"> Auto-start next phase</label>
+        <label>Volume <input type="range" name="volume" min="0" max="1" step="0.05"></label>
+        <div class="row">
+          <button type="button" id="test-sound" class="secondary">Test sound</button>
+          <button type="button" id="clear-stats" class="danger">Clear stats</button>
+        </div>
+      </form>
+    </details>
+
+    <footer><kbd>Space</kbd> start/pause · <kbd>R</kbd> reset · <kbd>S</kbd> skip</footer>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

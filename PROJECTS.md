@@ -6,7 +6,7 @@ Ordered from starter to advanced, interleaving 20 areas and 40+ languages.
 
 Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 
-- [ ] 001 | Pomodoro Timer | HTML/CSS/JS | Starter | Web Frontend | Focus timer with sessions, breaks, sound alerts and stats
+- [x] 001 | Pomodoro Timer | HTML/CSS/JS | Starter | Web Frontend | Focus timer with sessions, breaks, sound alerts and stats → [folder](projects/001-pomodoro-timer/)
 - [ ] 002 | URL Shortener | Go | Starter | Backend & APIs | Short links with redirects, click counts, SQLite storage
 - [ ] 003 | Todo CLI | Python | Starter | CLI Tools | Task list with priorities, due dates, JSON storage
 - [ ] 004 | Sorting Visualizer | JavaScript | Starter | Data Structures & Algorithms | Animate bubble, merge, quick, heap sort

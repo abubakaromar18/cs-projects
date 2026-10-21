@@ -11,3 +11,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 
 | # | Project | Language | Level |
 |---|---------|----------|-------|
+| 001 | [Pomodoro Timer](projects/001-pomodoro-timer/) | HTML/CSS/JS | Starter |

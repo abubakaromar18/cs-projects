@@ -1,0 +1,90 @@
+:root {
+  --bg: #fbf7f4;
+  --surface: #ffffff;
+  --text: #2a2522;
+  --muted: #7a706a;
+  --border: #ebe3dd;
+  --accent: #d9534f;          /* overridden per phase below */
+  --accent-soft: #f7dcda;
+  --radius: 14px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+
+body[data-phase="shortBreak"] { --accent: #2e9e7a; --accent-soft: #d4efe6; }
+body[data-phase="longBreak"]  { --accent: #3a7bd5; --accent-soft: #d8e5f8; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #181514; --surface: #221e1c; --text: #f1ebe7;
+    --muted: #a79d97; --border: #352f2c; --accent-soft: #3b2423;
+    color-scheme: dark;
+  }
+  body[data-phase="shortBreak"] { --accent-soft: #1d3a31; }
+  body[data-phase="longBreak"]  { --accent-soft: #1f2e45; }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color .4s;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+header { text-align: center; }
+h1 { margin: 0 0 12px; font-size: 1.5rem; letter-spacing: .02em; }
+h2 { margin: 0 0 12px; font-size: 1rem; color: var(--muted); font-weight: 600; }
+
+.phase-tabs { display: inline-flex; gap: 4px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 4px; }
+.phase-tabs span { padding: 6px 12px; border-radius: 999px; font-size: .85rem; color: var(--muted); }
+.phase-tabs span.active { background: var(--accent); color: #fff; }
+
+.timer { position: relative; width: min(300px, 80vw); aspect-ratio: 1; margin: 0 auto; }
+.ring { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring circle { fill: none; stroke-width: 6; }
+.ring-track { stroke: var(--accent-soft); }
+.ring-progress { stroke: var(--accent); stroke-linecap: round; transition: stroke-dashoffset .25s linear, stroke .4s; }
+.readout { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.time { font-size: clamp(3rem, 14vw, 4.5rem); font-weight: 700; font-variant-numeric: tabular-nums; }
+.cycle { color: var(--muted); font-size: .9rem; }
+
+.controls { display: flex; justify-content: center; gap: 12px; }
+button {
+  font: inherit; cursor: pointer; border-radius: 999px; padding: 10px 20px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+button:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; min-width: 120px; font-weight: 600; }
+button.danger { color: #c0392b; }
+
+.stats, .settings { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+.tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.tile { display: flex; flex-direction: column; }
+.tile span { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tile small { color: var(--muted); }
+
+.chart { display: flex; align-items: flex-end; gap: 8px; height: 110px; margin-top: 16px; }
+.bar { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 4px; font-size: .7rem; color: var(--muted); }
+.bar div { width: 100%; max-width: 28px; background: var(--accent); border-radius: 4px 4px 0 0; min-height: 2px; }
+
+.settings summary { cursor: pointer; font-weight: 600; }
+.settings form { display: grid; gap: 10px; margin-top: 12px; }
+.settings label { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.settings input[type="number"] { width: 72px; padding: 4px 6px; font: inherit; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); }
+.settings .check { justify-content: flex-start; }
+.settings .row { display: flex; gap: 8px; justify-content: space-between; }
+
+footer { text-align: center; color: var(--muted); font-size: .8rem; }
+kbd { border: 1px solid var(--border); border-radius: 4px; padding: 0 4px; font-size: .75rem; }
