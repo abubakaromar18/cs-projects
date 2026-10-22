@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sorting Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Sorting Visualizer</h1>
+    <p class="subtitle">Watch bubble, merge, quick and heap sort work step by step.</p>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Controls">
+      <label>Algorithm
+        <select id="algorithm">
+          <option value="bubble">Bubble sort</option>
+          <option value="merge">Merge sort</option>
+          <option value="quick" selected>Quick sort</option>
+          <option value="heap">Heap sort</option>
+        </select>
+      </label>
+      <label>Input
+        <select id="preset">
+          <option value="random">Random</option>
+          <option value="nearly-sorted">Nearly sorted</option>
+          <option value="reversed">Reversed</option>
+          <option value="few-unique">Few unique</option>
+        </select>
+      </label>
+      <label>Size <output id="size-out">48</output>
+        <input id="size" type="range" min="8" max="160" value="48">
+      </label>
+      <label>Speed <output id="speed-out">40</output>
+        <input id="speed" type="range" min="1" max="100" value="40">
+      </label>
+      <label class="check"><input id="sound" type="checkbox"> Sound</label>
+      <div class="buttons">
+        <button id="play" class="primary">Play</button>
+        <button id="step" title="Apply one step (→)">Step</button>
+        <button id="reset" title="Rewind to the unsorted input (R)">Reset</button>
+        <button id="shuffle" title="Generate a new input (N)">New array</button>
+      </div>
+    </section>
+
+    <section class="stage" aria-label="Array">
+      <div id="bars" class="bars" role="img" aria-label="Array bars"></div>
+    </section>
+
+    <section class="panel">
+      <dl class="stats" aria-live="polite">
+        <div><dt>Comparisons</dt><dd id="stat-comparisons">0</dd></div>
+        <div><dt>Swaps</dt><dd id="stat-swaps">0</dd></div>
+        <div><dt>Writes</dt><dd id="stat-writes">0</dd></div>
+        <div><dt>Steps</dt><dd id="stat-steps">0</dd></div>
+      </dl>
+      <ul class="legend">
+        <li><span class="swatch compare"></span>Comparing</li>
+        <li><span class="swatch swap"></span>Swap / write</li>
+        <li><span class="swatch pivot"></span>Pivot</li>
+        <li><span class="swatch sorted"></span>Sorted</li>
+      </ul>
+      <table class="complexity">
+        <caption id="complexity-caption">Quick sort</caption>
+        <tr><th>Best</th><th>Average</th><th>Worst</th><th>Space</th><th>Stable</th></tr>
+        <tr><td id="cx-best"></td><td id="cx-average"></td><td id="cx-worst"></td><td id="cx-space"></td><td id="cx-stable"></td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>Keyboard: <kbd>Space</kbd> play/pause · <kbd>→</kbd> step · <kbd>R</kbd> reset · <kbd>N</kbd> new array</footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
