@@ -8,7 +8,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 
 - [x] 001 | Pomodoro Timer | HTML/CSS/JS | Starter | Web Frontend | Focus timer with sessions, breaks, sound alerts and stats → [folder](projects/001-pomodoro-timer/)
 - [x] 002 | URL Shortener | Go | Starter | Backend & APIs | Short links with redirects, click counts, SQLite storage → [folder](projects/002-url-shortener/)
-- [ ] 003 | Todo CLI | Python | Starter | CLI Tools | Task list with priorities, due dates, JSON storage
+- [x] 003 | Todo CLI | Python | Starter | CLI Tools | Task list with priorities, due dates, JSON storage → [folder](projects/003-todo-cli/)
 - [ ] 004 | Sorting Visualizer | JavaScript | Starter | Data Structures & Algorithms | Animate bubble, merge, quick, heap sort
 - [ ] 005 | Producer-Consumer Simulator | Java | Starter | Systems & Operating Systems | Bounded buffer with semaphores visualized
 - [ ] 006 | Port Scanner | Python | Starter | Networking | TCP connect scan with concurrency (own hosts only)

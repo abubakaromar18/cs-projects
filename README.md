@@ -11,3 +11,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 |---|---------|----------|-------|
 | 001 | [Pomodoro Timer](projects/001-pomodoro-timer/) | HTML/CSS/JS | Starter |
 | 002 | [URL Shortener](projects/002-url-shortener/) | Go | Starter |
+| 003 | [Todo CLI](projects/003-todo-cli/) | Python | Starter |
