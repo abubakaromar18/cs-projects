@@ -13,3 +13,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 002 | [URL Shortener](projects/002-url-shortener/) | Go | Starter |
 | 003 | [Todo CLI](projects/003-todo-cli/) | Python | Starter |
 | 004 | [Sorting Visualizer](projects/004-sorting-visualizer/) | JavaScript | Starter |
+| 005 | [Producer-Consumer Simulator](projects/005-producer-consumer-simulator/) | Java | Starter |
