@@ -11,7 +11,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 003 | Todo CLI | Python | Starter | CLI Tools | Task list with priorities, due dates, JSON storage → [folder](projects/003-todo-cli/)
 - [x] 004 | Sorting Visualizer | JavaScript | Starter | Data Structures & Algorithms | Animate bubble, merge, quick, heap sort → [folder](projects/004-sorting-visualizer/)
 - [x] 005 | Producer-Consumer Simulator | Java | Starter | Systems & Operating Systems | Bounded buffer with semaphores visualized → [folder](projects/005-producer-consumer-simulator/)
-- [ ] 006 | Port Scanner | Python | Starter | Networking | TCP connect scan with concurrency (own hosts only)
+- [x] 006 | Port Scanner | Python | Starter | Networking | TCP connect scan with concurrency (own hosts only) → [folder](projects/006-port-scanner/)
 - [ ] 007 | Library Management DB | SQL + Python | Starter | Databases & Storage | Normalized schema, queries, CLI
 - [ ] 008 | Calculator Parser | Python | Starter | Compilers & Interpreters | Recursive descent with operator precedence
 - [ ] 009 | Tic-Tac-Toe With Minimax | Python | Starter | Games | Unbeatable AI with pygame UI
