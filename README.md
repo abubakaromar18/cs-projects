@@ -16,3 +16,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 005 | [Producer-Consumer Simulator](projects/005-producer-consumer-simulator/) | Java | Starter |
 | 006 | [Port Scanner](projects/006-port-scanner/) | Python | Starter |
 | 007 | [Library Management DB](projects/007-library-management-db/) | SQL + Python | Starter |
+| 008 | [Calculator Parser](projects/008-calculator-parser/) | Python | Starter |
