@@ -14,7 +14,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 006 | Port Scanner | Python | Starter | Networking | TCP connect scan with concurrency (own hosts only) → [folder](projects/006-port-scanner/)
 - [x] 007 | Library Management DB | SQL + Python | Starter | Databases & Storage | Normalized schema, queries, CLI → [folder](projects/007-library-management-db/)
 - [x] 008 | Calculator Parser | Python | Starter | Compilers & Interpreters | Recursive descent with operator precedence → [folder](projects/008-calculator-parser/)
-- [ ] 009 | Tic-Tac-Toe With Minimax | Python | Starter | Games | Unbeatable AI with pygame UI
+- [x] 009 | Tic-Tac-Toe With Minimax | Python | Starter | Games | Unbeatable AI with pygame UI → [folder](projects/009-tic-tac-toe-with-minimax/)
 - [ ] 010 | Password Strength Checker | Python | Starter | Security | Entropy estimate and breach-list check
 - [ ] 011 | Linear Regression From Scratch | Python (NumPy) | Starter | Machine Learning & AI | Gradient descent with plots
 - [ ] 012 | COVID/Public Data Dashboard | Python (Pandas + Plotly) | Starter | Data Engineering & Analysis | Clean, analyze, visualize open data
