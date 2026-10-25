@@ -18,3 +18,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 007 | [Library Management DB](projects/007-library-management-db/) | SQL + Python | Starter |
 | 008 | [Calculator Parser](projects/008-calculator-parser/) | Python | Starter |
 | 009 | [Tic-Tac-Toe With Minimax](projects/009-tic-tac-toe-with-minimax/) | Python | Starter |
+| 010 | [Password Strength Checker](projects/010-password-strength-checker/) | Python | Starter |
