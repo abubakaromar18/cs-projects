@@ -19,3 +19,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 008 | [Calculator Parser](projects/008-calculator-parser/) | Python | Starter |
 | 009 | [Tic-Tac-Toe With Minimax](projects/009-tic-tac-toe-with-minimax/) | Python | Starter |
 | 010 | [Password Strength Checker](projects/010-password-strength-checker/) | Python | Starter |
+| 011 | [Linear Regression From Scratch](projects/011-linear-regression-from-scratch/) | Python (NumPy) | Starter |

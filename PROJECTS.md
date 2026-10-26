@@ -16,7 +16,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 008 | Calculator Parser | Python | Starter | Compilers & Interpreters | Recursive descent with operator precedence → [folder](projects/008-calculator-parser/)
 - [x] 009 | Tic-Tac-Toe With Minimax | Python | Starter | Games | Unbeatable AI with pygame UI → [folder](projects/009-tic-tac-toe-with-minimax/)
 - [x] 010 | Password Strength Checker | Python | Starter | Security | Entropy estimate and breach-list check → [folder](projects/010-password-strength-checker/)
-- [ ] 011 | Linear Regression From Scratch | Python (NumPy) | Starter | Machine Learning & AI | Gradient descent with plots
+- [x] 011 | Linear Regression From Scratch | Python (NumPy) | Starter | Machine Learning & AI | Gradient descent with plots → [folder](projects/011-linear-regression-from-scratch/)
 - [ ] 012 | COVID/Public Data Dashboard | Python (Pandas + Plotly) | Starter | Data Engineering & Analysis | Clean, analyze, visualize open data
 - [ ] 013 | Notes App | Dart (Flutter) | Starter | Mobile & Desktop Apps | Cross-platform notes with search
 - [ ] 014 | Dockerized Microservices | Docker Compose | Starter | DevOps & Cloud | 3 services with networking and volumes
