@@ -17,7 +17,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 009 | Tic-Tac-Toe With Minimax | Python | Starter | Games | Unbeatable AI with pygame UI → [folder](projects/009-tic-tac-toe-with-minimax/)
 - [x] 010 | Password Strength Checker | Python | Starter | Security | Entropy estimate and breach-list check → [folder](projects/010-password-strength-checker/)
 - [x] 011 | Linear Regression From Scratch | Python (NumPy) | Starter | Machine Learning & AI | Gradient descent with plots → [folder](projects/011-linear-regression-from-scratch/)
-- [ ] 012 | COVID/Public Data Dashboard | Python (Pandas + Plotly) | Starter | Data Engineering & Analysis | Clean, analyze, visualize open data
+- [x] 012 | COVID/Public Data Dashboard | Python (Pandas + Plotly) | Starter | Data Engineering & Analysis | Clean, analyze, visualize open data → [folder](projects/012-covid-public-data-dashboard/)
 - [ ] 013 | Notes App | Dart (Flutter) | Starter | Mobile & Desktop Apps | Cross-platform notes with search
 - [ ] 014 | Dockerized Microservices | Docker Compose | Starter | DevOps & Cloud | 3 services with networking and volumes
 - [ ] 015 | Snowflake ID Generator | Rust | Starter | Distributed Systems | Unique time-ordered IDs
