@@ -1,0 +1,11 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    - prefer_final_locals
+    - prefer_single_quotes
+    - directives_ordering
+    - unawaited_futures
+
+formatter:
+  page_width: 100

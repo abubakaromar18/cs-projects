@@ -18,7 +18,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 010 | Password Strength Checker | Python | Starter | Security | Entropy estimate and breach-list check → [folder](projects/010-password-strength-checker/)
 - [x] 011 | Linear Regression From Scratch | Python (NumPy) | Starter | Machine Learning & AI | Gradient descent with plots → [folder](projects/011-linear-regression-from-scratch/)
 - [x] 012 | COVID/Public Data Dashboard | Python (Pandas + Plotly) | Starter | Data Engineering & Analysis | Clean, analyze, visualize open data → [folder](projects/012-covid-public-data-dashboard/)
-- [ ] 013 | Notes App | Dart (Flutter) | Starter | Mobile & Desktop Apps | Cross-platform notes with search
+- [x] 013 | Notes App | Dart (Flutter) | Starter | Mobile & Desktop Apps | Cross-platform notes with search → [folder](projects/013-notes-app/)
 - [ ] 014 | Dockerized Microservices | Docker Compose | Starter | DevOps & Cloud | 3 services with networking and volumes
 - [ ] 015 | Snowflake ID Generator | Rust | Starter | Distributed Systems | Unique time-ordered IDs
 - [ ] 016 | Particle System | JavaScript (Canvas) | Starter | Graphics & Simulation | Fireworks and forces
