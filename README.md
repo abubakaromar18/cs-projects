@@ -22,3 +22,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 011 | [Linear Regression From Scratch](projects/011-linear-regression-from-scratch/) | Python (NumPy) | Starter |
 | 012 | [COVID/Public Data Dashboard](projects/012-covid-public-data-dashboard/) | Python (Pandas + Plotly) | Starter |
 | 013 | [Notes App](projects/013-notes-app/) | Dart (Flutter) | Starter |
+| 014 | [Dockerized Microservices](projects/014-dockerized-microservices/) | Docker Compose | Starter |

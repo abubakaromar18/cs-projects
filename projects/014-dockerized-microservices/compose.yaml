@@ -1,0 +1,63 @@
+# Three services, two networks, two volumes.
+#
+#   host:8080 ──► gateway ──┬──► notes ──► stats
+#               (frontend)  │  (backend)    ▲
+#                           └───────────────┘
+#
+# Only the gateway publishes a port. notes and stats are on the internal
+# `backend` network, so the host cannot reach them directly, and they
+# cannot reach the internet. Containers find each other by service name
+# through Docker's built-in DNS (http://notes:8000, http://stats:8000).
+
+name: microservices
+
+services:
+  gateway:
+    build: ./services/gateway
+    ports:
+      # Bound to localhost only; change to "8080:8080" to expose on your LAN.
+      - "127.0.0.1:${GATEWAY_PORT:-8080}:8080"
+    environment:
+      NOTES_URL: http://notes:8000
+      STATS_URL: http://stats:8000
+    networks: [frontend, backend]
+    depends_on:
+      notes:
+        condition: service_healthy
+      stats:
+        condition: service_healthy
+    restart: unless-stopped
+
+  notes:
+    build: ./services/notes
+    environment:
+      DATA_DIR: /data
+      STATS_URL: http://stats:8000
+    volumes:
+      - notes-data:/data
+    networks: [backend]
+    depends_on:
+      stats:
+        condition: service_healthy
+    restart: unless-stopped
+
+  stats:
+    build: ./services/stats
+    environment:
+      DATA_DIR: /data
+    volumes:
+      - stats-data:/data
+    networks: [backend]
+    restart: unless-stopped
+
+networks:
+  frontend: {}
+  backend:
+    # No gateway to the outside world: only containers on this network can talk.
+    internal: true
+
+volumes:
+  # Named volumes outlive containers. `docker compose down` keeps them;
+  # `docker compose down -v` deletes them.
+  notes-data: {}
+  stats-data: {}
