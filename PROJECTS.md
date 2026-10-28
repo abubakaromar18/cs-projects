@@ -20,7 +20,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 012 | COVID/Public Data Dashboard | Python (Pandas + Plotly) | Starter | Data Engineering & Analysis | Clean, analyze, visualize open data → [folder](projects/012-covid-public-data-dashboard/)
 - [x] 013 | Notes App | Dart (Flutter) | Starter | Mobile & Desktop Apps | Cross-platform notes with search → [folder](projects/013-notes-app/)
 - [x] 014 | Dockerized Microservices | Docker Compose | Starter | DevOps & Cloud | 3 services with networking and volumes → [folder](projects/014-dockerized-microservices/)
-- [ ] 015 | Snowflake ID Generator | Rust | Starter | Distributed Systems | Unique time-ordered IDs
+- [x] 015 | Snowflake ID Generator | Rust | Starter | Distributed Systems | Unique time-ordered IDs → [folder](projects/015-snowflake-id-generator/)
 - [ ] 016 | Particle System | JavaScript (Canvas) | Starter | Graphics & Simulation | Fireworks and forces
 - [ ] 017 | Bank Account Actors | Elixir | Starter | Functional & Polyglot | GenServer accounts with supervision
 - [ ] 018 | Logic Gate Simulator | TypeScript | Starter | Embedded & Emulation | Drag gates, build adders

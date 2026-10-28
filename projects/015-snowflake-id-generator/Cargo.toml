@@ -1,0 +1,19 @@
+[package]
+name = "snowflake-id"
+version = "0.1.0"
+edition = "2021"
+description = "Lock-free, time-ordered 64-bit unique ID generator (Twitter Snowflake layout)"
+license = "MIT"
+
+[lib]
+name = "snowflake_id"
+path = "src/lib.rs"
+
+[[bin]]
+name = "snowflake"
+path = "src/main.rs"
+
+[dependencies]
+
+[profile.release]
+lto = true
