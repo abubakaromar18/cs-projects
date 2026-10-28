@@ -24,3 +24,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 013 | [Notes App](projects/013-notes-app/) | Dart (Flutter) | Starter |
 | 014 | [Dockerized Microservices](projects/014-dockerized-microservices/) | Docker Compose | Starter |
 | 015 | [Snowflake ID Generator](projects/015-snowflake-id-generator/) | Rust | Starter |
+| 016 | [Particle System](projects/016-particle-system/) | JavaScript (Canvas) | Starter |

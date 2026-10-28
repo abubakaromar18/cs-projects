@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Particle System — Fireworks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="sky" aria-label="Fireworks simulation"></canvas>
+
+  <aside class="panel" aria-label="Controls">
+    <h1>Particle System</h1>
+    <p class="hint">Click to launch · <kbd>Shift</kbd>+click attract · <kbd>Alt</kbd>+click repel · <kbd>Ctrl</kbd>+click vortex</p>
+
+    <label>Pattern <select id="pattern"></select></label>
+    <label>Gravity <input id="gravity" type="range" min="0" max="800" step="10" value="300"> <output id="gravity-out"></output></label>
+    <label>Wind <input id="wind" type="range" min="-150" max="150" step="5" value="0"> <output id="wind-out"></output></label>
+    <label>Drag <input id="drag" type="range" min="0" max="4" step="0.1" value="1.2"> <output id="drag-out"></output></label>
+    <label>Trail fade <input id="fade" type="range" min="0.03" max="1" step="0.01" value="0.22"> <output id="fade-out"></output></label>
+    <label class="check"><input id="auto" type="checkbox" checked> Auto show</label>
+
+    <div class="buttons">
+      <button id="finale" type="button">Finale</button>
+      <button id="clear" type="button">Clear</button>
+    </div>
+    <p id="hud" class="hud" aria-live="off"></p>
+  </aside>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
