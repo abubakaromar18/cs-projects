@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logic Gate Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="toolbar">
+    <h1>Logic Gate Simulator</h1>
+    <select id="example" aria-label="Load example"><option value="" disabled>Load example…</option></select>
+    <button id="reset" type="button" title="Clear latch memory (all values LOW)">Reset state</button>
+    <button id="clear" type="button">Clear board</button>
+    <button id="export" type="button">Export JSON</button>
+    <button id="import" type="button">Import JSON</button>
+    <input id="import-file" type="file" accept="application/json,.json" hidden>
+  </header>
+
+  <main class="layout">
+    <nav id="palette" class="palette" aria-label="Gate palette"></nav>
+
+    <section class="board-wrap">
+      <svg id="board" viewBox="0 0 900 640" preserveAspectRatio="xMinYMin meet" role="application" aria-label="Circuit board">
+        <defs>
+          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="1" class="grid-dot"></circle>
+          </pattern>
+        </defs>
+        <rect x="-2000" y="-2000" width="6000" height="6000" fill="url(#grid)"></rect>
+        <g id="wires"></g>
+        <path id="preview" class="wire preview" style="display:none"></path>
+        <g id="gates"></g>
+      </svg>
+      <p id="status" class="status" aria-live="polite"></p>
+      <p class="hint">Drag gates from the palette · drag <b>output → input</b> pins to wire · click a switch to toggle · click a wire to cut it · right-click or <kbd>Del</kbd> removes a gate · double-click IN/OUT to rename</p>
+    </section>
+
+    <aside class="side">
+      <h2>Truth table</h2>
+      <div id="truth-table"></div>
+    </aside>
+  </main>
+
+  <script type="module" src="dist/ui/app.js"></script>
+</body>
+</html>
