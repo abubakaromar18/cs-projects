@@ -22,7 +22,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 014 | Dockerized Microservices | Docker Compose | Starter | DevOps & Cloud | 3 services with networking and volumes → [folder](projects/014-dockerized-microservices/)
 - [x] 015 | Snowflake ID Generator | Rust | Starter | Distributed Systems | Unique time-ordered IDs → [folder](projects/015-snowflake-id-generator/)
 - [x] 016 | Particle System | JavaScript (Canvas) | Starter | Graphics & Simulation | Fireworks and forces → [folder](projects/016-particle-system/)
-- [ ] 017 | Bank Account Actors | Elixir | Starter | Functional & Polyglot | GenServer accounts with supervision
+- [x] 017 | Bank Account Actors | Elixir | Starter | Functional & Polyglot | GenServer accounts with supervision → [folder](projects/017-bank-account-actors/)
 - [ ] 018 | Logic Gate Simulator | TypeScript | Starter | Embedded & Emulation | Drag gates, build adders
 - [ ] 019 | Personal Portfolio Site | Next.js | Starter | Full-Stack Apps | Projects, blog, contact form
 - [ ] 020 | Matrix Calculator | Python | Starter | Math & Scientific Computing | Determinant, inverse, RREF with steps

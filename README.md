@@ -25,3 +25,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 014 | [Dockerized Microservices](projects/014-dockerized-microservices/) | Docker Compose | Starter |
 | 015 | [Snowflake ID Generator](projects/015-snowflake-id-generator/) | Rust | Starter |
 | 016 | [Particle System](projects/016-particle-system/) | JavaScript (Canvas) | Starter |
+| 017 | [Bank Account Actors](projects/017-bank-account-actors/) | Elixir | Starter |
