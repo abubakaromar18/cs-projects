@@ -28,3 +28,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 017 | [Bank Account Actors](projects/017-bank-account-actors/) | Elixir | Starter |
 | 018 | [Logic Gate Simulator](projects/018-logic-gate-simulator/) | TypeScript | Starter |
 | 019 | [Personal Portfolio Site](projects/019-personal-portfolio-site/) | Next.js | Starter |
+| 020 | [Matrix Calculator](projects/020-matrix-calculator/) | Python | Starter |
