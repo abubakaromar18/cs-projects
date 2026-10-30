@@ -27,3 +27,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 016 | [Particle System](projects/016-particle-system/) | JavaScript (Canvas) | Starter |
 | 017 | [Bank Account Actors](projects/017-bank-account-actors/) | Elixir | Starter |
 | 018 | [Logic Gate Simulator](projects/018-logic-gate-simulator/) | TypeScript | Starter |
+| 019 | [Personal Portfolio Site](projects/019-personal-portfolio-site/) | Next.js | Starter |

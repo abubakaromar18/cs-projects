@@ -24,7 +24,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 016 | Particle System | JavaScript (Canvas) | Starter | Graphics & Simulation | Fireworks and forces → [folder](projects/016-particle-system/)
 - [x] 017 | Bank Account Actors | Elixir | Starter | Functional & Polyglot | GenServer accounts with supervision → [folder](projects/017-bank-account-actors/)
 - [x] 018 | Logic Gate Simulator | TypeScript | Starter | Embedded & Emulation | Drag gates, build adders → [folder](projects/018-logic-gate-simulator/)
-- [ ] 019 | Personal Portfolio Site | Next.js | Starter | Full-Stack Apps | Projects, blog, contact form
+- [x] 019 | Personal Portfolio Site | Next.js | Starter | Full-Stack Apps | Projects, blog, contact form → [folder](projects/019-personal-portfolio-site/)
 - [ ] 020 | Matrix Calculator | Python | Starter | Math & Scientific Computing | Determinant, inverse, RREF with steps
 - [ ] 021 | Markdown Previewer | React | Starter | Web Frontend | Live split-pane markdown editor with export to HTML
 - [ ] 022 | REST Todo API | Python (FastAPI) | Starter | Backend & APIs | CRUD API with validation, tests, OpenAPI docs
