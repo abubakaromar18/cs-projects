@@ -1,0 +1,104 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --border: #d9dde3;
+  --text: #1d232b;
+  --muted: #6a7480;
+  --accent: #2f6fdd;
+  --accent-text: #ffffff;
+  --code-bg: #eef1f5;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171c;
+    --surface: #1b1f26;
+    --border: #2d333c;
+    --text: #e3e7ec;
+    --muted: #8d97a3;
+    --accent: #5b92f0;
+    --accent-text: #0b0e12;
+    --code-bg: #242a33;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+
+.app { display: flex; flex-direction: column; height: 100%; }
+
+/* ---------- Toolbar ---------- */
+.toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .75rem;
+  padding: .5rem 1rem; background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.brand { font-size: 1rem; margin: 0 .5rem 0 0; white-space: nowrap; }
+.group { display: flex; gap: .25rem; align-items: center; flex-wrap: wrap; }
+.actions { margin-left: auto; }
+
+button, .btn {
+  font: inherit; font-size: .85rem; color: var(--text); background: transparent;
+  border: 1px solid var(--border); border-radius: 6px; padding: .3rem .65rem; cursor: pointer;
+}
+button:hover, .btn:hover { border-color: var(--accent); }
+button:focus-visible, .btn:focus-within { outline: 2px solid var(--accent); outline-offset: 1px; }
+.icon-btn { min-width: 2rem; }
+.fmt-bold { font-weight: 700; }
+.fmt-italic { font-style: italic; }
+.fmt-strike { text-decoration: line-through; }
+.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.subtle { color: var(--muted); }
+.segmented button { border-radius: 0; margin-left: -1px; }
+.segmented button:first-child { border-radius: 6px 0 0 6px; }
+.segmented button:last-child { border-radius: 0 6px 6px 0; }
+.segmented .active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.file-btn input { display: none; }
+
+/* ---------- Panes ---------- */
+.workspace { flex: 1; display: grid; grid-template-columns: 1fr 1fr; min-height: 0; }
+.view-editor .workspace, .view-preview .workspace { grid-template-columns: 1fr; }
+.pane { display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+.editor-pane { border-right: 1px solid var(--border); }
+.pane-title {
+  font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+  padding: .4rem 1rem; border-bottom: 1px solid var(--border);
+}
+.stale { margin-left: .5rem; text-transform: none; letter-spacing: 0; }
+
+.editor {
+  flex: 1; resize: none; border: 0; padding: 1rem; outline: none;
+  font: 0.95rem/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--text); background: var(--surface); tab-size: 2;
+}
+.preview { flex: 1; overflow: auto; padding: 1rem 1.5rem; background: var(--surface); line-height: 1.6; }
+
+@media (max-width: 760px) {
+  .workspace { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  .view-editor .workspace, .view-preview .workspace { grid-template-rows: 1fr; }
+  .editor-pane { border-right: 0; border-bottom: 1px solid var(--border); }
+  .actions { margin-left: 0; }
+}
+
+/* ---------- Rendered Markdown ---------- */
+.markdown-body h1, .markdown-body h2 { border-bottom: 1px solid var(--border); padding-bottom: .3em; }
+.markdown-body code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em;
+  background: var(--code-bg); padding: .1em .35em; border-radius: 4px; }
+.markdown-body pre { background: var(--code-bg); padding: 1rem; border-radius: 6px; overflow-x: auto; }
+.markdown-body pre code { background: none; padding: 0; }
+.markdown-body blockquote { margin: 0; padding: 0 1rem; border-left: 4px solid var(--border); color: var(--muted); }
+.markdown-body table { border-collapse: collapse; }
+.markdown-body th, .markdown-body td { border: 1px solid var(--border); padding: .4rem .8rem; }
+.markdown-body img { max-width: 100%; }
+.markdown-body a { color: var(--accent); }
+.markdown-body hr { border: 0; border-top: 1px solid var(--border); }
+.markdown-body .contains-task-list { padding-left: 1.2em; }
+.markdown-body .task-list-item { list-style: none; }
+
+/* ---------- Status bar ---------- */
+.status-bar {
+  display: flex; justify-content: space-between; gap: 1rem; font-size: .8rem; color: var(--muted);
+  padding: .35rem 1rem; background: var(--surface); border-top: 1px solid var(--border);
+}

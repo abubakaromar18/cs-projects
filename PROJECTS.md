@@ -26,7 +26,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 018 | Logic Gate Simulator | TypeScript | Starter | Embedded & Emulation | Drag gates, build adders → [folder](projects/018-logic-gate-simulator/)
 - [x] 019 | Personal Portfolio Site | Next.js | Starter | Full-Stack Apps | Projects, blog, contact form → [folder](projects/019-personal-portfolio-site/)
 - [x] 020 | Matrix Calculator | Python | Starter | Math & Scientific Computing | Determinant, inverse, RREF with steps → [folder](projects/020-matrix-calculator/)
-- [ ] 021 | Markdown Previewer | React | Starter | Web Frontend | Live split-pane markdown editor with export to HTML
+- [x] 021 | Markdown Previewer | React | Starter | Web Frontend | Live split-pane markdown editor with export to HTML → [folder](projects/021-markdown-previewer/)
 - [ ] 022 | REST Todo API | Python (FastAPI) | Starter | Backend & APIs | CRUD API with validation, tests, OpenAPI docs
 - [ ] 023 | Password Generator | Rust | Starter | CLI Tools | Configurable secure passwords and passphrases
 - [ ] 024 | Linked List Library | C | Starter | Data Structures & Algorithms | Singly/doubly linked lists with tests
