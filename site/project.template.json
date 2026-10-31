@@ -1,0 +1,12 @@
+{
+  "_comment": "Optional. Put a copy named project.json in a project folder to override what scripts/build_site.py detects. Delete any key you don't need; this _comment key is ignored.",
+  "title": "Tic-Tac-Toe With Minimax",
+  "summary": "One-line blurb shown on the gallery card",
+  "description": "Longer text shown on the run page",
+  "language": "Python",
+  "level": "Starter",
+  "area": "Games",
+  "run": "pyodide",
+  "examples": ["--help", "--analyze \"XX.OO....\""],
+  "packages": []
+}

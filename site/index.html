@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS Projects · Abubakar Omar</title>
+  <meta name="description" content="A growing collection of computer science projects across many languages, runnable in the browser where possible.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <p class="eyebrow">abubakaromar18 / cs-projects</p>
+      <h1>Computer science,<br>one project at a time.</h1>
+      <p>Projects across 20 areas and dozens of languages, added twice a day. Web apps and Python CLIs run right here in your browser; everything else links to its source and a one-click Codespace.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+  </header>
+
+  <nav class="controls" aria-label="Filter projects">
+    <div class="wrap">
+      <input class="search" id="q" type="search" placeholder="Search projects, languages, topics…" aria-label="Search">
+      <select id="area" aria-label="Area"><option value="">All areas</option></select>
+      <select id="lang" aria-label="Language"><option value="">All languages</option></select>
+      <div class="chips" role="group" aria-label="How it runs">
+        <button class="chip" data-run="" aria-pressed="true">All</button>
+        <button class="chip" data-run="web" aria-pressed="false">Runs in browser</button>
+        <button class="chip" data-run="pyodide" aria-pressed="false">Python in browser</button>
+        <button class="chip" data-run="code" aria-pressed="false">Source only</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Built automatically from <a href="https://github.com/abubakaromar18/cs-projects">the repository</a> on every push.
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

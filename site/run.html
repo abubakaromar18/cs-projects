@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Run · CS Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="run-head">
+      <a class="back" href="./">← all projects</a>
+      <h1 id="title">Loading…</h1>
+      <p id="desc"></p>
+      <div class="meta" id="meta"></div>
+      <div class="actions" style="margin-top:12px">
+        <a class="btn" id="source" target="_blank" rel="noopener">Code</a>
+      </div>
+      <div class="examples" id="examples" aria-label="Example commands"></div>
+    </header>
+
+    <section class="terminal" aria-label="Terminal">
+      <div class="term-bar"><span id="status">starting Python…</span><button id="clear" type="button">clear</button></div>
+      <div class="term-out" id="out" role="log" aria-live="polite"></div>
+      <form class="term-in" id="form" autocomplete="off">
+        <label for="cmd" id="prompt">$</label>
+        <input id="cmd" type="text" spellcheck="false" autocapitalize="off" disabled placeholder="arguments, e.g. --help">
+        <button id="go" type="submit" disabled>Run</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
+  <script src="runner.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{
+  "run": "pyodide",
+  "examples": ["--cli", "--analyze \"XX.OO....\"", "--stats", "--help"]
+}

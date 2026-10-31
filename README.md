@@ -5,6 +5,12 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 - Full queue: [PROJECTS.md](PROJECTS.md). Checked items are built.
 - Each project is in [`projects/`](projects/) in its own folder, with its own README, source, and tests.
 
+## Showcase site
+
+Live gallery: **https://abubakaromar18.github.io/cs-projects/**. Web apps open directly, pure-Python CLIs run in the browser via Pyodide, and everything else links to its source and a Codespace.
+
+The site rebuilds on every push to `main` (`.github/workflows/pages.yml` runs `scripts/build_site.py`). New projects are picked up automatically from `PROJECTS.md` and their README. To override what's detected (title, run mode, example commands), add a `project.json` to the project folder; see [`site/project.template.json`](site/project.template.json).
+
 ## Built projects
 
 | # | Project | Language | Level |
