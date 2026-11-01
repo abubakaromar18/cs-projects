@@ -31,3 +31,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 020 | [Matrix Calculator](projects/020-matrix-calculator/) | Python | Starter |
 | 021 | [Markdown Previewer](projects/021-markdown-previewer/) | React | Starter |
 | 022 | [REST Todo API](projects/022-rest-todo-api/) | Python (FastAPI) | Starter |
+| 023 | [Password Generator](projects/023-password-generator/) | Rust | Starter |

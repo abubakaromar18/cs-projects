@@ -1,0 +1,19 @@
+[package]
+name = "passgen"
+version = "0.1.0"
+edition = "2021"
+description = "Configurable, cryptographically secure password and passphrase generator"
+license = "MIT"
+
+[lib]
+name = "passgen"
+path = "src/lib.rs"
+
+[[bin]]
+name = "passgen"
+path = "src/main.rs"
+
+[dependencies]
+# Thin, audited wrapper around the operating system's CSPRNG
+# (getrandom(2) on Linux, BCryptGenRandom on Windows, SecRandomCopyBytes on macOS).
+getrandom = "0.2"

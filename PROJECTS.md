@@ -28,7 +28,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 020 | Matrix Calculator | Python | Starter | Math & Scientific Computing | Determinant, inverse, RREF with steps → [folder](projects/020-matrix-calculator/)
 - [x] 021 | Markdown Previewer | React | Starter | Web Frontend | Live split-pane markdown editor with export to HTML → [folder](projects/021-markdown-previewer/)
 - [x] 022 | REST Todo API | Python (FastAPI) | Starter | Backend & APIs | CRUD API with validation, tests, OpenAPI docs → [folder](projects/022-rest-todo-api/)
-- [ ] 023 | Password Generator | Rust | Starter | CLI Tools | Configurable secure passwords and passphrases
+- [x] 023 | Password Generator | Rust | Starter | CLI Tools | Configurable secure passwords and passphrases → [folder](projects/023-password-generator/)
 - [ ] 024 | Linked List Library | C | Starter | Data Structures & Algorithms | Singly/doubly linked lists with tests
 - [ ] 025 | CPU Scheduler Simulator | Python | Starter | Systems & Operating Systems | FCFS, SJF, RR, MLFQ with Gantt charts
 - [ ] 026 | Chat over TCP | Go | Starter | Networking | Multi-client chat server and client
