@@ -34,3 +34,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 023 | [Password Generator](projects/023-password-generator/) | Rust | Starter |
 | 024 | [Linked List Library](projects/024-linked-list-library/) | C | Starter |
 | 025 | [CPU Scheduler Simulator](projects/025-cpu-scheduler-simulator/) | Python | Starter |
+| 026 | [Chat over TCP](projects/026-chat-over-tcp/) | Go | Starter |

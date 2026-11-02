@@ -31,7 +31,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 023 | Password Generator | Rust | Starter | CLI Tools | Configurable secure passwords and passphrases → [folder](projects/023-password-generator/)
 - [x] 024 | Linked List Library | C | Starter | Data Structures & Algorithms | Singly/doubly linked lists with tests → [folder](projects/024-linked-list-library/)
 - [x] 025 | CPU Scheduler Simulator | Python | Starter | Systems & Operating Systems | FCFS, SJF, RR, MLFQ with Gantt charts → [folder](projects/025-cpu-scheduler-simulator/)
-- [ ] 026 | Chat over TCP | Go | Starter | Networking | Multi-client chat server and client
+- [x] 026 | Chat over TCP | Go | Starter | Networking | Multi-client chat server and client → [folder](projects/026-chat-over-tcp/)
 - [ ] 027 | Backup & Restore Tool | Bash | Starter | Databases & Storage | Scheduled dumps with rotation
 - [ ] 028 | Brainfuck Interpreter | C | Starter | Compilers & Interpreters | Interpreter plus optimizing pass
 - [ ] 029 | Snake | JavaScript (Canvas) | Starter | Games | Classic snake with levels and high scores
