@@ -1,0 +1,7 @@
+# Gaps between arrivals force idle CPU time.
+pid,arrival,burst
+A,0,3
+B,6,4
+C,7,1
+D,15,5
+E,16,2
