@@ -36,3 +36,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 025 | [CPU Scheduler Simulator](projects/025-cpu-scheduler-simulator/) | Python | Starter |
 | 026 | [Chat over TCP](projects/026-chat-over-tcp/) | Go | Starter |
 | 027 | [Backup & Restore Tool](projects/027-backup-restore-tool/) | Bash | Starter |
+| 028 | [Brainfuck Interpreter](projects/028-brainfuck-interpreter/) | C | Starter |
