@@ -1,0 +1,14 @@
+# Example bkp config. Use with:  bkp backup --config bkp.conf
+# Lines are KEY=VALUE. The file is parsed, never sourced, so it cannot run code.
+# Command-line flags override anything set here.
+
+source=sqlite:/var/lib/myapp/app.db
+dest=/var/backups/myapp
+name=myapp
+
+# Grandfather-father-son retention
+keep_last=3
+keep_daily=7
+keep_weekly=4
+keep_monthly=6
+keep_yearly=1

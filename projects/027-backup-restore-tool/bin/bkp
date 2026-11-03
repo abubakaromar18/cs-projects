@@ -1,0 +1,378 @@
+#!/usr/bin/env bash
+# bkp - a small backup & restore tool with checksums and GFS rotation.
+#
+#   bkp backup   --source KIND:TARGET --dest DIR [--name NAME] [retention]
+#   bkp list     --dest DIR [--name NAME]
+#   bkp verify   --dest DIR [ARCHIVE...]
+#   bkp restore  --dest DIR --target PATH (--name NAME | ARCHIVE) [--force]
+#   bkp rotate   --dest DIR --name NAME [retention] [--dry-run]
+#   bkp schedule --cron "SPEC" [--install] -- BACKUP-ARGS...
+#
+# Run `bkp help` for the full option list.
+
+set -Eeuo pipefail
+shopt -s nullglob
+
+BKP_HOME=$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)
+readonly BKP_HOME
+# shellcheck source=lib/common.sh
+source "$BKP_HOME/lib/common.sh"
+# shellcheck source=lib/sources.sh
+source "$BKP_HOME/lib/sources.sh"
+# shellcheck source=lib/rotate.sh
+source "$BKP_HOME/lib/rotate.sh"
+
+readonly VERSION=1.0.0
+
+usage() {
+  cat <<'EOF'
+bkp - backup & restore with checksums and rotation
+
+USAGE
+  bkp backup   --source KIND:TARGET --dest DIR [--name NAME] [RETENTION] [--no-rotate]
+  bkp list     --dest DIR [--name NAME]
+  bkp verify   --dest DIR [ARCHIVE...]          (no archives = verify all)
+  bkp restore  --dest DIR --target PATH (--name NAME [--at TIMESTAMP] | ARCHIVE) [--force]
+  bkp rotate   --dest DIR --name NAME [RETENTION] [--dry-run]
+  bkp schedule --cron "MIN HOUR DOM MON DOW" [--log FILE] [--install] -- BACKUP-ARGS...
+  bkp help | version
+
+SOURCES
+  dir:/path/to/dir      tar + gzip of a directory tree
+  sqlite:/path/to/db    consistent online snapshot via SQLite's .backup
+  postgres:dbname       pg_dump custom format
+
+RETENTION (defaults: last 3, daily 7, weekly 4, monthly 6, yearly 0)
+  --keep-last N  --keep-daily N  --keep-weekly N  --keep-monthly N  --keep-yearly N
+
+OTHER
+  --config FILE   read KEY=VALUE defaults (source, dest, name, keep_last, ...)
+  BKP_LOG=FILE    also append log lines to FILE
+  BKP_DEBUG=1     verbose logging
+EOF
+}
+
+# ---------------------------------------------------------------------------
+# Option parsing. Values start empty so that "set on the command line" can be
+# told apart from "not set", which lets a --config file supply defaults.
+# ---------------------------------------------------------------------------
+OPT_SOURCE='' OPT_DEST='' OPT_NAME='' OPT_TARGET='' OPT_AT='' OPT_CONFIG=''
+OPT_CRON='' OPT_LOGFILE=''
+OPT_KEEP_LAST='' OPT_KEEP_DAILY='' OPT_KEEP_WEEKLY='' OPT_KEEP_MONTHLY='' OPT_KEEP_YEARLY=''
+OPT_FORCE=0 OPT_DRY_RUN=0 OPT_NO_ROTATE=0 OPT_INSTALL=0
+POSITIONAL=()
+PASSTHROUGH=()
+
+need_value() { [[ $# -ge 2 && -n $2 ]] || die "option $1 needs a value" "$EX_USAGE"; }
+need_int() { [[ $2 =~ ^[0-9]+$ ]] || die "option $1 needs a non-negative integer (got '$2')" "$EX_USAGE"; }
+
+parse_args() {
+  while (($#)); do
+    case $1 in
+      --source) need_value "$@"; OPT_SOURCE=$2; shift 2 ;;
+      --dest) need_value "$@"; OPT_DEST=$2; shift 2 ;;
+      --name) need_value "$@"; OPT_NAME=$2; shift 2 ;;
+      --target) need_value "$@"; OPT_TARGET=$2; shift 2 ;;
+      --at) need_value "$@"; OPT_AT=$2; shift 2 ;;
+      --config) need_value "$@"; OPT_CONFIG=$2; shift 2 ;;
+      --cron) need_value "$@"; OPT_CRON=$2; shift 2 ;;
+      --log) need_value "$@"; OPT_LOGFILE=$2; shift 2 ;;
+      --keep-last) need_value "$@"; need_int "$1" "$2"; OPT_KEEP_LAST=$2; shift 2 ;;
+      --keep-daily) need_value "$@"; need_int "$1" "$2"; OPT_KEEP_DAILY=$2; shift 2 ;;
+      --keep-weekly) need_value "$@"; need_int "$1" "$2"; OPT_KEEP_WEEKLY=$2; shift 2 ;;
+      --keep-monthly) need_value "$@"; need_int "$1" "$2"; OPT_KEEP_MONTHLY=$2; shift 2 ;;
+      --keep-yearly) need_value "$@"; need_int "$1" "$2"; OPT_KEEP_YEARLY=$2; shift 2 ;;
+      --force) OPT_FORCE=1; shift ;;
+      --dry-run) OPT_DRY_RUN=1; shift ;;
+      --no-rotate) OPT_NO_ROTATE=1; shift ;;
+      --install) OPT_INSTALL=1; shift ;;
+      --) shift; PASSTHROUGH=("$@"); break ;;
+      -h | --help) usage; exit "$EX_OK" ;;
+      -*) die "unknown option: $1" "$EX_USAGE" ;;
+      *) POSITIONAL+=("$1"); shift ;;
+    esac
+  done
+}
+
+# load_config FILE - parse KEY=VALUE lines *without* sourcing the file, so a
+# config can never execute code. Only whitelisted keys are accepted and only
+# fill options that were not given on the command line.
+load_config() {
+  local file=$1 line key value n=0
+  [[ -f $file ]] || die "config file not found: $file"
+  while IFS= read -r line || [[ -n $line ]]; do
+    n=$((n + 1))
+    line=${line%%#*}                               # strip comments
+    line="${line#"${line%%[![:space:]]*}"}"        # trim leading space
+    line="${line%"${line##*[![:space:]]}"}"        # trim trailing space
+    [[ -z $line ]] && continue
+    [[ $line == *=* ]] || die "$file:$n: expected KEY=VALUE"
+    key=${line%%=*} value=${line#*=}
+    value=${value#\"} value=${value%\"}
+    case $key in
+      source) : "${OPT_SOURCE:=$value}" ;;
+      dest) : "${OPT_DEST:=$value}" ;;
+      name) : "${OPT_NAME:=$value}" ;;
+      keep_last) need_int "$key" "$value"; : "${OPT_KEEP_LAST:=$value}" ;;
+      keep_daily) need_int "$key" "$value"; : "${OPT_KEEP_DAILY:=$value}" ;;
+      keep_weekly) need_int "$key" "$value"; : "${OPT_KEEP_WEEKLY:=$value}" ;;
+      keep_monthly) need_int "$key" "$value"; : "${OPT_KEEP_MONTHLY:=$value}" ;;
+      keep_yearly) need_int "$key" "$value"; : "${OPT_KEEP_YEARLY:=$value}" ;;
+      *) die "$file:$n: unknown key '$key'" ;;
+    esac
+  done <"$file"
+}
+
+apply_defaults() {
+  : "${OPT_KEEP_LAST:=3}" "${OPT_KEEP_DAILY:=7}" "${OPT_KEEP_WEEKLY:=4}"
+  : "${OPT_KEEP_MONTHLY:=6}" "${OPT_KEEP_YEARLY:=0}"
+}
+
+require_dest() {
+  [[ -n $OPT_DEST ]] || die "--dest is required" "$EX_USAGE"
+}
+
+# default_name TARGET - derive a set name from a source path: /srv/my site -> my_site
+default_name() {
+  local base=${1%/}
+  base=${base##*/}
+  base=${base%.*}
+  base=$(printf '%s' "$base" | tr -c 'A-Za-z0-9_.-' '_' | sed -e 's/--*/-/g' -e 's/^[^A-Za-z0-9]*//')
+  printf '%s\n' "${base:-backup}"
+}
+
+# list_archives DIR [NAME] - archive basenames in DIR, oldest first.
+list_archives() {
+  local dir=$1 name=${2:-} f base
+  local pattern='*--*'
+  [[ -n $name ]] && pattern="$name--*"
+  for f in "$dir"/$pattern; do
+    base=${f##*/}
+    [[ $base == *.sha256 ]] && continue
+    archive_kind "$base" >/dev/null || continue
+    [[ $(archive_ts "$base") =~ $BKP_TS_REGEX ]] || continue
+    printf '%s\t%s\n' "$(archive_ts "$base")" "$base"
+  done | sort | cut -f2-
+}
+
+# write_checksum FILE - store "HASH  basename" next to FILE.
+write_checksum() {
+  local file=$1
+  (cd "$(dirname "$file")" && sha256sum "${file##*/}") >"$file.sha256"
+}
+
+# verify_one PATH - 0 if the archive matches its .sha256 sidecar.
+verify_one() {
+  local file=$1
+  [[ -f $file.sha256 ]] || { warn "no checksum for ${file##*/}"; return 1; }
+  (cd "$(dirname "$file")" && sha256sum --quiet -c "${file##*/}.sha256") >/dev/null 2>&1
+}
+
+# ---------------------------------------------------------------------------
+# Commands
+# ---------------------------------------------------------------------------
+
+cmd_backup() {
+  require_dest
+  [[ -n $OPT_SOURCE ]] || die "--source is required" "$EX_USAGE"
+  parse_source "$OPT_SOURCE"
+  [[ -n $OPT_NAME ]] || OPT_NAME=$(default_name "$SRC_TARGET")
+  validate_name "$OPT_NAME"
+  mkdir -p "$OPT_DEST"
+  with_lock "$OPT_DEST" _do_backup
+}
+
+_do_backup() {
+  local ts final tmp size
+  ts=$(epoch_to_ts "$(now_epoch)")
+  final="$OPT_DEST/$OPT_NAME--$ts.$(kind_ext "$SRC_KIND")"
+  [[ ! -e $final ]] || die "archive already exists: ${final##*/}"
+
+  # Write to a hidden temp file and rename only on success. rename(2) is
+  # atomic within a filesystem, so `list`/`restore` never see a partial
+  # archive, and a crash mid-backup leaves nothing that looks valid.
+  tmp="$OPT_DEST/.${final##*/}.partial"
+  trap 'rm -f "$tmp" "$tmp.snapshot"' EXIT
+  info "backing up $SRC_KIND:$SRC_TARGET -> ${final##*/}"
+  dump_source "$SRC_KIND" "$SRC_TARGET" "$tmp"
+  mv "$tmp" "$final"
+  trap - EXIT
+  write_checksum "$final"
+  size=$(stat -c %s "$final")
+  info "wrote ${final##*/} ($(human_size "$size"))"
+  printf '%s\n' "$final"
+
+  if ((OPT_NO_ROTATE == 0)); then
+    _do_rotate
+  fi
+}
+
+cmd_list() {
+  require_dest
+  [[ -d $OPT_DEST ]] || die "destination not found: $OPT_DEST"
+  [[ -z $OPT_NAME ]] || validate_name "$OPT_NAME"
+  local base ts kind size status count=0
+  printf '%-24s %-17s %-8s %9s  %s\n' SET TIMESTAMP KIND SIZE CHECKSUM
+  while IFS= read -r base; do
+    [[ -n $base ]] || continue
+    ts=$(archive_ts "$base")
+    kind=$(archive_kind "$base")
+    size=$(human_size "$(stat -c %s "$OPT_DEST/$base")")
+    if [[ -f $OPT_DEST/$base.sha256 ]]; then status=present; else status=MISSING; fi
+    printf '%-24s %-17s %-8s %9s  %s\n' "${base%%--*}" "$ts" "$kind" "$size" "$status"
+    count=$((count + 1))
+  done < <(list_archives "$OPT_DEST" "$OPT_NAME")
+  info "$count archive(s)"
+}
+
+cmd_verify() {
+  require_dest
+  local -a targets=()
+  if ((${#POSITIONAL[@]})); then
+    targets=("${POSITIONAL[@]}")
+  else
+    mapfile -t targets < <(list_archives "$OPT_DEST" "$OPT_NAME")
+  fi
+  ((${#targets[@]})) || die "no archives to verify in $OPT_DEST"
+  local base bad=0
+  for base in "${targets[@]}"; do
+    base=${base##*/}
+    if [[ -f $OPT_DEST/$base ]] && verify_one "$OPT_DEST/$base"; then
+      printf 'OK      %s\n' "$base"
+    else
+      printf 'FAILED  %s\n' "$base"
+      bad=$((bad + 1))
+    fi
+  done
+  ((bad == 0)) || die "$bad archive(s) failed verification"
+}
+
+cmd_restore() {
+  require_dest
+  [[ -n $OPT_TARGET ]] || die "--target is required" "$EX_USAGE"
+  local archive=''
+  if ((${#POSITIONAL[@]})); then
+    archive=${POSITIONAL[0]##*/}
+  else
+    [[ -n $OPT_NAME ]] || die "give an ARCHIVE or --name NAME" "$EX_USAGE"
+    validate_name "$OPT_NAME"
+    local -a all
+    mapfile -t all < <(list_archives "$OPT_DEST" "$OPT_NAME")
+    ((${#all[@]})) || die "no archives for set '$OPT_NAME' in $OPT_DEST"
+    if [[ -n $OPT_AT ]]; then
+      # Point-in-time restore: newest archive taken at or before --at.
+      [[ $OPT_AT =~ $BKP_TS_REGEX ]] || die "--at must look like 20261103T024100Z" "$EX_USAGE"
+      local a
+      for a in "${all[@]}"; do
+        [[ ! $(archive_ts "$a") > $OPT_AT ]] && archive=$a
+      done
+      [[ -n $archive ]] || die "no archive at or before $OPT_AT"
+    else
+      archive=${all[-1]}
+    fi
+  fi
+  local path="$OPT_DEST/$archive" kind
+  [[ -f $path ]] || die "archive not found: $path"
+  kind=$(archive_kind "$archive") || die "unrecognised archive type: $archive"
+  # Never restore something we can't prove is intact.
+  verify_one "$path" || die "checksum verification failed for $archive; refusing to restore"
+  info "restoring $archive -> $OPT_TARGET"
+  restore_archive "$kind" "$path" "$OPT_TARGET" "$OPT_FORCE"
+  info "restore complete"
+}
+
+cmd_rotate() {
+  require_dest
+  [[ -n $OPT_NAME ]] || die "--name is required for rotate" "$EX_USAGE"
+  validate_name "$OPT_NAME"
+  with_lock "$OPT_DEST" _do_rotate
+}
+
+_do_rotate() {
+  if ((OPT_KEEP_LAST + OPT_KEEP_DAILY + OPT_KEEP_WEEKLY + OPT_KEEP_MONTHLY + OPT_KEEP_YEARLY == 0)); then
+    die "refusing to rotate with an all-zero retention policy (would delete everything)" "$EX_USAGE"
+  fi
+  local -a doomed
+  mapfile -t doomed < <(
+    list_archives "$OPT_DEST" "$OPT_NAME" |
+      rotate_select "$OPT_KEEP_LAST" "$OPT_KEEP_DAILY" "$OPT_KEEP_WEEKLY" "$OPT_KEEP_MONTHLY" "$OPT_KEEP_YEARLY"
+  )
+  local base
+  for base in "${doomed[@]}"; do
+    [[ -n $base ]] || continue
+    if ((OPT_DRY_RUN)); then
+      printf 'would delete %s\n' "$base"
+    else
+      rm -f -- "$OPT_DEST/$base" "$OPT_DEST/$base.sha256"
+      info "rotated out $base"
+    fi
+  done
+  debug "rotation removed ${#doomed[@]} archive(s)"
+}
+
+cmd_schedule() {
+  [[ -n $OPT_CRON ]] || die "--cron is required" "$EX_USAGE"
+  local -a fields
+  read -r -a fields <<<"$OPT_CRON"
+  ((${#fields[@]} == 5)) || die "--cron needs 5 fields, e.g. \"15 2 * * *\"" "$EX_USAGE"
+  local f
+  for f in "${fields[@]}"; do
+    [[ $f =~ ^[0-9*/,-]+$ ]] || die "invalid cron field '$f'" "$EX_USAGE"
+  done
+  ((${#PASSTHROUGH[@]})) || die "put the backup arguments after '--'" "$EX_USAGE"
+
+  # Find the set name so re-installing replaces the old line (idempotent).
+  local tag='' i
+  for ((i = 0; i < ${#PASSTHROUGH[@]}; i++)); do
+    [[ ${PASSTHROUGH[i]} == --name ]] && tag=${PASSTHROUGH[i + 1]:-}
+  done
+  [[ -n $tag ]] || die "scheduled backups need an explicit --name" "$EX_USAGE"
+  validate_name "$tag"
+
+  local cmd
+  cmd="$(printf '%q' "$BKP_HOME/bin/bkp") backup"
+  for f in "${PASSTHROUGH[@]}"; do cmd+=" $(printf '%q' "$f")"; done
+  if [[ -n $OPT_LOGFILE ]]; then
+    cmd+=" >>$(printf '%q' "$OPT_LOGFILE") 2>&1"
+  fi
+  # cron treats a bare % as a newline, so it must be escaped.
+  cmd=${cmd//%/\\%}
+  local line="${fields[*]} $cmd # bkp:$tag"
+
+  if ((OPT_INSTALL == 0)); then
+    printf '%s\n' "$line"
+    return
+  fi
+  local crontab_cmd=${BKP_CRONTAB:-crontab}
+  require_cmd "$crontab_cmd"
+  # Read the current table fully *before* writing the new one, then drop any
+  # previous line for this set so re-running is idempotent.
+  local current
+  current=$("$crontab_cmd" -l 2>/dev/null | grep -vF "# bkp:$tag" || true)
+  {
+    [[ -z $current ]] || printf '%s\n' "$current"
+    printf '%s\n' "$line"
+  } | "$crontab_cmd" -
+  info "installed cron entry for '$tag'"
+}
+
+main() {
+  local cmd=${1:-help}
+  (($#)) && shift
+  parse_args "$@"
+  [[ -z $OPT_CONFIG ]] || load_config "$OPT_CONFIG"
+  apply_defaults
+  case $cmd in
+    backup) cmd_backup ;;
+    list | ls) cmd_list ;;
+    verify) cmd_verify ;;
+    restore) cmd_restore ;;
+    rotate) cmd_rotate ;;
+    schedule) cmd_schedule ;;
+    help | -h | --help) usage ;;
+    version | --version) echo "bkp $VERSION" ;;
+    *) usage >&2; die "unknown command: $cmd" "$EX_USAGE" ;;
+  esac
+}
+
+main "$@"

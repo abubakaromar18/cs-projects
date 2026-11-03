@@ -1,0 +1,5 @@
+# local backup output from trying the tool
+/backups/
+*.partial
+.bkp.lock
+bkp.conf
