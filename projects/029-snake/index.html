@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snake</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Snake</h1>
+      <dl class="stats">
+        <div><dt>Score</dt><dd id="score">0</dd></div>
+        <div><dt>Best</dt><dd id="best">0</dd></div>
+        <div><dt>Level</dt><dd id="level">1</dd></div>
+      </dl>
+    </header>
+    <canvas id="board" aria-label="Snake game board"></canvas>
+    <p class="help">Arrows / WASD to move · P or Space to pause · Enter to continue · swipe on touch screens</p>
+    <section>
+      <h2>High scores</h2>
+      <ol id="scores"></ol>
+      <button id="clear" type="button">Clear scores</button>
+    </section>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
