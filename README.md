@@ -39,3 +39,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 028 | [Brainfuck Interpreter](projects/028-brainfuck-interpreter/) | C | Starter |
 | 029 | [Snake](projects/029-snake/) | JavaScript (Canvas) | Starter |
 | 030 | [Caesar/Vigenere Cracker](projects/030-caesar-vigenere-cracker/) | Python | Starter |
+| 031 | [Spam Classifier](projects/031-spam-classifier/) | Python | Starter |

@@ -36,7 +36,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 028 | Brainfuck Interpreter | C | Starter | Compilers & Interpreters | Interpreter plus optimizing pass → [folder](projects/028-brainfuck-interpreter/)
 - [x] 029 | Snake | JavaScript (Canvas) | Starter | Games | Classic snake with levels and high scores → [folder](projects/029-snake/)
 - [x] 030 | Caesar/Vigenere Cracker | Python | Starter | Security | Frequency analysis tools → [folder](projects/030-caesar-vigenere-cracker/)
-- [ ] 031 | Spam Classifier | Python | Starter | Machine Learning & AI | Naive Bayes on SMS dataset
+- [x] 031 | Spam Classifier | Python | Starter | Machine Learning & AI | Naive Bayes on SMS dataset → [folder](projects/031-spam-classifier/)
 - [ ] 032 | Web Scraper Pipeline | Python | Starter | Data Engineering & Analysis | Scrape, clean, store with scheduling
 - [ ] 033 | Weather App | React Native | Starter | Mobile & Desktop Apps | Location-based forecasts
 - [ ] 034 | CI Pipeline Template | GitHub Actions | Starter | DevOps & Cloud | Lint, test, build, release workflow
