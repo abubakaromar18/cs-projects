@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slugkit"
+version = "0.1.0"
+description = "Tiny sample library exercised by the CI pipeline template"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov>=4", "pyyaml>=6"]
+
+[project.scripts]
+slugkit = "slugkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

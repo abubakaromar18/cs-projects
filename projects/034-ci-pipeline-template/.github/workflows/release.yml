@@ -1,0 +1,78 @@
+# Release: triggered by pushing a tag like v1.2.3.
+#
+# 1. Re-runs the full CI pipeline (reusable via workflow_call would also work;
+#    here we simply gate on lint+tests again so a tag can never skip checks).
+# 2. Verifies the tag matches the version in pyproject.toml.
+# 3. Builds the distributions and publishes a GitHub Release with them attached.
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: read
+
+# Never run two releases for the same tag at once, and never cancel one midway.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify tag and run tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check tag matches package version
+        run: python scripts/check_version.py "${GITHUB_REF_NAME}"
+      - name: Lint and test
+        run: |
+          python -m pip install ruff -e ".[test]"
+          ruff check .
+          python -m pytest
+
+  build:
+    name: Build distributions
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install build
+          python -m build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Only this job may write: it needs to create the release.
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - name: Create release with generated notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release create "${GITHUB_REF_NAME}" dist/*
+          --repo "${GITHUB_REPOSITORY}"
+          --title "${GITHUB_REF_NAME}"
+          --generate-notes
