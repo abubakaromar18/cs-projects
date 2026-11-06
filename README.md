@@ -41,3 +41,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 030 | [Caesar/Vigenere Cracker](projects/030-caesar-vigenere-cracker/) | Python | Starter |
 | 031 | [Spam Classifier](projects/031-spam-classifier/) | Python | Starter |
 | 032 | [Web Scraper Pipeline](projects/032-web-scraper-pipeline/) | Python | Starter |
+| 033 | [Weather App](projects/033-weather-app/) | React Native | Starter |
