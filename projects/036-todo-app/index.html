@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elm Todos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app"></div>
+  <!-- Built by `npm run build` (elm make src/Main.elm --output=elm.js) -->
+  <script src="elm.js"></script>
+  <script>
+    // JavaScript side of the ports: Elm owns all state, JS only does I/O.
+    const KEY = "elm-todos";
+    let stored = null;
+    try { stored = JSON.parse(localStorage.getItem(KEY)); } catch (_) {}
+
+    const app = Elm.Main.init({ node: document.getElementById("app"), flags: stored });
+    app.ports.save.subscribe((value) => {
+      try { localStorage.setItem(KEY, JSON.stringify(value)); } catch (_) {}
+    });
+  </script>
+</body>
+</html>

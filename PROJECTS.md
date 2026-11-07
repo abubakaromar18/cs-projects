@@ -41,7 +41,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 033 | Weather App | React Native | Starter | Mobile & Desktop Apps | Location-based forecasts → [folder](projects/033-weather-app/)
 - [x] 034 | CI Pipeline Template | GitHub Actions | Starter | DevOps & Cloud | Lint, test, build, release workflow → [folder](projects/034-ci-pipeline-template/)
 - [x] 035 | Boids Flocking | Processing (Java) | Starter | Graphics & Simulation | Separation, alignment, cohesion → [folder](projects/035-boids-flocking/)
-- [ ] 036 | Todo App | Elm | Starter | Functional & Polyglot | The Elm architecture
+- [x] 036 | Todo App | Elm | Starter | Functional & Polyglot | The Elm architecture → [folder](projects/036-todo-app/)
 - [ ] 037 | Arduino Sensor Logger | C++ (Arduino) | Starter | Embedded & Emulation | Read sensors, log over serial
 - [ ] 038 | Link-in-Bio Page Builder | SvelteKit | Starter | Full-Stack Apps | Custom profile pages
 - [ ] 039 | Prime Sieve Benchmarks | C | Starter | Math & Scientific Computing | Eratosthenes, Atkin, segmented

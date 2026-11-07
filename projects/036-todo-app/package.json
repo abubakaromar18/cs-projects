@@ -1,0 +1,15 @@
+{
+  "name": "elm-todo-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TodoMVC-style app demonstrating The Elm Architecture",
+  "scripts": {
+    "build": "elm make src/Main.elm --optimize --output=elm.js",
+    "dev": "elm make src/Main.elm --output=elm.js && npx --yes serve .",
+    "test": "elm-test"
+  },
+  "devDependencies": {
+    "elm": "0.19.1-6",
+    "elm-test": "0.19.1-revision12"
+  }
+}
