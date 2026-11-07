@@ -43,3 +43,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 032 | [Web Scraper Pipeline](projects/032-web-scraper-pipeline/) | Python | Starter |
 | 033 | [Weather App](projects/033-weather-app/) | React Native | Starter |
 | 034 | [CI Pipeline Template](projects/034-ci-pipeline-template/) | GitHub Actions | Starter |
+| 035 | [Boids Flocking](projects/035-boids-flocking/) | Processing (Java) | Starter |
