@@ -45,3 +45,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 034 | [CI Pipeline Template](projects/034-ci-pipeline-template/) | GitHub Actions | Starter |
 | 035 | [Boids Flocking](projects/035-boids-flocking/) | Processing (Java) | Starter |
 | 036 | [Todo App](projects/036-todo-app/) | Elm | Starter |
+| 037 | [Arduino Sensor Logger](projects/037-arduino-sensor-logger/) | C++ (Arduino) | Starter |
