@@ -45,7 +45,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 037 | Arduino Sensor Logger | C++ (Arduino) | Starter | Embedded & Emulation | Read sensors, log over serial → [folder](projects/037-arduino-sensor-logger/)
 - [x] 038 | Link-in-Bio Page Builder | SvelteKit | Starter | Full-Stack Apps | Custom profile pages → [folder](projects/038-link-in-bio-page-builder/)
 - [x] 039 | Prime Sieve Benchmarks | C | Starter | Math & Scientific Computing | Eratosthenes, Atkin, segmented → [folder](projects/039-prime-sieve-benchmarks/)
-- [ ] 040 | Weather Dashboard | Vue | Starter | Web Frontend | City search, 5-day forecast, unit toggle using Open-Meteo
+- [x] 040 | Weather Dashboard | Vue | Starter | Web Frontend | City search, 5-day forecast, unit toggle using Open-Meteo → [folder](projects/040-weather-dashboard/)
 - [ ] 041 | Pastebin Clone | Node.js (Express) | Starter | Backend & APIs | Paste sharing with expiry and syntax highlighting
 - [ ] 042 | Unit Converter | Go | Starter | CLI Tools | Length, mass, temperature, data size conversions
 - [ ] 043 | Trie Autocomplete | Python | Starter | Data Structures & Algorithms | Prefix search with frequency ranking
