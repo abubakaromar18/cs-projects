@@ -47,3 +47,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 036 | [Todo App](projects/036-todo-app/) | Elm | Starter |
 | 037 | [Arduino Sensor Logger](projects/037-arduino-sensor-logger/) | C++ (Arduino) | Starter |
 | 038 | [Link-in-Bio Page Builder](projects/038-link-in-bio-page-builder/) | SvelteKit | Starter |
+| 039 | [Prime Sieve Benchmarks](projects/039-prime-sieve-benchmarks/) | C | Starter |
