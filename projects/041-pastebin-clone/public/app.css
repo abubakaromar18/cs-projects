@@ -1,0 +1,80 @@
+:root {
+  --bg: #f6f8fa;
+  --fg: #1f2328;
+  --muted: #656d76;
+  --border: #d0d7de;
+  --accent: #0969da;
+  --panel: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+header {
+  padding: 12px 24px;
+  background: var(--fg);
+}
+
+.brand { color: #fff; font-weight: 700; text-decoration: none; }
+
+main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+
+a { color: var(--accent); }
+
+.muted { color: var(--muted); font-size: 13px; }
+.error { background: #ffebe9; border: 1px solid #ff8182; padding: 8px 12px; border-radius: 6px; }
+.warn { background: #fff8c5; border: 1px solid #d4a72c; padding: 8px 12px; border-radius: 6px; }
+
+.paste-form { display: flex; flex-direction: column; gap: 10px; }
+.paste-form input[name="title"],
+.paste-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+  font: inherit;
+}
+.paste-form textarea { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #1f883d;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.recent { list-style: none; padding: 0; }
+.recent li { padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; gap: 12px; }
+
+.meta h1 { margin: 0 0 4px; font-size: 22px; }
+
+pre.code {
+  display: flex;
+  overflow-x: auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+pre.code code { padding: 12px; }
+.gutter {
+  text-align: right;
+  color: var(--muted);
+  user-select: none;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.hljs { background: transparent !important; flex: 1; }
+.link { display: block; padding: 8px; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; word-break: break-all; }

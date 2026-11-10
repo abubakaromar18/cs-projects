@@ -49,3 +49,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 038 | [Link-in-Bio Page Builder](projects/038-link-in-bio-page-builder/) | SvelteKit | Starter |
 | 039 | [Prime Sieve Benchmarks](projects/039-prime-sieve-benchmarks/) | C | Starter |
 | 040 | [Weather Dashboard](projects/040-weather-dashboard/) | Vue | Starter |
+| 041 | [Pastebin Clone](projects/041-pastebin-clone/) | Node.js (Express) | Starter |
