@@ -50,3 +50,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 039 | [Prime Sieve Benchmarks](projects/039-prime-sieve-benchmarks/) | C | Starter |
 | 040 | [Weather Dashboard](projects/040-weather-dashboard/) | Vue | Starter |
 | 041 | [Pastebin Clone](projects/041-pastebin-clone/) | Node.js (Express) | Starter |
+| 042 | [Unit Converter](projects/042-unit-converter/) | Go | Starter |

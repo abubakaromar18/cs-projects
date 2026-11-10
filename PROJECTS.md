@@ -47,7 +47,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 039 | Prime Sieve Benchmarks | C | Starter | Math & Scientific Computing | Eratosthenes, Atkin, segmented → [folder](projects/039-prime-sieve-benchmarks/)
 - [x] 040 | Weather Dashboard | Vue | Starter | Web Frontend | City search, 5-day forecast, unit toggle using Open-Meteo → [folder](projects/040-weather-dashboard/)
 - [x] 041 | Pastebin Clone | Node.js (Express) | Starter | Backend & APIs | Paste sharing with expiry and syntax highlighting → [folder](projects/041-pastebin-clone/)
-- [ ] 042 | Unit Converter | Go | Starter | CLI Tools | Length, mass, temperature, data size conversions
+- [x] 042 | Unit Converter | Go | Starter | CLI Tools | Length, mass, temperature, data size conversions → [folder](projects/042-unit-converter/)
 - [ ] 043 | Trie Autocomplete | Python | Starter | Data Structures & Algorithms | Prefix search with frequency ranking
 - [ ] 044 | Page Replacement Simulator | Python | Starter | Systems & Operating Systems | FIFO, LRU, Clock, OPT comparisons
 - [ ] 045 | Subnet Calculator | TypeScript | Starter | Networking | CIDR math with visual breakdown
