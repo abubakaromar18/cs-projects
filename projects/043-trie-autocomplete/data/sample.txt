@@ -1,0 +1,15 @@
+The theory of computation asks what can be computed and how efficiently. A trie
+is a tree in which every path from the root spells a prefix, so the time to find
+a prefix depends on the length of the prefix and not on the number of stored
+words. That is the reason tries are the classic structure behind autocomplete,
+spell checkers, and routing tables. The trie stores each word once; the
+frequency of the word tells the ranking how popular it is. The more often a
+word is typed, the higher it ranks. Think of the search box in a browser: you
+type "th" and it offers the, that, this, then, there, they, think, through.
+Those suggestions are ranked by how frequently each word was seen. Training the
+trie on a corpus of text gives realistic frequencies. Tree, trees, tries,
+trial, train, training, transfer, transform, translate, transport, travel.
+The prefix "tr" is shared by all of them, so they share the same branch in the
+tree. Throughput, thread, threads, threshold, throw, thrown, thumb, thunder.
+Programming, program, programs, programmer, progress, project, projects,
+prefix, prefixes, prefer, preference, prepare, present, preserve, pressure.

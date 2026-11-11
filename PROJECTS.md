@@ -48,7 +48,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 040 | Weather Dashboard | Vue | Starter | Web Frontend | City search, 5-day forecast, unit toggle using Open-Meteo → [folder](projects/040-weather-dashboard/)
 - [x] 041 | Pastebin Clone | Node.js (Express) | Starter | Backend & APIs | Paste sharing with expiry and syntax highlighting → [folder](projects/041-pastebin-clone/)
 - [x] 042 | Unit Converter | Go | Starter | CLI Tools | Length, mass, temperature, data size conversions → [folder](projects/042-unit-converter/)
-- [ ] 043 | Trie Autocomplete | Python | Starter | Data Structures & Algorithms | Prefix search with frequency ranking
+- [x] 043 | Trie Autocomplete | Python | Starter | Data Structures & Algorithms | Prefix search with frequency ranking → [folder](projects/043-trie-autocomplete/)
 - [ ] 044 | Page Replacement Simulator | Python | Starter | Systems & Operating Systems | FIFO, LRU, Clock, OPT comparisons
 - [ ] 045 | Subnet Calculator | TypeScript | Starter | Networking | CIDR math with visual breakdown
 - [ ] 046 | Data Seeder | Node.js | Starter | Databases & Storage | Realistic fake data generator for schemas

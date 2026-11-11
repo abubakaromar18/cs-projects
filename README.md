@@ -51,3 +51,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 040 | [Weather Dashboard](projects/040-weather-dashboard/) | Vue | Starter |
 | 041 | [Pastebin Clone](projects/041-pastebin-clone/) | Node.js (Express) | Starter |
 | 042 | [Unit Converter](projects/042-unit-converter/) | Go | Starter |
+| 043 | [Trie Autocomplete](projects/043-trie-autocomplete/) | Python | Starter |
