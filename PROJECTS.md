@@ -49,7 +49,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 041 | Pastebin Clone | Node.js (Express) | Starter | Backend & APIs | Paste sharing with expiry and syntax highlighting → [folder](projects/041-pastebin-clone/)
 - [x] 042 | Unit Converter | Go | Starter | CLI Tools | Length, mass, temperature, data size conversions → [folder](projects/042-unit-converter/)
 - [x] 043 | Trie Autocomplete | Python | Starter | Data Structures & Algorithms | Prefix search with frequency ranking → [folder](projects/043-trie-autocomplete/)
-- [ ] 044 | Page Replacement Simulator | Python | Starter | Systems & Operating Systems | FIFO, LRU, Clock, OPT comparisons
+- [x] 044 | Page Replacement Simulator | Python | Starter | Systems & Operating Systems | FIFO, LRU, Clock, OPT comparisons → [folder](projects/044-page-replacement-simulator/)
 - [ ] 045 | Subnet Calculator | TypeScript | Starter | Networking | CIDR math with visual breakdown
 - [ ] 046 | Data Seeder | Node.js | Starter | Databases & Storage | Realistic fake data generator for schemas
 - [ ] 047 | Esoteric Language Design | Python | Starter | Compilers & Interpreters | Design and implement your own tiny language
