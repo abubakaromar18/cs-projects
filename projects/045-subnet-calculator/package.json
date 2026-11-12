@@ -1,0 +1,24 @@
+{
+  "name": "subnet-calculator",
+  "version": "1.0.0",
+  "description": "IPv4 CIDR subnet calculator in TypeScript with a visual bit-level breakdown, subnet splitting, VLSM planning and route summarization",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "subnet": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build --silent && node dist/cli.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"build-test/test/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

@@ -53,3 +53,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 042 | [Unit Converter](projects/042-unit-converter/) | Go | Starter |
 | 043 | [Trie Autocomplete](projects/043-trie-autocomplete/) | Python | Starter |
 | 044 | [Page Replacement Simulator](projects/044-page-replacement-simulator/) | Python | Starter |
+| 045 | [Subnet Calculator](projects/045-subnet-calculator/) | TypeScript | Starter |
