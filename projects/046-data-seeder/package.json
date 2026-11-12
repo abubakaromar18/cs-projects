@@ -1,0 +1,19 @@
+{
+  "name": "data-seeder",
+  "version": "1.0.0",
+  "description": "Deterministic, schema-driven fake data generator that emits JSON, CSV, or SQL INSERTs while respecting foreign keys and unique constraints.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "data-seeder": "bin/seed.js"
+  },
+  "scripts": {
+    "seed": "node bin/seed.js",
+    "example": "node bin/seed.js examples/blog.schema.json --format sql --seed 42",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

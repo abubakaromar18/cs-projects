@@ -1,0 +1,46 @@
+{
+  "tables": {
+    "users": {
+      "count": 5,
+      "fields": {
+        "id": { "type": "serial", "primaryKey": true },
+        "first_name": { "type": "firstName" },
+        "last_name": { "type": "lastName" },
+        "email": { "type": "email", "unique": true },
+        "role": { "type": "enum", "values": ["admin", "editor", "reader"], "weights": [1, 3, 10] },
+        "created_at": { "type": "datetime", "from": "2023-01-01", "to": "2025-01-01" }
+      }
+    },
+    "categories": {
+      "count": 4,
+      "fields": {
+        "id": { "type": "serial", "primaryKey": true },
+        "name": { "type": "word", "unique": true },
+        "parent_id": { "type": "ref", "table": "categories", "column": "id", "nullable": true, "nullRate": 0.5 }
+      }
+    },
+    "posts": {
+      "count": 8,
+      "fields": {
+        "id": { "type": "uuid", "primaryKey": true },
+        "author_id": { "type": "ref", "table": "users", "column": "id" },
+        "category_id": { "type": "ref", "table": "categories", "column": "id" },
+        "title": { "type": "title", "minWords": 3, "maxWords": 6 },
+        "slug": { "type": "slug", "from": "title", "unique": true },
+        "body": { "type": "paragraph" },
+        "published": { "type": "boolean", "probability": 0.7 },
+        "published_at": { "type": "datetime", "from": "2024-01-01", "to": "2025-06-01" },
+        "updated_at": { "type": "datetime", "after": "published_at", "to": "2025-12-31" }
+      }
+    },
+    "comments": {
+      "count": 12,
+      "fields": {
+        "id": { "type": "serial", "primaryKey": true },
+        "post_id": { "type": "ref", "table": "posts", "column": "id" },
+        "user_id": { "type": "ref", "table": "users", "column": "id", "nullable": true, "nullRate": 0.25 },
+        "body": { "type": "sentence" }
+      }
+    }
+  }
+}

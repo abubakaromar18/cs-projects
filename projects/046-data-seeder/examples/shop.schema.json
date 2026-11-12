@@ -1,0 +1,40 @@
+{
+  "tables": {
+    "customers": {
+      "count": 10,
+      "fields": {
+        "id": { "type": "serial", "primaryKey": true },
+        "first_name": { "type": "firstName" },
+        "last_name": { "type": "lastName" },
+        "display_name": { "type": "template", "pattern": "{{first_name}} {{last_name}}" },
+        "email": { "type": "email", "unique": true, "domain": "example.com" },
+        "phone": { "type": "phone", "nullable": true },
+        "street": { "type": "street" },
+        "city": { "type": "city" },
+        "zip": { "type": "zip" },
+        "country": { "type": "country" }
+      }
+    },
+    "products": {
+      "count": 6,
+      "fields": {
+        "sku": { "type": "template", "pattern": "SKU-{{index}}", "primaryKey": true },
+        "name": { "type": "productName" },
+        "price": { "type": "price", "min": 5, "max": 250 },
+        "stock": { "type": "int", "min": 0, "max": 500 },
+        "color": { "type": "hexColor" }
+      }
+    },
+    "orders": {
+      "count": 15,
+      "fields": {
+        "id": { "type": "uuid", "primaryKey": true },
+        "customer_id": { "type": "ref", "table": "customers", "column": "id" },
+        "product_sku": { "type": "ref", "table": "products", "column": "sku" },
+        "quantity": { "type": "int", "min": 1, "max": 5 },
+        "status": { "type": "enum", "values": ["pending", "paid", "shipped", "refunded"], "weights": [2, 4, 6, 1] },
+        "ordered_on": { "type": "date", "from": "2025-01-01", "to": "2025-12-31" }
+      }
+    }
+  }
+}
