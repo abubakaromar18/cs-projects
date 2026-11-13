@@ -53,7 +53,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 045 | Subnet Calculator | TypeScript | Starter | Networking | CIDR math with visual breakdown → [folder](projects/045-subnet-calculator/)
 - [x] 046 | Data Seeder | Node.js | Starter | Databases & Storage | Realistic fake data generator for schemas → [folder](projects/046-data-seeder/)
 - [x] 047 | Esoteric Language Design | Python | Starter | Compilers & Interpreters | Design and implement your own tiny language → [folder](projects/047-esoteric-language-design/)
-- [ ] 048 | Breakout | Rust (macroquad) | Starter | Games | Paddle physics and power-ups
+- [x] 048 | Breakout | Rust (macroquad) | Starter | Games | Paddle physics and power-ups → [folder](projects/048-breakout/)
 - [ ] 049 | Hash Identifier | Go | Starter | Security | Detect hash types by format
 - [ ] 050 | K-Means Visualizer | JavaScript | Starter | Machine Learning & AI | Interactive clustering steps
 - [ ] 051 | SQL Analytics Notebook | SQL + Jupyter | Starter | Data Engineering & Analysis | Analyze a public dataset with SQL

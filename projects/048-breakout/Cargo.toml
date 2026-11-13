@@ -1,0 +1,20 @@
+[package]
+name = "breakout"
+version = "0.1.0"
+edition = "2021"
+description = "Classic Breakout with paddle-angle physics and power-ups, built on macroquad"
+license = "MIT"
+
+[lib]
+name = "breakout"
+path = "src/lib.rs"
+
+[[bin]]
+name = "breakout"
+path = "src/main.rs"
+
+[dependencies]
+macroquad = "0.4"
+
+[profile.release]
+opt-level = 3
