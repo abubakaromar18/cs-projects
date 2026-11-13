@@ -1,0 +1,3 @@
+# Read whitespace-separated non-negative integers and print their sum.
+# & pushes -1 when input runs out.
+0 & : 1 + [ $ + & : 1 + ] $ $ . 10,

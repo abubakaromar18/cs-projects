@@ -52,7 +52,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 044 | Page Replacement Simulator | Python | Starter | Systems & Operating Systems | FIFO, LRU, Clock, OPT comparisons → [folder](projects/044-page-replacement-simulator/)
 - [x] 045 | Subnet Calculator | TypeScript | Starter | Networking | CIDR math with visual breakdown → [folder](projects/045-subnet-calculator/)
 - [x] 046 | Data Seeder | Node.js | Starter | Databases & Storage | Realistic fake data generator for schemas → [folder](projects/046-data-seeder/)
-- [ ] 047 | Esoteric Language Design | Python | Starter | Compilers & Interpreters | Design and implement your own tiny language
+- [x] 047 | Esoteric Language Design | Python | Starter | Compilers & Interpreters | Design and implement your own tiny language → [folder](projects/047-esoteric-language-design/)
 - [ ] 048 | Breakout | Rust (macroquad) | Starter | Games | Paddle physics and power-ups
 - [ ] 049 | Hash Identifier | Go | Starter | Security | Detect hash types by format
 - [ ] 050 | K-Means Visualizer | JavaScript | Starter | Machine Learning & AI | Interactive clustering steps

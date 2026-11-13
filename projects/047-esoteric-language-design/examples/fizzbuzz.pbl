@@ -1,0 +1,17 @@
+# FizzBuzz 1..100.
+# Pebble has no "else", so a done-flag in register d chains the cases.
+
+(P [,]$)                      # word P: print a zero-terminated string
+
+1~i                           # i = 1
+i 101 <                       # loop condition sits on top of the stack
+[ $                           # drop the condition at the start of each pass
+  0~d
+  i 15 % ! { "FizzBuzz" P 1~d }
+  d ! { i 3 % ! { "Fizz" P 1~d } }
+  d ! { i 5 % ! { "Buzz" P 1~d } }
+  d ! { i . }
+  10,                         # newline
+  i 1 + ~i
+  i 101 <                     # recompute the condition
+] $

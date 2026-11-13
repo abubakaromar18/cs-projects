@@ -1,0 +1,5 @@
+# Hello, World! in Pebble.
+# A string pushes a 0 terminator first, then its characters in reverse,
+# so the first character is on top. [,] prints until it reaches the 0,
+# and $ drops that terminator.
+"Hello, World!\n" [,] $

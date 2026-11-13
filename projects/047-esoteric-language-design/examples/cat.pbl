@@ -1,0 +1,3 @@
+# Echo standard input to standard output.
+# ? pushes -1 at end of input; adding 1 turns that into the 0 that ends the loop.
+? 1 + [ 1 - , ? 1 + ] $

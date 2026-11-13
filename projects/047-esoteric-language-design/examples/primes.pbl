@@ -1,0 +1,13 @@
+# Primes below 50 by trial division.
+2~n n 50 <
+[ $
+  1~p 2~d                         # p = is-prime flag, d = divisor
+  d d * n > !                     # while d*d <= n
+  [ $
+    n d % ! { 0~p }               # divisible -> not prime
+    d 1 + ~d
+    d d * n > !
+  ] $
+  p { n . 32, }
+  n 1 + ~n n 50 <
+] $ 10,

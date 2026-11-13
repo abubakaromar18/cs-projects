@@ -1,0 +1,13 @@
+# Recursive factorial, 0! .. 10!
+#
+# F ( n -- n! )
+# The  c : { ... 1 } ! { ... }  idiom builds if/else: the "then" branch
+# leaves a 1 that "!" turns into 0, so the "else" branch is skipped.
+(F : 1 > : { $ : 1 - F * 1 } ! { $ 1 })
+(P [,]$)
+
+0~i i 11 <
+[ $
+  i . "! = " P i F . 10,
+  i 1 + ~i i 11 <
+] $
