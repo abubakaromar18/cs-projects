@@ -57,3 +57,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 046 | [Data Seeder](projects/046-data-seeder/) | Node.js | Starter |
 | 047 | [Esoteric Language Design](projects/047-esoteric-language-design/) | Python | Starter |
 | 048 | [Breakout](projects/048-breakout/) | Rust (macroquad) | Starter |
+| 049 | [Merkle Tree](projects/049-merkle-tree/) | Go | Starter |

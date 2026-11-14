@@ -54,7 +54,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 046 | Data Seeder | Node.js | Starter | Databases & Storage | Realistic fake data generator for schemas → [folder](projects/046-data-seeder/)
 - [x] 047 | Esoteric Language Design | Python | Starter | Compilers & Interpreters | Design and implement your own tiny language → [folder](projects/047-esoteric-language-design/)
 - [x] 048 | Breakout | Rust (macroquad) | Starter | Games | Paddle physics and power-ups → [folder](projects/048-breakout/)
-- [ ] 049 | Hash Identifier | Go | Starter | Security | Detect hash types by format
+- [x] 049 | Merkle Tree | Go | Starter | Security | Build and verify tamper-evidence proofs with hashing → [folder](projects/049-merkle-tree/)
 - [ ] 050 | K-Means Visualizer | JavaScript | Starter | Machine Learning & AI | Interactive clustering steps
 - [ ] 051 | SQL Analytics Notebook | SQL + Jupyter | Starter | Data Engineering & Analysis | Analyze a public dataset with SQL
 - [ ] 052 | Screen Color Picker | Python (Tkinter) | Starter | Mobile & Desktop Apps | Pick and convert colors
