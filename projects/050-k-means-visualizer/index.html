@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>K-Means Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>K-Means Visualizer</h1>
+    <p class="sub">Watch Lloyd's algorithm alternate between <b>assign</b> (E-step) and <b>update</b> (M-step). Click the canvas to add points; shift-click to place your own centroids.</p>
+  </header>
+
+  <main>
+    <section class="stage">
+      <canvas id="canvas" aria-label="Clustering canvas"></canvas>
+      <div id="status" class="status" role="status">Ready.</div>
+    </section>
+
+    <aside class="panel">
+      <fieldset>
+        <legend>Data</legend>
+        <label>Dataset
+          <select id="dataset">
+            <option value="blobs">Gaussian blobs</option>
+            <option value="anisotropic">Uneven clusters</option>
+            <option value="uniform">Uniform noise</option>
+            <option value="moons">Two moons</option>
+            <option value="rings">Concentric rings</option>
+            <option value="empty">Empty (draw your own)</option>
+          </select>
+        </label>
+        <label>Points <output id="nOut">300</output>
+          <input id="n" type="range" min="20" max="800" step="10" value="300">
+        </label>
+        <label>Seed <input id="seed" type="number" value="7" min="0"></label>
+        <button id="regen">Generate</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Algorithm</legend>
+        <label>k <output id="kOut">4</output>
+          <input id="k" type="range" min="1" max="10" value="4">
+        </label>
+        <label>Initialisation
+          <select id="init">
+            <option value="kmeans++">k-means++</option>
+            <option value="forgy">Forgy (random points)</option>
+            <option value="random-partition">Random partition</option>
+          </select>
+        </label>
+        <div class="row">
+          <button id="back" title="Step back (←)">◀ Back</button>
+          <button id="step" title="Step forward (→)">Step ▶</button>
+        </div>
+        <div class="row">
+          <button id="play" class="primary" title="Play/pause (space)">Play</button>
+          <button id="finish">Finish</button>
+          <button id="restart" title="New initialisation (R)">Restart</button>
+        </div>
+        <label>Speed <input id="speed" type="range" min="50" max="1500" step="50" value="500"></label>
+        <label class="check"><input id="regions" type="checkbox" checked> Voronoi regions</label>
+        <label class="check"><input id="links" type="checkbox"> Point→centroid lines</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Stats</legend>
+        <dl class="stats">
+          <dt>Phase</dt><dd id="phase">—</dd>
+          <dt>Iteration</dt><dd id="iter">0</dd>
+          <dt>Inertia</dt><dd id="inertia">—</dd>
+          <dt>Silhouette</dt><dd id="sil">—</dd>
+        </dl>
+      </fieldset>
+
+      <fieldset>
+        <legend>Choosing k</legend>
+        <button id="elbow">Compute elbow curve</button>
+        <canvas id="elbowCanvas" class="elbow" aria-label="Elbow curve"></canvas>
+        <p id="elbowNote" class="note"></p>
+      </fieldset>
+    </aside>
+  </main>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
