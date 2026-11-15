@@ -57,7 +57,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 049 | Merkle Tree | Go | Starter | Security | Build and verify tamper-evidence proofs with hashing → [folder](projects/049-merkle-tree/)
 - [x] 050 | K-Means Visualizer | JavaScript | Starter | Machine Learning & AI | Interactive clustering steps → [folder](projects/050-k-means-visualizer/)
 - [x] 051 | SQL Analytics Notebook | SQL + Jupyter | Starter | Data Engineering & Analysis | Analyze a public dataset with SQL → [folder](projects/051-sql-analytics-notebook/)
-- [ ] 052 | Screen Color Picker | Python (Tkinter) | Starter | Mobile & Desktop Apps | Pick and convert colors
+- [x] 052 | Screen Color Picker | Python (Tkinter) | Starter | Mobile & Desktop Apps | Pick and convert colors → [folder](projects/052-screen-color-picker/)
 - [ ] 053 | Self-hosted Git Server Setup | Docker | Starter | DevOps & Cloud | Gitea with backups
 - [ ] 054 | L-System Plants | Python | Starter | Graphics & Simulation | Grammar-based plant drawing
 - [ ] 055 | Game of Life | Elixir | Starter | Functional & Polyglot | Process-per-cell experiment
