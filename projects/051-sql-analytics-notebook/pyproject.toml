@@ -1,0 +1,17 @@
+[project]
+name = "sql-analytics-notebook"
+version = "0.1.0"
+description = "Exploratory SQL analysis of the Palmer Penguins dataset in SQLite and Jupyter"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab", "ipykernel", "nbformat", "nbclient"]
+dev = ["pytest>=7", "ipykernel", "nbformat", "nbclient"]
+
+[tool.setuptools]
+packages = ["analytics"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

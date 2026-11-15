@@ -59,3 +59,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 048 | [Breakout](projects/048-breakout/) | Rust (macroquad) | Starter |
 | 049 | [Merkle Tree](projects/049-merkle-tree/) | Go | Starter |
 | 050 | [K-Means Visualizer](projects/050-k-means-visualizer/) | JavaScript | Starter |
+| 051 | [SQL Analytics Notebook](projects/051-sql-analytics-notebook/) | SQL + Jupyter | Starter |
