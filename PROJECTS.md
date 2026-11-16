@@ -59,7 +59,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 051 | SQL Analytics Notebook | SQL + Jupyter | Starter | Data Engineering & Analysis | Analyze a public dataset with SQL → [folder](projects/051-sql-analytics-notebook/)
 - [x] 052 | Screen Color Picker | Python (Tkinter) | Starter | Mobile & Desktop Apps | Pick and convert colors → [folder](projects/052-screen-color-picker/)
 - [x] 053 | Self-hosted Git Server Setup | Docker | Starter | DevOps & Cloud | Gitea with backups → [folder](projects/053-self-hosted-git-server-setup/)
-- [ ] 054 | L-System Plants | Python | Starter | Graphics & Simulation | Grammar-based plant drawing
+- [x] 054 | L-System Plants | Python | Starter | Graphics & Simulation | Grammar-based plant drawing → [folder](projects/054-l-system-plants/)
 - [ ] 055 | Game of Life | Elixir | Starter | Functional & Polyglot | Process-per-cell experiment
 - [ ] 056 | Raspberry Pi Dashboard | Python | Starter | Embedded & Emulation | GPIO control web panel
 - [ ] 057 | Code Snippet Manager | Next.js | Starter | Full-Stack Apps | Tags, search, syntax highlight
