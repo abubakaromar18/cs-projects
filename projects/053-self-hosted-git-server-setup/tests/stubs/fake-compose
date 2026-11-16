@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+# Test double for `docker compose`. Used via COMPOSE=tests/stubs/fake-compose.
+#
+# Every invocation is appended to $FAKE_STATE/calls.log. Behaviour is
+# controlled through files/env in $FAKE_STATE so tests can simulate a stopped
+# service, a failing pg_dump, etc.
+#   FAKE_DOWN="gitea"          services reported as not running
+#   FAKE_PGDUMP_FAIL=1         pg_dump exits non-zero
+#   FAKE_GITEA_DUMP_EMPTY=1    gitea dump writes nothing
+#   FAKE_PSQL_FAIL=1           psql exits non-zero
+set -uo pipefail
+: "${FAKE_STATE:?FAKE_STATE must be set}"
+echo "$*" >> "$FAKE_STATE/calls.log"
+
+cmd="$1"; shift
+case "$cmd" in
+  ps)
+    # ps --status running -q <svc>
+    svc="${*: -1}"
+    [[ " ${FAKE_DOWN:-} " == *" $svc "* ]] || echo "container-$svc"
+    ;;
+  exec)
+    # strip exec flags: -T, -u <user>
+    while [[ "$1" == -* ]]; do
+      [[ "$1" == "-u" ]] && shift
+      shift
+    done
+    svc="$1"; shift
+    case "$svc:$1" in
+      db:pg_dump)
+        [[ -n "${FAKE_PGDUMP_FAIL:-}" ]] && { echo "pg_dump: connection refused" >&2; exit 1; }
+        printf -- '-- PostgreSQL database dump\nDROP TABLE IF EXISTS repository;\nCREATE TABLE repository (id int);\n'
+        ;;
+      db:postgres) echo "postgres (PostgreSQL) 16.4" ;;
+      db:pg_isready) echo "accepting connections" ;;
+      db:psql)
+        [[ -n "${FAKE_PSQL_FAIL:-}" ]] && { cat >/dev/null; echo "psql: ERROR" >&2; exit 3; }
+        cat > "$FAKE_STATE/psql_input.sql"
+        ;;
+      gitea:gitea)
+        case "$2" in
+          dump)
+            [[ -n "${FAKE_GITEA_DUMP_EMPTY:-}" ]] && exit 0
+            # Real gitea writes a zip to stdout; any bytes do for the stub.
+            printf 'PK\x03\x04fake-gitea-dump-%s' "${FAKE_DUMP_ID:-1}"
+            ;;
+          --version) echo "Gitea version 1.22.3 built with GNU Make" ;;
+          admin) echo "admin: $*" ;;
+        esac
+        ;;
+      gitea:curl) exit "${FAKE_HEALTH_FAIL:-0}" ;;
+      *) echo "fake-compose: unhandled exec $svc $*" >&2; exit 99 ;;
+    esac
+    ;;
+  run)
+    # Capture the restore mount so tests can check what restore.sh handed over.
+    while [[ $# -gt 0 ]]; do
+      if [[ "$1" == "-v" ]]; then
+        src="${2%%:*}"; ls "$src" > "$FAKE_STATE/run_mount_listing"; shift
+      fi
+      shift
+    done
+    ;;
+  stop|start|up|down|logs|pull|config) : ;;
+  *) echo "fake-compose: unhandled $cmd" >&2; exit 99 ;;
+esac

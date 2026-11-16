@@ -1,0 +1,6 @@
+# Install with: crontab -e   (adjust the path to where you cloned this project)
+# Nightly backup at 03:17, keeping the newest BACKUP_KEEP archives.
+17 3 * * *  cd /opt/gitea-stack && scripts/backup.sh >> backups/backup.log 2>&1
+# Every 30 minutes: alert (non-zero exit -> cron mails MAILTO) if Gitea is down
+# or the newest backup is older than 26 hours or fails its checksum.
+*/30 * * * * cd /opt/gitea-stack && scripts/healthcheck.sh > /dev/null

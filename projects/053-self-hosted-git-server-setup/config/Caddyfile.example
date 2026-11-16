@@ -1,0 +1,5 @@
+# Optional: HTTPS reverse proxy in front of Gitea (Caddy obtains certificates
+# automatically). Set GITEA_ROOT_URL=https://git.example.com/ in .env.
+git.example.com {
+	reverse_proxy 127.0.0.1:3000
+}
