@@ -60,7 +60,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 052 | Screen Color Picker | Python (Tkinter) | Starter | Mobile & Desktop Apps | Pick and convert colors → [folder](projects/052-screen-color-picker/)
 - [x] 053 | Self-hosted Git Server Setup | Docker | Starter | DevOps & Cloud | Gitea with backups → [folder](projects/053-self-hosted-git-server-setup/)
 - [x] 054 | L-System Plants | Python | Starter | Graphics & Simulation | Grammar-based plant drawing → [folder](projects/054-l-system-plants/)
-- [ ] 055 | Game of Life | Elixir | Starter | Functional & Polyglot | Process-per-cell experiment
+- [x] 055 | Game of Life | Elixir | Starter | Functional & Polyglot | Process-per-cell experiment → [folder](projects/055-game-of-life/)
 - [ ] 056 | Raspberry Pi Dashboard | Python | Starter | Embedded & Emulation | GPIO control web panel
 - [ ] 057 | Code Snippet Manager | Next.js | Starter | Full-Stack Apps | Tags, search, syntax highlight
 - [ ] 058 | Graph Plotter | JavaScript | Starter | Math & Scientific Computing | Plot functions with zoom/pan
