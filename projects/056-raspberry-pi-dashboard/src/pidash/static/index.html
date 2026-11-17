@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pi Dashboard</title>
+<style>
+  :root { --bg:#f5f6f8; --card:#fff; --fg:#1d2330; --muted:#6b7385; --on:#1f9d55; --off:#c7ccd6; --accent:#c51a4a; --border:#e2e5eb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151b; --card:#1b1f27; --fg:#e7eaf0; --muted:#8c94a6; --off:#3a4150; --border:#2a303b; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+  header { display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; padding:16px; border-bottom:1px solid var(--border); }
+  h1 { font-size:20px; margin:0; } h1 span { color:var(--accent); }
+  main { max-width:960px; margin:0 auto; padding:16px; display:grid; gap:16px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; }
+  .card h3 { margin:0 0 4px; font-size:15px; } .meta { color:var(--muted); font-size:12px; }
+  .led { width:14px; height:14px; border-radius:50%; background:var(--off); display:inline-block; vertical-align:middle; margin-right:6px; transition:background .15s; }
+  .led.on { background:var(--on); box-shadow:0 0 8px var(--on); }
+  button { margin-top:10px; width:100%; padding:8px; border:0; border-radius:8px; background:var(--accent); color:#fff; font-weight:600; cursor:pointer; }
+  input[type=range] { width:100%; margin-top:10px; }
+  .vitals { display:flex; flex-wrap:wrap; gap:24px; } .vitals b { display:block; font-size:22px; }
+  #err { color:var(--accent); min-height:1.2em; }
+  ul { list-style:none; margin:0; padding:0; font-size:13px; } li { padding:4px 0; border-bottom:1px solid var(--border); }
+  input#token { padding:6px 8px; border-radius:6px; border:1px solid var(--border); background:var(--card); color:var(--fg); }
+</style>
+</head>
+<body>
+<header>
+  <h1><span>&#9679;</span> Pi Dashboard <small class="meta" id="host"></small></h1>
+  <label class="meta">Token <input id="token" type="password" placeholder="(if required)"></label>
+</header>
+<main>
+  <section class="card vitals" id="vitals"></section>
+  <div id="err"></div>
+  <section class="grid" id="pins"></section>
+  <section class="card"><h3>Recent activity</h3><ul id="history"></ul></section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const tokenInput = $("token");
+try { tokenInput.value = localStorage.getItem("pidash-token") || ""; } catch (_) {}
+tokenInput.addEventListener("change", () => {
+  try { localStorage.setItem("pidash-token", tokenInput.value); } catch (_) {}
+  refresh();
+});
+
+async function api(path, body) {
+  const opts = { headers: {} };
+  if (tokenInput.value) opts.headers.Authorization = "Bearer " + tokenInput.value;
+  if (body !== undefined) {
+    opts.method = "POST";
+    opts.headers["Content-Type"] = "application/json";
+    opts.body = JSON.stringify(body);
+  }
+  const res = await fetch(path, opts);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || res.statusText);
+  return data;
+}
+
+function el(tag, props = {}, ...kids) {
+  const n = Object.assign(document.createElement(tag), props);
+  n.append(...kids);
+  return n;
+}
+
+function pinCard(p) {
+  const led = el("span", { className: "led" + (p.value ? " on" : "") });
+  const card = el("div", { className: "card" },
+    el("h3", {}, led, p.name),
+    el("div", { className: "meta" }, `GPIO${p.pin} · ${p.mode}` + (p.mode === "pwm" ? ` · ${p.duty}%` : "")));
+  if (p.mode === "output") {
+    card.append(el("button", { textContent: p.value ? "Turn off" : "Turn on",
+      onclick: () => act(() => api(`/api/pins/${p.pin}/toggle`, {})) }));
+  } else if (p.mode === "pwm") {
+    card.append(el("input", { type: "range", min: 0, max: 100, value: p.duty,
+      onchange: (e) => act(() => api(`/api/pins/${p.pin}`, { duty: Number(e.target.value) })) }));
+  } else {
+    card.append(el("div", { className: "meta", textContent: p.value ? "Reading HIGH" : "Reading LOW" }));
+  }
+  return card;
+}
+
+function fmtUptime(s) {
+  if (s == null) return "–";
+  const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+  return (d ? d + "d " : "") + h + "h " + m + "m";
+}
+
+function stat(label, value) { return el("div", {}, el("span", { className: "meta", textContent: label }), el("b", { textContent: value })); }
+
+async function act(fn) { try { await fn(); await refresh(); } catch (e) { $("err").textContent = e.message; } }
+
+async function refresh() {
+  try {
+    const [pins, sys, hist] = await Promise.all([api("/api/pins"), api("/api/system"), api("/api/history")]);
+    $("err").textContent = "";
+    $("host").textContent = sys.hostname || "";
+    $("pins").replaceChildren(...pins.map(pinCard));
+    const mem = sys.memory_mb;
+    $("vitals").replaceChildren(
+      stat("CPU temp", sys.cpu_temp_c == null ? "–" : sys.cpu_temp_c + " °C"),
+      stat("Load (1m)", sys.load ? sys.load[0] : "–"),
+      stat("Memory free", mem ? `${mem.available} / ${mem.total} MB` : "–"),
+      stat("Uptime", fmtUptime(sys.uptime_s)));
+    $("history").replaceChildren(...(hist.length ? hist.slice(0, 15).map((h) =>
+      el("li", { textContent: `${new Date(h.timestamp * 1000).toLocaleTimeString()} — ${h.name}: ${h.action} → ${h.value}` }))
+      : [el("li", { className: "meta", textContent: "No changes yet" })]));
+  } catch (e) { $("err").textContent = e.message; }
+}
+
+refresh();
+setInterval(refresh, 2000);
+</script>
+</body>
+</html>

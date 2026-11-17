@@ -64,3 +64,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 053 | [Self-hosted Git Server Setup](projects/053-self-hosted-git-server-setup/) | Docker | Starter |
 | 054 | [L-System Plants](projects/054-l-system-plants/) | Python | Starter |
 | 055 | [Game of Life](projects/055-game-of-life/) | Elixir | Starter |
+| 056 | [Raspberry Pi Dashboard](projects/056-raspberry-pi-dashboard/) | Python | Starter |

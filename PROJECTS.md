@@ -61,7 +61,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 053 | Self-hosted Git Server Setup | Docker | Starter | DevOps & Cloud | Gitea with backups → [folder](projects/053-self-hosted-git-server-setup/)
 - [x] 054 | L-System Plants | Python | Starter | Graphics & Simulation | Grammar-based plant drawing → [folder](projects/054-l-system-plants/)
 - [x] 055 | Game of Life | Elixir | Starter | Functional & Polyglot | Process-per-cell experiment → [folder](projects/055-game-of-life/)
-- [ ] 056 | Raspberry Pi Dashboard | Python | Starter | Embedded & Emulation | GPIO control web panel
+- [x] 056 | Raspberry Pi Dashboard | Python | Starter | Embedded & Emulation | GPIO control web panel → [folder](projects/056-raspberry-pi-dashboard/)
 - [ ] 057 | Code Snippet Manager | Next.js | Starter | Full-Stack Apps | Tags, search, syntax highlight
 - [ ] 058 | Graph Plotter | JavaScript | Starter | Math & Scientific Computing | Plot functions with zoom/pan
 - [ ] 059 | Color Palette Generator | Svelte | Starter | Web Frontend | Generate, lock, and export accessible color palettes

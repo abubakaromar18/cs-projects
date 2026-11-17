@@ -1,0 +1,8 @@
+{
+  "pins": [
+    {"pin": 17, "name": "Status LED", "mode": "output"},
+    {"pin": 27, "name": "Relay: Fan", "mode": "output"},
+    {"pin": 18, "name": "Dimmable LED", "mode": "pwm"},
+    {"pin": 22, "name": "Door button", "mode": "input", "pull_up": true}
+  ]
+}
