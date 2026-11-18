@@ -1,0 +1,29 @@
+{
+  "name": "code-snippet-manager",
+  "version": "1.0.0",
+  "description": "Next.js code snippet manager with tags, ranked full-text search, and a hand-written syntax highlighter",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "next": "15.5.28",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.6.3",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "license": "MIT"
+}
