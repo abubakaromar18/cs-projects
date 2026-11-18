@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graph Plotter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="panel">
+    <h1>Graph Plotter</h1>
+    <ul id="fn-list" class="fn-list"></ul>
+    <button id="add" class="add">+ Add function</button>
+    <div class="toolbar">
+      <button id="zoom-in" title="Zoom in (+)">＋</button>
+      <button id="zoom-out" title="Zoom out (−)">−</button>
+      <button id="reset" title="Reset view (0)">Reset</button>
+    </div>
+    <details class="help">
+      <summary>Syntax</summary>
+      <p>Operators <code>+ - * / ^</code>, implicit multiplication (<code>2x</code>, <code>3(x+1)</code>).</p>
+      <p>Functions: <code>sin cos tan asin acos atan sinh cosh tanh sec csc cot sqrt cbrt abs exp ln log log2 floor ceil round sign atan2 mod min max</code></p>
+      <p>Constants: <code>pi e tau</code></p>
+    </details>
+  </aside>
+  <main class="stage">
+    <canvas id="plot" tabindex="0" aria-label="Function plot. Arrow keys pan, plus and minus zoom."></canvas>
+    <div id="readout" class="readout"></div>
+  </main>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

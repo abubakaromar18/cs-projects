@@ -66,3 +66,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 055 | [Game of Life](projects/055-game-of-life/) | Elixir | Starter |
 | 056 | [Raspberry Pi Dashboard](projects/056-raspberry-pi-dashboard/) | Python | Starter |
 | 057 | [Code Snippet Manager](projects/057-code-snippet-manager/) | Next.js | Starter |
+| 058 | [Graph Plotter](projects/058-graph-plotter/) | JavaScript | Starter |

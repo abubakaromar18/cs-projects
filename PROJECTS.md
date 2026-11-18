@@ -63,7 +63,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 055 | Game of Life | Elixir | Starter | Functional & Polyglot | Process-per-cell experiment → [folder](projects/055-game-of-life/)
 - [x] 056 | Raspberry Pi Dashboard | Python | Starter | Embedded & Emulation | GPIO control web panel → [folder](projects/056-raspberry-pi-dashboard/)
 - [x] 057 | Code Snippet Manager | Next.js | Starter | Full-Stack Apps | Tags, search, syntax highlight → [folder](projects/057-code-snippet-manager/)
-- [ ] 058 | Graph Plotter | JavaScript | Starter | Math & Scientific Computing | Plot functions with zoom/pan
+- [x] 058 | Graph Plotter | JavaScript | Starter | Math & Scientific Computing | Plot functions with zoom/pan → [folder](projects/058-graph-plotter/)
 - [ ] 059 | Color Palette Generator | Svelte | Starter | Web Frontend | Generate, lock, and export accessible color palettes
 - [ ] 060 | wc Clone | C | Starter | CLI Tools | Counts lines, words, bytes with flags
 - [ ] 061 | Union-Find Maze Generator | Python | Starter | Data Structures & Algorithms | Kruskal-based maze generation and solver
