@@ -68,3 +68,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 057 | [Code Snippet Manager](projects/057-code-snippet-manager/) | Next.js | Starter |
 | 058 | [Graph Plotter](projects/058-graph-plotter/) | JavaScript | Starter |
 | 059 | [Color Palette Generator](projects/059-color-palette-generator/) | Svelte | Starter |
+| 060 | [wc Clone](projects/060-wc-clone/) | C | Starter |

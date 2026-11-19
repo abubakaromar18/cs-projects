@@ -65,7 +65,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 057 | Code Snippet Manager | Next.js | Starter | Full-Stack Apps | Tags, search, syntax highlight → [folder](projects/057-code-snippet-manager/)
 - [x] 058 | Graph Plotter | JavaScript | Starter | Math & Scientific Computing | Plot functions with zoom/pan → [folder](projects/058-graph-plotter/)
 - [x] 059 | Color Palette Generator | Svelte | Starter | Web Frontend | Generate, lock, and export accessible color palettes → [folder](projects/059-color-palette-generator/)
-- [ ] 060 | wc Clone | C | Starter | CLI Tools | Counts lines, words, bytes with flags
+- [x] 060 | wc Clone | C | Starter | CLI Tools | Counts lines, words, bytes with flags → [folder](projects/060-wc-clone/)
 - [ ] 061 | Union-Find Maze Generator | Python | Starter | Data Structures & Algorithms | Kruskal-based maze generation and solver
 - [ ] 062 | Network Speed Tester | Python | Starter | Networking | Latency, throughput, jitter measurements
 - [ ] 063 | Spreadsheet to SQL Importer | Python | Starter | Databases & Storage | Infer types and load CSV/XLSX into DB
