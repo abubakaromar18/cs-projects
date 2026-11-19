@@ -64,7 +64,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 056 | Raspberry Pi Dashboard | Python | Starter | Embedded & Emulation | GPIO control web panel → [folder](projects/056-raspberry-pi-dashboard/)
 - [x] 057 | Code Snippet Manager | Next.js | Starter | Full-Stack Apps | Tags, search, syntax highlight → [folder](projects/057-code-snippet-manager/)
 - [x] 058 | Graph Plotter | JavaScript | Starter | Math & Scientific Computing | Plot functions with zoom/pan → [folder](projects/058-graph-plotter/)
-- [ ] 059 | Color Palette Generator | Svelte | Starter | Web Frontend | Generate, lock, and export accessible color palettes
+- [x] 059 | Color Palette Generator | Svelte | Starter | Web Frontend | Generate, lock, and export accessible color palettes → [folder](projects/059-color-palette-generator/)
 - [ ] 060 | wc Clone | C | Starter | CLI Tools | Counts lines, words, bytes with flags
 - [ ] 061 | Union-Find Maze Generator | Python | Starter | Data Structures & Algorithms | Kruskal-based maze generation and solver
 - [ ] 062 | Network Speed Tester | Python | Starter | Networking | Latency, throughput, jitter measurements
