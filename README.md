@@ -70,3 +70,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 059 | [Color Palette Generator](projects/059-color-palette-generator/) | Svelte | Starter |
 | 060 | [wc Clone](projects/060-wc-clone/) | C | Starter |
 | 061 | [Union-Find Maze Generator](projects/061-union-find-maze-generator/) | Python | Starter |
+| 062 | [Network Speed Tester](projects/062-network-speed-tester/) | Python | Starter |
