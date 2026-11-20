@@ -69,3 +69,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 058 | [Graph Plotter](projects/058-graph-plotter/) | JavaScript | Starter |
 | 059 | [Color Palette Generator](projects/059-color-palette-generator/) | Svelte | Starter |
 | 060 | [wc Clone](projects/060-wc-clone/) | C | Starter |
+| 061 | [Union-Find Maze Generator](projects/061-union-find-maze-generator/) | Python | Starter |
