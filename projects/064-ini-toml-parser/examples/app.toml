@@ -1,0 +1,28 @@
+# Example application config
+title = "Demo service"
+debug = false
+
+[server]
+host = "127.0.0.1"
+port = 8_080
+timeout = 2.5
+tags = ["web", "api",]   # trailing comma is fine
+
+[server.tls]
+enabled = true
+cert = 'C:\certs\server.pem'   # literal string: no escapes
+
+[database]
+url = "postgres://localhost/demo"
+pool = { min = 1, max = 10 }
+
+[[plugins]]
+name = "auth"
+order = 1
+
+[[plugins]]
+name = "metrics"
+order = 2
+motd = """
+Welcome to the \
+  demo service!"""

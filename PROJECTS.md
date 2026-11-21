@@ -69,7 +69,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 061 | Union-Find Maze Generator | Python | Starter | Data Structures & Algorithms | Kruskal-based maze generation and solver → [folder](projects/061-union-find-maze-generator/)
 - [x] 062 | Network Speed Tester | Python | Starter | Networking | Latency, throughput, jitter measurements → [folder](projects/062-network-speed-tester/)
 - [x] 063 | Spreadsheet to SQL Importer | Python | Starter | Databases & Storage | Infer types and load CSV/XLSX into DB → [folder](projects/063-spreadsheet-to-sql-importer/)
-- [ ] 064 | INI/TOML Parser | Rust | Starter | Compilers & Interpreters | Config parser with good errors
+- [x] 064 | INI/TOML Parser | Rust | Starter | Compilers & Interpreters | Config parser with good errors → [folder](projects/064-ini-toml-parser/)
 - [ ] 065 | 2048 | TypeScript | Starter | Games | Swipe controls and animations
 - [ ] 066 | JWT Debugger | React | Starter | Security | Decode and verify tokens locally
 - [ ] 067 | Chatbot With Intents | Python | Starter | Machine Learning & AI | Rule plus classifier hybrid bot

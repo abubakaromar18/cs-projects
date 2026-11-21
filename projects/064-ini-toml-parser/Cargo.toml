@@ -1,0 +1,16 @@
+[package]
+name = "confparse"
+version = "0.1.0"
+edition = "2021"
+description = "A dependency-free INI / TOML-subset config parser with precise, friendly error messages"
+license = "MIT"
+
+[lib]
+name = "confparse"
+path = "src/lib.rs"
+
+[[bin]]
+name = "confparse"
+path = "src/main.rs"
+
+[dependencies]
