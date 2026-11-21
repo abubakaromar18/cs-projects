@@ -1,0 +1,6 @@
+Employee ID,Full Name,Department,Start Date,Salary,Remote?,Last Login,Zip Code
+1,Ada Lovelace,Engineering,2019-03-04,"125,000",yes,2026-11-01 09:15:00,02134
+2,Alan Turing,Research,2018-07-16,131500.50,no,2026-11-02 14:02:10,10001
+3,Grace Hopper,Engineering,2020-01-02,118000,yes,,94105
+4,Edsger Dijkstra,Research,2021-09-30,109250,NO,2026-10-29 08:00:00,60601
+5,Barbara Liskov,Management,2017-05-22,142000,Y,2026-11-03 17:45:30,N/A
