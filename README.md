@@ -74,3 +74,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 063 | [Spreadsheet to SQL Importer](projects/063-spreadsheet-to-sql-importer/) | Python | Starter |
 | 064 | [INI/TOML Parser](projects/064-ini-toml-parser/) | Rust | Starter |
 | 065 | [2048](projects/065-2048/) | TypeScript | Starter |
+| 066 | [JWT Debugger](projects/066-jwt-debugger/) | React | Starter |

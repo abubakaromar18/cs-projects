@@ -71,7 +71,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 063 | Spreadsheet to SQL Importer | Python | Starter | Databases & Storage | Infer types and load CSV/XLSX into DB → [folder](projects/063-spreadsheet-to-sql-importer/)
 - [x] 064 | INI/TOML Parser | Rust | Starter | Compilers & Interpreters | Config parser with good errors → [folder](projects/064-ini-toml-parser/)
 - [x] 065 | 2048 | TypeScript | Starter | Games | Swipe controls and animations → [folder](projects/065-2048/)
-- [ ] 066 | JWT Debugger | React | Starter | Security | Decode and verify tokens locally
+- [x] 066 | JWT Debugger | React | Starter | Security | Decode and verify tokens locally → [folder](projects/066-jwt-debugger/)
 - [ ] 067 | Chatbot With Intents | Python | Starter | Machine Learning & AI | Rule plus classifier hybrid bot
 - [ ] 068 | Personal Spending Analyzer | R | Starter | Data Engineering & Analysis | Categorize and chart transactions
 - [ ] 069 | QR Code Scanner/Generator | Flutter | Starter | Mobile & Desktop Apps | Camera scan and generation
