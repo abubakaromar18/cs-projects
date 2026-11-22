@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>2048</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>2048</h1>
+      <div class="scores">
+        <div class="score-box"><span class="label">Score</span><span id="score">0</span></div>
+        <div class="score-box"><span class="label">Best</span><span id="best">0</span></div>
+      </div>
+    </header>
+    <div class="controls">
+      <p class="hint">Join the tiles, get to <strong>2048!</strong></p>
+      <button id="undo" type="button" title="Undo (U)">Undo</button>
+      <button id="new-game" type="button">New game</button>
+    </div>
+
+    <div id="board" class="board" aria-label="2048 board">
+      <div id="grid" class="grid"></div>
+      <div id="tiles" class="tiles"></div>
+      <div id="overlay" class="overlay" hidden>
+        <p id="overlay-text"></p>
+        <div class="overlay-buttons">
+          <button id="continue" type="button" hidden>Keep going</button>
+          <button id="retry" type="button">Try again</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="help">Arrow keys, WASD or HJKL to move · swipe on touch screens · U to undo</p>
+  </main>
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>

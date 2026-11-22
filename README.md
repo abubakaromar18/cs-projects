@@ -73,3 +73,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 062 | [Network Speed Tester](projects/062-network-speed-tester/) | Python | Starter |
 | 063 | [Spreadsheet to SQL Importer](projects/063-spreadsheet-to-sql-importer/) | Python | Starter |
 | 064 | [INI/TOML Parser](projects/064-ini-toml-parser/) | Rust | Starter |
+| 065 | [2048](projects/065-2048/) | TypeScript | Starter |
