@@ -1,0 +1,318 @@
+{
+  "rules": [
+    {
+      "intent": "math",
+      "priority": 10,
+      "pattern": "^(?:what is|what's|calculate|compute|solve)?\\s*(?P<expr>[-+]?[\\d.]+(?:\\s*(?:[-+*/%^x×÷]|\\*\\*|//)\\s*[-+]?[\\d.(]+[\\d.)]*)+)\\s*\\??$"
+    },
+    {
+      "intent": "set_name",
+      "priority": 9,
+      "pattern": "\\b(?:my name is|call me|i am called)\\s+(?P<name>[A-Za-z][A-Za-z'-]{0,30})"
+    },
+    {
+      "intent": "ask_my_name",
+      "priority": 8,
+      "pattern": "\\b(?:what(?:'s| is) my name|do you (?:know|remember) my name|who am i)\\b"
+    },
+    {
+      "intent": "time",
+      "priority": 5,
+      "pattern": "\\bwhat(?:'s| is)? the time\\b|\\bwhat time is it\\b"
+    },
+    {
+      "intent": "goodbye",
+      "priority": 5,
+      "pattern": "^\\s*(?:bye|goodbye|quit|exit|see ya|cya)\\s*[.!]*\\s*$"
+    }
+  ],
+  "intents": {
+    "greeting": {
+      "examples": [
+        "hi",
+        "hello",
+        "hey there",
+        "good morning",
+        "good evening",
+        "howdy",
+        "hiya",
+        "yo",
+        "hello bot",
+        "hey",
+        "greetings",
+        "good afternoon",
+        "hi there friend",
+        "sup",
+        "hi bot",
+        "hello there",
+        "hey hey",
+        "morning",
+        "evening",
+        "hi how do you do",
+        "hello friend",
+        "hey buddy",
+        "good day",
+        "hi again"
+      ],
+      "responses": [
+        "Hello{name_suffix}! How can I help?",
+        "Hi{name_suffix}! What's up?"
+      ]
+    },
+    "goodbye": {
+      "examples": [
+        "bye",
+        "goodbye",
+        "see you later",
+        "talk to you soon",
+        "i have to go",
+        "catch you later",
+        "good night",
+        "farewell",
+        "i'm leaving now",
+        "see you tomorrow",
+        "later gator",
+        "i'm off",
+        "bye bye",
+        "goodbye for now",
+        "i'm going now",
+        "talk later",
+        "see you soon",
+        "gotta go",
+        "night night",
+        "until next time",
+        "i'll be going",
+        "bye for now"
+      ],
+      "responses": [
+        "Goodbye{name_suffix}!",
+        "See you later{name_suffix}!"
+      ]
+    },
+    "thanks": {
+      "examples": [
+        "thanks",
+        "thank you",
+        "thanks a lot",
+        "much appreciated",
+        "cheers",
+        "thank you so much",
+        "that was helpful",
+        "great thanks",
+        "ty",
+        "appreciate it",
+        "awesome thank you",
+        "you're a lifesaver",
+        "thanks bot",
+        "thank you very much",
+        "many thanks",
+        "thanks for the help",
+        "thx",
+        "nice one thanks",
+        "you've been helpful",
+        "thanks buddy",
+        "grateful for your help",
+        "cheers mate"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help.",
+        "Any time!"
+      ]
+    },
+    "how_are_you": {
+      "examples": [
+        "how are you",
+        "how are you doing",
+        "how's it going",
+        "how do you feel",
+        "are you okay",
+        "how have you been",
+        "what's up with you",
+        "how is your day",
+        "you doing alright",
+        "how are things",
+        "how are you today",
+        "how you doing",
+        "are you well",
+        "how are you feeling",
+        "you good",
+        "how's your day going",
+        "everything ok with you",
+        "how's life",
+        "are you doing well",
+        "how are you holding up"
+      ],
+      "responses": [
+        "I'm running smoothly, thanks for asking!",
+        "All systems nominal. You?"
+      ]
+    },
+    "bot_identity": {
+      "examples": [
+        "who are you",
+        "what are you",
+        "are you a robot",
+        "are you human",
+        "what is your name",
+        "tell me about yourself",
+        "are you a bot",
+        "who made you",
+        "what can i call you",
+        "introduce yourself",
+        "what is your name bot",
+        "who is this",
+        "are you an ai",
+        "what kind of bot are you",
+        "who built you",
+        "are you real",
+        "tell me who you are",
+        "what should i call you",
+        "are you a person",
+        "what's your name"
+      ],
+      "responses": [
+        "I'm IntentBot, a small chatbot that mixes regex rules with a Naive Bayes classifier."
+      ]
+    },
+    "capabilities": {
+      "examples": [
+        "what can you do",
+        "help",
+        "what do you know",
+        "how can you help me",
+        "what are your features",
+        "show me what you can do",
+        "list your skills",
+        "what should i ask you",
+        "i need help",
+        "what are you capable of",
+        "help me",
+        "what can you help with",
+        "what are your abilities",
+        "can you help me",
+        "what do you do",
+        "what are you good at",
+        "show me your commands",
+        "what skills do you have",
+        "how do i use you",
+        "what can i ask"
+      ],
+      "responses": [
+        "I can chat, tell jokes, do arithmetic (try 'what is 3 * 7'), tell the time, and remember your name."
+      ]
+    },
+    "joke": {
+      "examples": [
+        "tell me a joke",
+        "make me laugh",
+        "say something funny",
+        "know any jokes",
+        "i want to hear a joke",
+        "joke please",
+        "do you know a good joke",
+        "cheer me up",
+        "be funny",
+        "another joke",
+        "got any puns",
+        "tell me another joke",
+        "tell a joke",
+        "say a joke",
+        "i need a laugh",
+        "make a joke",
+        "something funny please",
+        "give me a pun",
+        "tell me something funny",
+        "entertain me",
+        "joke time"
+      ],
+      "responses": [
+        "Why do programmers prefer dark mode? Because light attracts bugs.",
+        "There are 10 kinds of people: those who understand binary and those who don't.",
+        "A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?'",
+        "Why was the function sad? It didn't get called back."
+      ]
+    },
+    "weather": {
+      "examples": [
+        "what's the weather like",
+        "is it going to rain",
+        "will it be sunny today",
+        "how hot is it outside",
+        "weather forecast",
+        "do i need an umbrella",
+        "is it cold out",
+        "what's the temperature",
+        "will it snow tomorrow",
+        "how's the weather",
+        "weather today",
+        "is it raining",
+        "will it rain today",
+        "is it sunny",
+        "how warm is it",
+        "what's the forecast",
+        "is it windy outside",
+        "will it be cold tomorrow",
+        "rain forecast",
+        "what's the weather tomorrow"
+      ],
+      "responses": [
+        "I don't have live weather data, but a window is a great sensor!"
+      ]
+    },
+    "time": {
+      "examples": [
+        "what time is it",
+        "tell me the time",
+        "current time",
+        "do you have the time",
+        "what's the time now",
+        "clock please",
+        "what hour is it",
+        "time check",
+        "what's the time",
+        "time please",
+        "tell me what time it is",
+        "can you tell me the time",
+        "current hour",
+        "what's the clock say",
+        "have you got the time",
+        "time now"
+      ],
+      "responses": [
+        "It's {time}."
+      ]
+    },
+    "set_name": {
+      "examples": [],
+      "responses": [
+        "Nice to meet you, {name}!"
+      ],
+      "rule_only": true
+    },
+    "ask_my_name": {
+      "examples": [
+        "what is my name",
+        "do you remember my name",
+        "who am i",
+        "do you know my name",
+        "whats my name",
+        "remember my name",
+        "what did i say my name was",
+        "say my name",
+        "what do you call me",
+        "tell me my name"
+      ],
+      "responses": [
+        "You're {name}."
+      ]
+    },
+    "math": {
+      "examples": [],
+      "responses": [
+        "{expr} = {result}"
+      ],
+      "rule_only": true
+    }
+  }
+}

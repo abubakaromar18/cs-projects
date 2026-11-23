@@ -72,7 +72,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 064 | INI/TOML Parser | Rust | Starter | Compilers & Interpreters | Config parser with good errors → [folder](projects/064-ini-toml-parser/)
 - [x] 065 | 2048 | TypeScript | Starter | Games | Swipe controls and animations → [folder](projects/065-2048/)
 - [x] 066 | JWT Debugger | React | Starter | Security | Decode and verify tokens locally → [folder](projects/066-jwt-debugger/)
-- [ ] 067 | Chatbot With Intents | Python | Starter | Machine Learning & AI | Rule plus classifier hybrid bot
+- [x] 067 | Chatbot With Intents | Python | Starter | Machine Learning & AI | Rule plus classifier hybrid bot → [folder](projects/067-chatbot-with-intents/)
 - [ ] 068 | Personal Spending Analyzer | R | Starter | Data Engineering & Analysis | Categorize and chart transactions
 - [ ] 069 | QR Code Scanner/Generator | Flutter | Starter | Mobile & Desktop Apps | Camera scan and generation
 - [ ] 070 | Home Lab Dashboard | TypeScript | Starter | DevOps & Cloud | Links and status for self-hosted services

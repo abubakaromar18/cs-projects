@@ -75,3 +75,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 064 | [INI/TOML Parser](projects/064-ini-toml-parser/) | Rust | Starter |
 | 065 | [2048](projects/065-2048/) | TypeScript | Starter |
 | 066 | [JWT Debugger](projects/066-jwt-debugger/) | React | Starter |
+| 067 | [Chatbot With Intents](projects/067-chatbot-with-intents/) | Python | Starter |
