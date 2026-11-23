@@ -1,0 +1,13 @@
+Package: spendinganalyzer
+Title: Categorize and Chart Personal Transactions
+Version: 0.1.0
+Description: Normalises bank CSV exports, categorises transactions with
+    prioritised regex rules, summarises spending by category and month,
+    compares against budgets, detects recurring charges and outliers, and
+    renders charts with base graphics.
+License: MIT
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports: graphics, grDevices, stats, utils
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
