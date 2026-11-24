@@ -1,0 +1,23 @@
+name: qr_studio
+description: Scan QR codes with the camera and generate them with a from-scratch QR encoder (Flutter).
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Camera + barcode detection (ML Kit on Android, Vision on iOS/macOS).
+  # Generation does NOT use a package: see lib/src/core/.
+  mobile_scanner: ^6.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,5 @@
+name: flutter_test
+description: Minimal VM-only stand-in for flutter_test, used by tool/run_core_tests.sh.
+publish_to: none
+environment:
+  sdk: ">=3.4.0 <4.0.0"

@@ -77,3 +77,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 066 | [JWT Debugger](projects/066-jwt-debugger/) | React | Starter |
 | 067 | [Chatbot With Intents](projects/067-chatbot-with-intents/) | Python | Starter |
 | 068 | [Personal Spending Analyzer](projects/068-personal-spending-analyzer/) | R | Starter |
+| 069 | [QR Code Scanner/Generator](projects/069-qr-code-scanner-generator/) | Dart (Flutter) | Starter |

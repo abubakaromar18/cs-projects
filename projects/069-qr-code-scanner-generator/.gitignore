@@ -1,0 +1,22 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/
+
+# Generated platform runners (recreate with `flutter create .`)
+android/
+ios/
+linux/
+macos/
+windows/
+web/
+
+# IDE
+.idea/
+*.iml
+.vscode/

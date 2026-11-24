@@ -74,7 +74,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 066 | JWT Debugger | React | Starter | Security | Decode and verify tokens locally → [folder](projects/066-jwt-debugger/)
 - [x] 067 | Chatbot With Intents | Python | Starter | Machine Learning & AI | Rule plus classifier hybrid bot → [folder](projects/067-chatbot-with-intents/)
 - [x] 068 | Personal Spending Analyzer | R | Starter | Data Engineering & Analysis | Categorize and chart transactions → [folder](projects/068-personal-spending-analyzer/)
-- [ ] 069 | QR Code Scanner/Generator | Flutter | Starter | Mobile & Desktop Apps | Camera scan and generation
+- [x] 069 | QR Code Scanner/Generator | Flutter | Starter | Mobile & Desktop Apps | Camera scan and generation → [folder](projects/069-qr-code-scanner-generator/)
 - [ ] 070 | Home Lab Dashboard | TypeScript | Starter | DevOps & Cloud | Links and status for self-hosted services
 - [ ] 071 | Pixel Sorting Art | Python | Starter | Graphics & Simulation | Glitch art generator
 - [ ] 072 | Static Blog Generator | Ruby | Starter | Functional & Polyglot | ERB templates and markdown
