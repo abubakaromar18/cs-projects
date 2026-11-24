@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Lab</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header>
+    <div class="title-row">
+      <h1 id="title">Home Lab</h1>
+      <span id="updated" class="muted"></span>
+    </div>
+    <div id="banner" class="banner unknown" role="status" aria-live="polite">Loading…</div>
+    <div class="toolbar">
+      <input id="filter" type="search" placeholder="Filter services  ( / )" aria-label="Filter services" autocomplete="off">
+      <button id="refresh" type="button" title="Check all services now">↻ Check now</button>
+    </div>
+    <div id="error" class="error" role="alert" hidden></div>
+  </header>
+  <main id="groups"></main>
+  <footer class="muted">homelab-dashboard · status from <code>/api/status</code></footer>
+</body>
+</html>

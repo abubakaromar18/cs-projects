@@ -78,3 +78,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 067 | [Chatbot With Intents](projects/067-chatbot-with-intents/) | Python | Starter |
 | 068 | [Personal Spending Analyzer](projects/068-personal-spending-analyzer/) | R | Starter |
 | 069 | [QR Code Scanner/Generator](projects/069-qr-code-scanner-generator/) | Dart (Flutter) | Starter |
+| 070 | [Home Lab Dashboard](projects/070-home-lab-dashboard/) | TypeScript | Starter |

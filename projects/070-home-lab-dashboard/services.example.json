@@ -1,0 +1,33 @@
+{
+  "title": "My Home Lab",
+  "intervalSeconds": 30,
+  "historySize": 60,
+  "groups": [
+    {
+      "name": "Media",
+      "services": [
+        { "name": "Jellyfin", "url": "http://192.168.1.10:8096", "icon": "🎬", "description": "Movies & TV",
+          "check": { "type": "http", "path": "/health", "expectStatus": [200] } },
+        { "name": "Navidrome", "url": "http://192.168.1.10:4533", "icon": "🎵" }
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "services": [
+        { "name": "Proxmox", "url": "https://192.168.1.2:8006", "icon": "🖥️",
+          "check": { "type": "http", "insecure": true, "slowMs": 800 } },
+        { "name": "Pi-hole", "url": "http://192.168.1.3/admin", "icon": "🛡️" },
+        { "name": "NAS (SMB)", "url": "smb://192.168.1.20", "icon": "💾",
+          "check": { "type": "tcp", "host": "192.168.1.20", "port": 445 } },
+        { "name": "Router", "url": "http://192.168.1.1", "icon": "📡", "check": { "type": "none" } }
+      ]
+    },
+    {
+      "name": "This machine",
+      "services": [
+        { "name": "Dashboard itself", "url": "http://127.0.0.1:8080", "icon": "🏠",
+          "check": { "type": "http", "path": "/api/health" } }
+      ]
+    }
+  ]
+}

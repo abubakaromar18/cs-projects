@@ -1,0 +1,20 @@
+{
+  "name": "home-lab-dashboard",
+  "version": "1.0.0",
+  "description": "Self-hosted home lab dashboard: links to your services with live HTTP/TCP health checks, latency and uptime history",
+  "type": "module",
+  "private": true,
+  "bin": { "homelab-dashboard": "dist/server/main.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build --silent && node dist/server/main.js --config services.example.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"build-test/test/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}
