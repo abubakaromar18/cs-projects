@@ -1,0 +1,6 @@
+title: Notes from the Stack
+description: Short essays on programming, systems and the craft of software.
+author: Omar
+base_url: http://localhost:4000
+base_path: ""
+per_page: 3

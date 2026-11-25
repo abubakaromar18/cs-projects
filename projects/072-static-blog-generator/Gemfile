@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# Runtime has no dependencies beyond the Ruby standard library.
+group :development do
+  gem "minitest", "~> 5.20"
+  gem "rake", "~> 13.0"
+end

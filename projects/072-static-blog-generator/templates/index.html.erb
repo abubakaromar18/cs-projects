@@ -1,0 +1,13 @@
+<%- if @posts.empty? -%>
+<p class="empty">No posts yet. Run <code>bin/blog new "Hello"</code> to write one.</p>
+<%- end -%>
+<%- @posts.each do |post| -%>
+<%= partial "post_card", post: post %>
+<%- end -%>
+<%- if @pager[:total] > 1 -%>
+<nav class="pager">
+  <%- if @pager[:prev_url] -%><a rel="prev" href="<%= @pager[:prev_url] %>">&larr; Newer</a><%- end -%>
+  <span>Page <%= @pager[:number] %> of <%= @pager[:total] %></span>
+  <%- if @pager[:next_url] -%><a rel="next" href="<%= @pager[:next_url] %>">Older &rarr;</a><%- end -%>
+</nav>
+<%- end -%>

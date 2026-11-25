@@ -1,0 +1,5 @@
+<%- @title = "##{@tag}" -%>
+<h1 class="tag-title">Posts tagged <em>#<%= h @tag %></em> <small>(<%= @posts.size %>)</small></h1>
+<%- @posts.each do |post| -%>
+<%= partial "post_card", post: post %>
+<%- end -%>

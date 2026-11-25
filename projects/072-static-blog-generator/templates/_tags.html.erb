@@ -1,0 +1,7 @@
+<%- unless @tags.empty? -%>
+<ul class="tags">
+  <%- @tags.each do |tag| -%>
+  <li><a href="<%= tag_url tag %>">#<%= h tag %></a></li>
+  <%- end -%>
+</ul>
+<%- end -%>

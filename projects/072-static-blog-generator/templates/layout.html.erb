@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= @title ? "#{h @title} · " : "" %><%= h site.title %></title>
+  <meta name="description" content="<%= h(@description || site.description) %>">
+  <link rel="stylesheet" href="<%= url_for "/style.css" %>">
+  <link rel="alternate" type="application/atom+xml" title="<%= h site.title %>" href="<%= url_for "/feed.xml" %>">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="<%= url_for "/" %>"><%= h site.title %></a>
+    <nav>
+      <%- site.pages.each do |page| -%>
+      <a href="<%= url_for page.url %>"><%= h page.title %></a>
+      <%- end -%>
+      <a href="<%= url_for "/feed.xml" %>">Feed</a>
+    </nav>
+  </header>
+  <main>
+<%= yield %>
+  </main>
+  <footer class="site-footer">
+    &copy; <%= (site.posts.first&.date || Date.today).year %> <%= h site.author %> · Built with StaticBlog
+  </footer>
+</body>
+</html>

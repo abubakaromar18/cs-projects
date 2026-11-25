@@ -80,3 +80,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 069 | [QR Code Scanner/Generator](projects/069-qr-code-scanner-generator/) | Dart (Flutter) | Starter |
 | 070 | [Home Lab Dashboard](projects/070-home-lab-dashboard/) | TypeScript | Starter |
 | 071 | [Pixel Sorting Art](projects/071-pixel-sorting-art/) | Python | Starter |
+| 072 | [Static Blog Generator](projects/072-static-blog-generator/) | Ruby | Starter |

@@ -1,0 +1,23 @@
+:root { --fg: #1d1d1f; --muted: #6b6b70; --accent: #b4235a; --bg: #fdfcfa; --code: #f2efe9; }
+@media (prefers-color-scheme: dark) {
+  :root { --fg: #e9e7e2; --muted: #9a978f; --accent: #ff7aa8; --bg: #16161a; --code: #24242a; }
+}
+* { box-sizing: border-box; }
+body { margin: 0 auto; max-width: 42rem; padding: 0 1rem; font: 17px/1.65 Georgia, "Iowan Old Style", serif; color: var(--fg); background: var(--bg); }
+a { color: var(--accent); }
+.site-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; padding: 1.5rem 0; border-bottom: 1px solid var(--code); }
+.brand { font-weight: bold; font-size: 1.25rem; text-decoration: none; color: var(--fg); }
+nav a { margin-left: 1rem; }
+.card { padding: 1.25rem 0; border-bottom: 1px solid var(--code); }
+.card h2 { margin: 0 0 .25rem; font-size: 1.4rem; }
+.meta { color: var(--muted); font-size: .9rem; margin: 0 0 .5rem; }
+.tags { list-style: none; padding: 0; display: flex; gap: .5rem; flex-wrap: wrap; font-size: .85rem; }
+code { font: .88em ui-monospace, Menlo, monospace; background: var(--code); padding: .1em .3em; border-radius: 3px; }
+pre { background: var(--code); padding: 1rem; overflow-x: auto; border-radius: 6px; }
+pre code { padding: 0; background: none; }
+blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--accent); color: var(--muted); }
+.toc { background: var(--code); padding: .75rem 1rem; border-radius: 6px; font-size: .92rem; }
+.toc ul { margin: .25rem 0 0; padding-left: 1.2rem; }
+.toc-3 { margin-left: 1rem; }
+.pager { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem 0; }
+.site-footer { color: var(--muted); font-size: .85rem; padding: 2rem 0; }

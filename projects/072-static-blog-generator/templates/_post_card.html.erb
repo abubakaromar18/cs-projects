@@ -1,0 +1,6 @@
+<article class="card">
+  <h2><a href="<%= url_for @post.url %>"><%= h @post.title %></a></h2>
+  <p class="meta"><time datetime="<%= @post.date.iso8601 %>"><%= format_date @post.date %></time> · <%= @post.reading_minutes %> min read</p>
+  <p><%= h @post.summary %></p>
+  <%= partial "tags", tags: @post.tags %>
+</article>

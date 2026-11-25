@@ -1,0 +1,26 @@
+<%- @title = @post.title; @description = @post.summary -%>
+<article class="post">
+  <header>
+    <h1><%= h @post.title %></h1>
+    <p class="meta"><time datetime="<%= @post.date.iso8601 %>"><%= format_date @post.date %></time> · <%= @post.reading_minutes %> min read</p>
+    <%= partial "tags", tags: @post.tags %>
+  </header>
+  <%- toc = @post.headings.select { |hd| hd.level.between?(2, 3) } -%>
+  <%- if toc.size >= 3 -%>
+  <nav class="toc">
+    <strong>Contents</strong>
+    <ul>
+      <%- toc.each do |hd| -%>
+      <li class="toc-<%= hd.level %>"><a href="#<%= hd.id %>"><%= h hd.text %></a></li>
+      <%- end -%>
+    </ul>
+  </nav>
+  <%- end -%>
+  <div class="content">
+<%= @post.html %>
+  </div>
+</article>
+<nav class="pager">
+  <%- if @older -%><a rel="prev" href="<%= url_for @older.url %>">&larr; <%= h @older.title %></a><%- else -%><span></span><%- end -%>
+  <%- if @newer -%><a rel="next" href="<%= url_for @newer.url %>"><%= h @newer.title %> &rarr;</a><%- end -%>
+</nav>
