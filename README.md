@@ -82,3 +82,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 071 | [Pixel Sorting Art](projects/071-pixel-sorting-art/) | Python | Starter |
 | 072 | [Static Blog Generator](projects/072-static-blog-generator/) | Ruby | Starter |
 | 073 | [Serial Terminal](projects/073-serial-terminal/) | Go | Starter |
+| 074 | [Monte Carlo Pi & Options](projects/074-monte-carlo-pi-options/) | Python | Starter |
