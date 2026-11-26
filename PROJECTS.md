@@ -78,7 +78,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 070 | Home Lab Dashboard | TypeScript | Starter | DevOps & Cloud | Links and status for self-hosted services → [folder](projects/070-home-lab-dashboard/)
 - [x] 071 | Pixel Sorting Art | Python | Starter | Graphics & Simulation | Glitch art generator → [folder](projects/071-pixel-sorting-art/)
 - [x] 072 | Static Blog Generator | Ruby | Starter | Functional & Polyglot | ERB templates and markdown → [folder](projects/072-static-blog-generator/)
-- [ ] 073 | Serial Terminal | Go | Starter | Embedded & Emulation | Cross-platform serial monitor
+- [x] 073 | Serial Terminal | Go | Starter | Embedded & Emulation | Cross-platform serial monitor → [folder](projects/073-serial-terminal/)
 - [ ] 074 | Monte Carlo Pi & Options | Python | Starter | Math & Scientific Computing | Simulation estimates
 - [ ] 075 | Typing Speed Test | TypeScript | Starter | Web Frontend | WPM/accuracy test with per-key heatmap
 - [ ] 076 | File Organizer | Python | Starter | CLI Tools | Sort files into folders by type/date with dry run

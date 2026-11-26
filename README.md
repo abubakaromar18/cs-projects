@@ -81,3 +81,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 070 | [Home Lab Dashboard](projects/070-home-lab-dashboard/) | TypeScript | Starter |
 | 071 | [Pixel Sorting Art](projects/071-pixel-sorting-art/) | Python | Starter |
 | 072 | [Static Blog Generator](projects/072-static-blog-generator/) | Ruby | Starter |
+| 073 | [Serial Terminal](projects/073-serial-terminal/) | Go | Starter |
