@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Typing Speed Test</h1>
+    <nav class="modes" aria-label="Test mode">
+      <button data-mode="words-10">10 words</button>
+      <button data-mode="words-25" class="active">25 words</button>
+      <button data-mode="words-50">50 words</button>
+      <span class="sep"></span>
+      <button data-mode="time-15">15s</button>
+      <button data-mode="time-30">30s</button>
+      <button data-mode="time-60">60s</button>
+      <span class="sep"></span>
+      <label><input type="checkbox" id="opt-punct"> punctuation</label>
+      <label><input type="checkbox" id="opt-num"> numbers</label>
+    </nav>
+  </header>
+
+  <main>
+    <section class="live" aria-live="polite">
+      <div><span id="live-wpm">0</span><small>wpm</small></div>
+      <div><span id="live-acc">100%</span><small>accuracy</small></div>
+      <div><span id="live-timer">0/25</span><small>progress</small></div>
+    </section>
+
+    <div id="passage" class="passage" tabindex="0" aria-label="Click here and start typing"></div>
+    <p class="hint">Click the text and start typing. <kbd>Tab</kbd> / <kbd>Esc</kbd> restarts, <kbd>Ctrl</kbd>+<kbd>Backspace</kbd> deletes a word.</p>
+    <p id="focus-note" class="focus-note"></p>
+    <div class="actions">
+      <button id="btn-restart">New test</button>
+      <button id="btn-practice">Practise weak keys</button>
+      <button id="btn-normal">Normal words</button>
+    </div>
+
+    <section id="results" hidden>
+      <h2>Results <span id="res-pb" class="pb" hidden>New personal best!</span></h2>
+      <div class="stats">
+        <div><b id="res-wpm"></b><small>net wpm</small></div>
+        <div><b id="res-raw"></b><small>raw wpm</small></div>
+        <div><b id="res-acc"></b><small>accuracy</small></div>
+        <div><b id="res-cons"></b><small>consistency</small></div>
+        <div><b id="res-time"></b><small>time</small></div>
+        <div><b id="res-chars"></b><small>correct / wrong / fixed</small></div>
+      </div>
+
+      <h3>Speed over time</h3>
+      <svg id="chart" viewBox="0 0 600 160" preserveAspectRatio="none" role="img" aria-label="WPM over time"></svg>
+      <p class="legend"><span class="sw wpm"></span> net wpm <span class="sw burst"></span> burst wpm <span class="sw err"></span> errors</p>
+    </section>
+
+    <section class="heat">
+      <h3>Per-key heatmap
+        <select id="heat-mode"><option value="errors">errors</option><option value="latency">latency</option></select>
+        <select id="heat-scope"><option value="run">this run</option><option value="lifetime">lifetime</option></select>
+      </h3>
+      <div id="heatmap" class="keyboard"></div>
+      <p>Weakest keys: <b id="weak-keys">none yet</b> · Slowest: <span id="slow-keys">–</span></p>
+    </section>
+
+    <section class="history">
+      <h3>Recent runs <small>(avg of last 10: <span id="avg-wpm">–</span> wpm)</small>
+        <button id="btn-clear" class="link">clear</button></h3>
+      <table><thead><tr><th>When</th><th>Mode</th><th>WPM</th><th>Acc</th></tr></thead>
+        <tbody id="history-body"></tbody></table>
+    </section>
+  </main>
+  <script type="module" src="/dist/web/app.js"></script>
+</body>
+</html>

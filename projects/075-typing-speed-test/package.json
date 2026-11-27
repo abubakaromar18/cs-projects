@@ -1,0 +1,19 @@
+{
+  "name": "typing-speed-test",
+  "version": "1.0.0",
+  "description": "Browser typing speed test with WPM/accuracy scoring and a per-key error/latency heatmap",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build --silent && node dist/server/serve.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test \"build-test/test/*.test.js\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

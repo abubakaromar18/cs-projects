@@ -80,7 +80,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 072 | Static Blog Generator | Ruby | Starter | Functional & Polyglot | ERB templates and markdown → [folder](projects/072-static-blog-generator/)
 - [x] 073 | Serial Terminal | Go | Starter | Embedded & Emulation | Cross-platform serial monitor → [folder](projects/073-serial-terminal/)
 - [x] 074 | Monte Carlo Pi & Options | Python | Starter | Math & Scientific Computing | Simulation estimates → [folder](projects/074-monte-carlo-pi-options/)
-- [ ] 075 | Typing Speed Test | TypeScript | Starter | Web Frontend | WPM/accuracy test with per-key heatmap
+- [x] 075 | Typing Speed Test | TypeScript | Starter | Web Frontend | WPM/accuracy test with per-key heatmap → [folder](projects/075-typing-speed-test/)
 - [ ] 076 | File Organizer | Python | Starter | CLI Tools | Sort files into folders by type/date with dry run
 - [ ] 077 | Sudoku Solver | Python | Starter | Data Structures & Algorithms | Backtracking with constraint propagation
 - [ ] 078 | Wake-on-LAN Tool | Python | Starter | Networking | Send magic packets to devices
