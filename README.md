@@ -84,3 +84,4 @@ A collection of computer science projects across 20 areas and 40+ languages, fro
 | 073 | [Serial Terminal](projects/073-serial-terminal/) | Go | Starter |
 | 074 | [Monte Carlo Pi & Options](projects/074-monte-carlo-pi-options/) | Python | Starter |
 | 075 | [Typing Speed Test](projects/075-typing-speed-test/) | TypeScript | Starter |
+| 076 | [File Organizer](projects/076-file-organizer/) | Python | Starter |

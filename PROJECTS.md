@@ -81,7 +81,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 073 | Serial Terminal | Go | Starter | Embedded & Emulation | Cross-platform serial monitor → [folder](projects/073-serial-terminal/)
 - [x] 074 | Monte Carlo Pi & Options | Python | Starter | Math & Scientific Computing | Simulation estimates → [folder](projects/074-monte-carlo-pi-options/)
 - [x] 075 | Typing Speed Test | TypeScript | Starter | Web Frontend | WPM/accuracy test with per-key heatmap → [folder](projects/075-typing-speed-test/)
-- [ ] 076 | File Organizer | Python | Starter | CLI Tools | Sort files into folders by type/date with dry run
+- [x] 076 | File Organizer | Python | Starter | CLI Tools | Sort files into folders by type/date with dry run → [folder](projects/076-file-organizer/)
 - [ ] 077 | Sudoku Solver | Python | Starter | Data Structures & Algorithms | Backtracking with constraint propagation
 - [ ] 078 | Wake-on-LAN Tool | Python | Starter | Networking | Send magic packets to devices
 - [ ] 079 | Inventory DB App | Java (JDBC) | Starter | Databases & Storage | Stock tracking with transactions
