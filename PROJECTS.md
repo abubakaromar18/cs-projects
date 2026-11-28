@@ -82,7 +82,7 @@ Format: `- [ ] NNN | Title | Language/stack | Level | Area | Description`
 - [x] 074 | Monte Carlo Pi & Options | Python | Starter | Math & Scientific Computing | Simulation estimates → [folder](projects/074-monte-carlo-pi-options/)
 - [x] 075 | Typing Speed Test | TypeScript | Starter | Web Frontend | WPM/accuracy test with per-key heatmap → [folder](projects/075-typing-speed-test/)
 - [x] 076 | File Organizer | Python | Starter | CLI Tools | Sort files into folders by type/date with dry run → [folder](projects/076-file-organizer/)
-- [ ] 077 | Sudoku Solver | Python | Starter | Data Structures & Algorithms | Backtracking with constraint propagation
+- [x] 077 | Sudoku Solver | Python | Starter | Data Structures & Algorithms | Backtracking with constraint propagation → [folder](projects/077-sudoku-solver/)
 - [ ] 078 | Wake-on-LAN Tool | Python | Starter | Networking | Send magic packets to devices
 - [ ] 079 | Inventory DB App | Java (JDBC) | Starter | Databases & Storage | Stock tracking with transactions
 - [ ] 080 | Stack Calculator (RPN) | Lua | Starter | Compilers & Interpreters | RPN with variables and functions
